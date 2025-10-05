@@ -15,6 +15,7 @@ public:
     virtual ~ITournamentDelegate() = default;
     virtual std::string CreateTournament(std::shared_ptr<domain::Tournament> tournament) = 0;
     virtual std::vector<std::shared_ptr<domain::Tournament>> ReadAll() = 0;
+    virtual std::shared_ptr<domain::Tournament> ReadById(const std::string& id) = 0;
 };
 
 #endif //TOURNAMENTS_ITOURNAMENTDELEGATE_HPP

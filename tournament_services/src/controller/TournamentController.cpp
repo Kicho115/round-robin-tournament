@@ -36,6 +36,27 @@ crow::response TournamentController::ReadAll() const {
     return response;
 }
 
+crow::response TournamentController::GetById(const crow::request &request, const std::string& id) const {
+    auto tournament = tournamentDelegate->ReadById(id);
+    
+    crow::response response;
+    
+    if (!tournament) {
+        response.code = crow::NOT_FOUND;
+        response.body = R"({"error": "Tournament not found"})";
+        response.add_header(CONTENT_TYPE_HEADER, JSON_CONTENT_TYPE);
+        return response;
+    }
+    
+    nlohmann::json body = tournament;
+    response.code = crow::OK;
+    response.body = body.dump();
+    response.add_header(CONTENT_TYPE_HEADER, JSON_CONTENT_TYPE);
+    
+    return response;
+}
+
 
 REGISTER_ROUTE(TournamentController, CreateTournament, "/tournaments", "POST"_method)
 REGISTER_ROUTE(TournamentController, ReadAll, "/tournaments", "GET"_method)
+REGISTER_ROUTE(TournamentController, GetById, "/tournaments/<string>", "GET"_method)
