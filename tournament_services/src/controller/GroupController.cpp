@@ -64,3 +64,11 @@ crow::response GroupController::AddTeam(const crow::request& req, const std::str
 REGISTER_ROUTE(GroupController, GetGroups,   "/tournaments/<string>/groups", "GET"_method)
 REGISTER_ROUTE(GroupController, CreateGroup, "/tournaments/<string>/groups", "POST"_method)
 REGISTER_ROUTE(GroupController, AddTeam,     "/tournaments/<string>/groups/<string>", "POST"_method)
+
+auto created = groupDelegate->CreateGroup(tid, name, teams);
+if (!created.has_value()) {
+    if (created.error() == "tournament_not_found") return crow::response{crow::NOT_FOUND, "tournament_not_found"};
+    if (created.error() == "duplicate_group_name") return crow::response{crow::CONFLICT, "duplicate_group_name"};
+    if (created.error() == "group_limit_reached")  return crow::response{crow::CONFLICT, "only_one_group_allowed"};
+    return crow::response{crow::UNPROCESSABLE, created.error()};
+}

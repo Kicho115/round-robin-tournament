@@ -57,3 +57,21 @@ TEST(GroupController, AddTeam_201_and_422) {
     auto nf = ctrl.AddTeam(nfReq, "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa", "bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb");
     EXPECT_EQ(nf.code, crow::UNPROCESSABLE);
 }
+TEST(GroupController, CreateGroup_SecondOne_Conflict409) {
+    auto mock = std::make_shared<GroupDelegateMock>();
+    GroupController ctrl(mock);
+
+    // primer create OK
+    crow::request r1; r1.body = R"({"name":"Group A"})";
+    EXPECT_CALL(*mock, CreateGroup(::testing::_,::testing::_,::testing::_))
+      .WillOnce(::testing::Return(std::expected<std::string,std::string>{"gid-1"}));
+    auto ok = ctrl.CreateGroup(r1, "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa");
+    EXPECT_EQ(ok.code, crow::CREATED);
+
+    // segundo create en mismo torneo → 409
+    crow::request r2; r2.body = R"({"name":"Group B"})";
+    EXPECT_CALL(*mock, CreateGroup(::testing::_,::testing::_,::testing::_))
+      .WillOnce(::testing::Return(std::unexpected("group_limit_reached")));
+    auto conflict = ctrl.CreateGroup(r2, "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa");
+    EXPECT_EQ(conflict.code, crow::CONFLICT);
+}
