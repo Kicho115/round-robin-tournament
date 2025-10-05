@@ -26,6 +26,10 @@ public:
     std::shared_ptr<domain::Group> FindByTournamentIdAndGroupId(const std::string_view& tournamentId, const std::string_view& groupId) override;
     std::shared_ptr<domain::Group> FindByTournamentIdAndTeamId(const std::string_view& tournamentId, const std::string_view& teamId) override;
     void UpdateGroupAddTeam(const std::string_view& groupId, const std::shared_ptr<domain::Team> & team) override;
+  
+    bool ExistsGroupForTournament(const std::string_view& tournamentId);
+    int  GroupsCountForTournament(const std::string_view& tournamentId);
+
 };
 
 #endif //TOURNAMENTS_GROUPREPOSITORY_HPP

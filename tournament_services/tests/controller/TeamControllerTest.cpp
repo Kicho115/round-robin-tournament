@@ -84,3 +84,61 @@ TEST_F(TeamControllerTest, SaveTeamTest) {
     EXPECT_EQ(teamRequestBody.at("id").get<std::string>(), capturedTeam.Id);
     EXPECT_EQ(teamRequestBody.at("name").get<std::string>(), capturedTeam.Name);
 }
+// ... includes y fixture existentes
+
+TEST_F(TeamControllerTest, SaveTeam_Conflict409_WhenDuplicate) {
+    // Simula que el delegate retorna id vacío para mapear 409
+    EXPECT_CALL(*teamDelegateMock, SaveTeam(::testing::_))
+        .WillOnce(testing::Return(std::string_view{}));
+
+    nlohmann::json body = { {"name","dup team"} };
+    crow::request req; req.body = body.dump();
+    auto res = teamController->SaveTeam(req);
+
+    EXPECT_EQ(crow::CONFLICT, res.code);
+}
+
+TEST_F(TeamControllerTest, GetAllTeams_EmptyAndNonEmpty) {
+    // vacío
+    EXPECT_CALL(*teamDelegateMock, GetAllTeams())
+        .WillOnce(testing::Return(std::vector<std::shared_ptr<domain::Team>>{}));
+    auto emptyRes = teamController->getAllTeams();
+    EXPECT_EQ(200, emptyRes.code);
+
+    // no vacío
+    std::vector<std::shared_ptr<domain::Team>> list;
+    list.push_back(std::make_shared<domain::Team>(domain::Team{"id1","A"}));
+    list.push_back(std::make_shared<domain::Team>(domain::Team{"id2","B"}));
+    EXPECT_CALL(*teamDelegateMock, GetAllTeams())
+        .WillOnce(testing::Return(list));
+    auto res = teamController->getAllTeams();
+    EXPECT_EQ(200, res.code);
+}
+
+class ITeamDelegatePatchMock : public ITeamDelegate {
+public:
+    MOCK_METHOD(std::shared_ptr<domain::Team>, GetTeam, (const std::string_view), (override));
+    MOCK_METHOD(std::vector<std::shared_ptr<domain::Team>>, GetAllTeams, (), (override));
+    MOCK_METHOD(std::string_view, SaveTeam, (const domain::Team&), (override));
+    MOCK_METHOD(std::expected<void,std::string>, UpdateTeam, (const domain::Team&), (const, override));
+};
+
+TEST(TeamControllerPatchTest, UpdateTeam_204_and_404) {
+    auto mock = std::make_shared<ITeamDelegatePatchMock>();
+    TeamController ctrl(mock);
+
+    // 204
+    nlohmann::json body = { {"name","updated"} };
+    crow::request req204; req204.body = body.dump();
+    EXPECT_CALL(*mock, UpdateTeam(::testing::_))
+        .WillOnce(testing::Return(std::expected<void,std::string>{}));
+    auto ok = ctrl.UpdateTeam(req204, "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa");
+    EXPECT_EQ(crow::NO_CONTENT, ok.code);
+
+    // 404
+    crow::request req404; req404.body = body.dump();
+    EXPECT_CALL(*mock, UpdateTeam(::testing::_))
+        .WillOnce(testing::Return(std::unexpected("team_not_found")));
+    auto nf = ctrl.UpdateTeam(req404, "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa");
+    EXPECT_EQ(crow::NOT_FOUND, nf.code);
+}

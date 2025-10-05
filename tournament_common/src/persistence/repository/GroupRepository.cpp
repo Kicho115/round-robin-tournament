@@ -118,3 +118,20 @@ void GroupRepository::UpdateGroupAddTeam(const std::string_view& groupId, const 
     const pqxx::result result = tx.exec(pqxx::prepped{"update_group_add_team"}, pqxx::params{groupId.data(), teamDocument.dump()});
     tx.commit();
 }
+bool GroupRepository::ExistsGroupForTournament(const std::string_view& tid) {
+    auto pooled = connectionProvider->Connection();
+    auto* c = dynamic_cast<PostgresConnection*>(&*pooled);
+    pqxx::work tx(*c->connection);
+    auto rs = tx.exec_params("SELECT 1 FROM groups WHERE tournament_id=$1 LIMIT 1;", tid.data());
+    tx.commit();
+    return !rs.empty();
+}
+
+int GroupRepository::GroupsCountForTournament(const std::string_view& tid) {
+    auto pooled = connectionProvider->Connection();
+    auto* c = dynamic_cast<PostgresConnection*>(&*pooled);
+    pqxx::work tx(*c->connection);
+    auto rs = tx.exec_params("SELECT COUNT(*) AS cnt FROM groups WHERE tournament_id=$1;", tid.data());
+    tx.commit();
+    return rs.empty() ? 0 : rs[0]["cnt"].as<int>(0);
+}
