@@ -23,7 +23,7 @@ public:
         for (size_t i = 0; i < poolSize; i++) {
             connectionPool.push(std::make_unique<pqxx::connection>(connectionString.data()));
             connectionPool.back()->prepare("insert_tournament", "insert into TOURNAMENTS (document) values($1) RETURNING id");
-            connectionPool.back()->prepare("select_tournament_by_id", "select * from TOURNAMENTS where id = $1");
+            connectionPool.back()->prepare("select_tournament_by_id", "select * from TOURNAMENTS where id = $1::uuid");
 
             connectionPool.back()->prepare("insert_team", "insert into TEAMS (document) values($1) RETURNING id");
             connectionPool.back()->prepare("select_team_by_id", "select * from TEAMS where id = $1");
@@ -42,10 +42,10 @@ public:
                 update groups
                     set document = jsonb_insert(
                             document, '{teams,-1}', $2
-                                   ),
-                    last_update_date = CURRENT_TIMESTAMP
+                                   )
                 where id = $1
             )");
+
         }
     }
 

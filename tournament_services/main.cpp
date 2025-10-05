@@ -5,6 +5,7 @@
 #include "include/configuration/RunConfiguration.hpp"
 
 int main() {
+    std::cout << "RUNNING" << std::endl;
     activemq::library::ActiveMQCPP::initializeLibrary();
     const auto container = config::containerSetup();
     crow::SimpleApp app;

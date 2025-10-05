@@ -37,6 +37,7 @@ crow::response TournamentController::ReadAll() const {
 }
 
 crow::response TournamentController::GetById(const crow::request &request, const std::string& id) const {
+    std::cout << "GET /tournaments/{} - Buscando torneo con ID: {}" << request.body << std::endl;
     auto tournament = tournamentDelegate->ReadById(id);
     
     crow::response response;
