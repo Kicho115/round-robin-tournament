@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BackendCodeEditorMiscSettings">
+    <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexedValue" value="true" type="bool" />
+  </component>
+  <component name="CMakePresetLoader"><![CDATA[{
+  "useNewFormat": true
+}]]></component>
+  <component name="CMakeRunConfigurationManager">
+    <generated />
+  </component>
+  <component name="CMakeSettings">
+    <configurations />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6f97cf59-b34a-44c6-b4dd-33f8dc971b34" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/tournament_common/include/domain/Utilities.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/tournament_common/include/domain/Utilities.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tournament_common/include/persistence/repository/TeamRepository.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/tournament_common/include/persistence/repository/TeamRepository.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tournament_common/include/persistence/repository/TournamentRepository.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/tournament_common/include/persistence/repository/TournamentRepository.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tournament_services/include/delegate/ITournamentDelegate.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/tournament_services/include/delegate/ITournamentDelegate.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tournament_services/include/delegate/TournamentDelegate.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/tournament_services/include/delegate/TournamentDelegate.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tournament_services/src/controller/TournamentController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tournament_services/src/controller/TournamentController.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tournament_services/src/delegate/TournamentDelegate.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tournament_services/src/delegate/TournamentDelegate.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tournament_services/tests/controller/TournamentControllerTest.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tournament_services/tests/controller/TournamentControllerTest.cpp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\rafae\OneDrive\Documents\GitHub\round-robin-tournament\tournament_services\tests" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6f97cf59-b34a-44c6-b4dd-33f8dc971b34" name="Changes" comment="" />
+      <created>1759201764835</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1759201764835</updated>
+      <workItem from="1759201766398" duration="2878000" />
+      <workItem from="1759650182404" duration="2575000" />
+    </task>
+    <servers />
+  </component>
+  <component name="VCPKGProject">
+    <isAutomaticCheckingOnLaunch value="false" />
+    <isAutomaticFoundErrors value="true" />
+    <isAutomaticReloadCMake value="true" />
+  </component>
+</project>

@@ -23,3 +23,17 @@ std::string_view TeamDelegate::SaveTeam(const domain::Team& team){
 }
 
 
+
+std::string_view TeamDelegate::SaveTeam(const domain::Team& team){
+    // el repo respetará índice único de nombre → si hay duplicado, lanzará o retornará ""
+    return teamRepository->Create(team);
+}
+
+std::expected<void, std::string> TeamDelegate::UpdateTeam(const domain::Team& team) const {
+    // verifica existencia previa para poder devolver 404
+    auto current = teamRepository->ReadById(team.Id);
+    if (!current) return std::unexpected("team_not_found");
+
+    teamRepository->Update(team);
+    return {};
+}
