@@ -20,6 +20,7 @@ public:
     std::string CreateTournament(std::shared_ptr<domain::Tournament> tournament) override;
     std::vector<std::shared_ptr<domain::Tournament>> ReadAll() override;
     std::shared_ptr<domain::Tournament> ReadById(const std::string& id) override;
+    std::string UpdateTournament(const std::string& id, std::shared_ptr<domain::Tournament> tournament) override;
 };
 
 #endif //TOURNAMENTS_TOURNAMENTDELEGATE_HPP

@@ -33,3 +33,8 @@ std::vector<std::shared_ptr<domain::Tournament> > TournamentDelegate::ReadAll() 
 std::shared_ptr<domain::Tournament> TournamentDelegate::ReadById(const std::string& id) {
     return tournamentRepository->ReadById(id);
 }
+
+std::string TournamentDelegate::UpdateTournament(const std::string& id, std::shared_ptr<domain::Tournament> tournament) {
+    tournament->Id() = id;
+    return tournamentRepository->Update(*tournament);
+}
