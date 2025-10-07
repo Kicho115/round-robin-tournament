@@ -17,19 +17,23 @@ std::shared_ptr<domain::Tournament> TournamentRepository::ReadById(std::string i
     auto pooled = connectionProvider->Connection();
     const auto connection = dynamic_cast<PostgresConnection*>(&*pooled);
 
+    try {
+        pqxx::work tx(*(connection->connection));
+        const pqxx::result result = tx.exec(pqxx::prepped{"select_tournament_by_id"}, id);
+        tx.commit();
 
-    pqxx::work tx(*(connection->connection));
-    const pqxx::result result = tx.exec(pqxx::prepped{"select_tournament_by_id"}, id);
-    tx.commit();
+        if (result.empty()) {
+            return nullptr;
+        }
+        nlohmann::json rowTournament = nlohmann::json::parse(result.at(0)["document"].c_str());
+        auto tournament = std::make_shared<domain::Tournament>(rowTournament);
+        tournament->Id() = result.at(0)["id"].c_str();
 
-    if (result.empty()) {
+        return tournament;
+    } catch (const pqxx::data_exception& e) {
+        // Invalid UUID format or other data-related errors
         return nullptr;
     }
-    nlohmann::json rowTournament = nlohmann::json::parse(result.at(0)["document"].c_str());
-    auto tournament = std::make_shared<domain::Tournament>(rowTournament);
-    tournament->Id() = result.at(0)["id"].c_str();
-
-    return tournament;
 }
 
 std::string TournamentRepository::Create (const domain::Tournament & entity) {
@@ -44,10 +48,6 @@ std::string TournamentRepository::Create (const domain::Tournament & entity) {
     tx.commit();
 
     return result[0]["id"].c_str();
-}
-
-std::string TournamentRepository::Update (const domain::Tournament & entity) {
-    return "id";
 }
 
 void TournamentRepository::Delete(std::string id) {
@@ -73,4 +73,22 @@ std::vector<std::shared_ptr<domain::Tournament>> TournamentRepository::ReadAll()
     }
 
     return tournaments;
+}
+
+// Updates a tournament in the database
+std::string TournamentRepository::Update(const domain::Tournament& entity) {
+    // Connection to the database
+    auto pooled = connectionProvider->Connection();
+    auto connection = dynamic_cast<PostgresConnection*>(&*pooled);
+
+    // Convert the tournament to a JSON object
+    nlohmann::json tournamentDoc = entity;
+
+    // Transaction
+    pqxx::work tx(*(connection->connection));
+    pqxx::result result = tx.exec(pqxx::prepped{"update_tournament"}, pqxx::params{entity.Id(), tournamentDoc.dump()});
+
+    tx.commit();
+
+    return entity.Id();
 }

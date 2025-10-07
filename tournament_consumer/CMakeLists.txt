@@ -7,6 +7,7 @@ set(CONSUMER_SOURCES
 find_package(libpqxx CONFIG REQUIRED)
 find_path(HYPODERMIC_INCLUDE_DIRS "Hypodermic/ActivatedRegistrationInfo.h")
 find_package(nlohmann_json CONFIG REQUIRED)
+find_package(OpenSSL REQUIRED)
 
 include_directories(include)
 
@@ -22,6 +23,13 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
         libpqxx::pqxx
         unofficial::activemq-cpp::activemq-cpp
         tournament_common
+        -Wl,--start-group
+        /opt/vcpkg/installed/x64-linux/debug/lib/libpq.a
+        /opt/vcpkg/installed/x64-linux/debug/lib/libpgcommon.a
+        /opt/vcpkg/installed/x64-linux/debug/lib/libpgport.a
+        -Wl,--end-group
+        OpenSSL::SSL
+        OpenSSL::Crypto
 )
 
 target_include_directories(${PROJECT_NAME} PRIVATE ${HYPODERMIC_INCLUDE_DIRS})
