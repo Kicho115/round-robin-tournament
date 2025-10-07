@@ -2,6 +2,7 @@
 #include <gmock/gmock.h>
 #include <crow.h>
 #include <nlohmann/json.hpp>
+#include <expected>
 
 #include "domain/Tournament.hpp"
 #include "domain/Utilities.hpp"
@@ -10,10 +11,10 @@
 
 class TournamentDelegateMock : public ITournamentDelegate {
 public:
-    MOCK_METHOD(std::string, CreateTournament, (std::shared_ptr<domain::Tournament> tournament), (override));
+    MOCK_METHOD((std::expected<std::string, std::string>), CreateTournament, (std::shared_ptr<domain::Tournament> tournament), (override));
     MOCK_METHOD(std::vector<std::shared_ptr<domain::Tournament>>, ReadAll, (), (override));
     MOCK_METHOD(std::shared_ptr<domain::Tournament>, ReadById, (const std::string& id), (override));
-    MOCK_METHOD(std::string, UpdateTournament, (const std::string& id, std::shared_ptr<domain::Tournament> tournament), (override));
+    MOCK_METHOD((std::expected<std::string, std::string>), UpdateTournament, (const std::string& id, std::shared_ptr<domain::Tournament> tournament), (override));
 };
 
 class TournamentControllerTest : public ::testing::Test {
@@ -52,7 +53,7 @@ TEST_F(TournamentControllerTest, CreateTournament_Success_Returns201) {
     EXPECT_CALL(*tournamentDelegateMock, CreateTournament(::testing::_))
         .WillOnce(::testing::DoAll(
             ::testing::SaveArg<0>(&capturedTournament),
-            ::testing::Return("new-tournament-id-123")
+            ::testing::Return(std::expected<std::string, std::string>("new-tournament-id-123"))
         ));
 
     // Execute
@@ -72,8 +73,8 @@ TEST_F(TournamentControllerTest, CreateTournament_Success_Returns201) {
     EXPECT_EQ(domain::TournamentType::ROUND_ROBIN, capturedTournament->Format().Type());
 }
 
-// Test: Create a Tournament with database error - HTTP 409
-TEST_F(TournamentControllerTest, CreateTournament_DatabaseError_Returns409) {
+// Test: Create a Tournament with database error - HTTP 500
+TEST_F(TournamentControllerTest, CreateTournament_DatabaseError_Returns500) {
     nlohmann::json tournamentJson = {
         {"name", "Torneo Duplicado"},
         {"format", {
@@ -86,14 +87,20 @@ TEST_F(TournamentControllerTest, CreateTournament_DatabaseError_Returns409) {
     crow::request request;
     request.body = tournamentJson.dump();
 
-    // Simulate database insertion error
+    // Simulate database insertion error using std::expected
     EXPECT_CALL(*tournamentDelegateMock, CreateTournament(::testing::_))
-        .WillOnce(::testing::Throw(std::runtime_error("Database constraint violation")));
+        .WillOnce(::testing::Return(std::unexpected<std::string>("Database constraint violation")));
 
-    // Execute and verify that it throws an exception
-    EXPECT_THROW({
-        crow::response response = tournamentController->CreateTournament(request);
-    }, std::runtime_error);
+    // Execute
+    crow::response response = tournamentController->CreateTournament(request);
+
+    // Verify
+    EXPECT_EQ(crow::INTERNAL_SERVER_ERROR, response.code);
+    EXPECT_EQ("application/json", response.get_header_value("content-type"));
+    
+    auto jsonResponse = nlohmann::json::parse(response.body);
+    EXPECT_TRUE(jsonResponse.contains("error"));
+    EXPECT_EQ("Database constraint violation", jsonResponse["error"].get<std::string>());
 }
 
 // Test: Successful GetById Tournament - HTTP 200
@@ -228,7 +235,7 @@ TEST_F(TournamentControllerTest, UpdateTournament_Success_Returns204) {
         .WillOnce(::testing::DoAll(
             ::testing::SaveArg<0>(&capturedId),
             ::testing::SaveArg<1>(&capturedTournament),
-            ::testing::Return(tournamentId)
+            ::testing::Return(std::expected<std::string, std::string>(tournamentId))
         ));
 
     // Execute

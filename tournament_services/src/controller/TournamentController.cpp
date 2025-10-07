@@ -19,10 +19,18 @@ crow::response TournamentController::CreateTournament(const crow::request &reque
     nlohmann::json body = nlohmann::json::parse(request.body);
     const std::shared_ptr<domain::Tournament> tournament = std::make_shared<domain::Tournament>(body);
 
-    const std::string id = tournamentDelegate->CreateTournament(tournament);
+    auto result = tournamentDelegate->CreateTournament(tournament);
     crow::response response;
-    response.code = crow::CREATED;
-    response.add_header("location", id);
+    
+    if (result.has_value()) {
+        response.code = crow::CREATED;
+        response.add_header("location", result.value());
+    } else {
+        response.code = crow::INTERNAL_SERVER_ERROR;
+        response.body = nlohmann::json{{"error", result.error()}}.dump();
+        response.add_header(CONTENT_TYPE_HEADER, JSON_CONTENT_TYPE);
+    }
+    
     return response;
 }
 
@@ -78,11 +86,19 @@ crow::response TournamentController::UpdateTournament(const crow::request &reque
     
     const std::shared_ptr<domain::Tournament> tournament = std::make_shared<domain::Tournament>(oldTournamentJson);
     
-    const std::string result = tournamentDelegate->UpdateTournament(id, tournament);
+    auto result = tournamentDelegate->UpdateTournament(id, tournament);
 
     crow::response response;
-    response.code = crow::NO_CONTENT;
-    response.add_header(CONTENT_TYPE_HEADER, JSON_CONTENT_TYPE);
+    
+    if (result.has_value()) {
+        response.code = crow::NO_CONTENT;
+        response.add_header(CONTENT_TYPE_HEADER, JSON_CONTENT_TYPE);
+    } else {
+        response.code = crow::INTERNAL_SERVER_ERROR;
+        response.body = nlohmann::json{{"error", result.error()}}.dump();
+        response.add_header(CONTENT_TYPE_HEADER, JSON_CONTENT_TYPE);
+    }
+    
     return response;
 }
 
