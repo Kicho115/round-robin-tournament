@@ -1,23 +1,31 @@
-//
-// Created by tomas on 8/22/25.
-//
-
-#ifndef RESTAPI_TESTDELEGATE_HPP
-#define RESTAPI_TESTDELEGATE_HPP
+#pragma once
 #include <memory>
-
+#include <string>
+#include <vector>
+#include <optional>
+#include "delegate/ITeamDelegate.hpp"
 #include "persistence/repository/IRepository.hpp"
 #include "domain/Team.hpp"
-#include "ITeamDelegate.hpp"
 
 class TeamDelegate : public ITeamDelegate {
+public:
+    explicit TeamDelegate(std::shared_ptr<IRepository<domain::Team, std::string_view>> repository)
+        : teamRepository(std::move(repository)) {}
+
+    std::vector<std::shared_ptr<domain::Team>> GetAllTeams() override {
+        return teamRepository->ReadAll();
+    }
+
+    std::shared_ptr<domain::Team> GetTeam(const std::string& id) override {
+        return teamRepository->ReadById(id);
+    }
+
+    // Devuelve id creado o "" si duplicado (el repo ya aplica unicidad)
+    std::string SaveTeam(const domain::Team& team) override;
+
+    // nullopt = OK; string = error ("team_not_found", …)
+    std::optional<std::string> UpdateTeam(const domain::Team& team) const override;
+
+private:
     std::shared_ptr<IRepository<domain::Team, std::string_view>> teamRepository;
-    public:
-    explicit TeamDelegate(std::shared_ptr<IRepository<domain::Team, std::string_view>> repository);
-    std::shared_ptr<domain::Team> GetTeam(std::string_view id) override;
-    std::vector<std::shared_ptr<domain::Team>> GetAllTeams() override;
-    std::string_view SaveTeam( const domain::Team& team) override;
 };
-
-
-#endif //RESTAPI_TESTDELEGATE_HPP

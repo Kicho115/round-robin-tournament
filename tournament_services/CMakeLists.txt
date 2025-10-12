@@ -14,7 +14,6 @@ find_package(Crow CONFIG REQUIRED)
 find_package(libpqxx CONFIG REQUIRED)
 find_path(HYPODERMIC_INCLUDE_DIRS "Hypodermic/ActivatedRegistrationInfo.h")
 find_package(nlohmann_json CONFIG REQUIRED)
-find_package(OpenSSL REQUIRED)
 
 
 add_subdirectory(tests)
@@ -30,16 +29,9 @@ target_link_libraries(${PROJECT_NAME} PUBLIC
         Crow::Crow
         asio::asio
         nlohmann_json::nlohmann_json
-        tournament_common
         libpqxx::pqxx
         unofficial::activemq-cpp::activemq-cpp
-        -Wl,--start-group
-        /opt/vcpkg/installed/x64-linux/debug/lib/libpq.a
-        /opt/vcpkg/installed/x64-linux/debug/lib/libpgcommon.a
-        /opt/vcpkg/installed/x64-linux/debug/lib/libpgport.a
-        -Wl,--end-group
-        OpenSSL::SSL
-        OpenSSL::Crypto)
+        tournament_common)
 
 target_include_directories(${PROJECT_NAME} INTERFACE ${HYPODERMIC_INCLUDE_DIRS})
 

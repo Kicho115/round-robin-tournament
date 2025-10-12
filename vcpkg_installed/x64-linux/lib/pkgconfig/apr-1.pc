@@ -1,0 +1,12 @@
+prefix=${pcfiledir}/../..
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+APR_MAJOR_VERSION=1
+includedir=${prefix}/include/apr-${APR_MAJOR_VERSION}
+
+Name: APR
+Description: The Apache Portable Runtime library
+Version: 1.7.6
+
+Libs: "-L${libdir}" -lapr-1 -luuid -lcrypt -lpthread
+Cflags: -DLINUX -D_REENTRANT -D_GNU_SOURCE  "-I${includedir}"
