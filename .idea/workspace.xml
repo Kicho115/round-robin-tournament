@@ -6,9 +6,9 @@
   <component name="BackendCodeEditorMiscSettings">
     <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexedValue" value="true" type="bool" />
   </component>
-  <component name="CMakePresetLoader"><![CDATA[{
-  "useNewFormat": true
-}]]></component>
+  <component name="CMakePresetLoader">{
+  &quot;useNewFormat&quot;: true
+}</component>
   <component name="CMakeRunConfigurationManager">
     <generated />
   </component>
@@ -17,14 +17,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f97cf59-b34a-44c6-b4dd-33f8dc971b34" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/tournament_common/include/domain/Utilities.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/tournament_common/include/domain/Utilities.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tournament_common/include/persistence/repository/TeamRepository.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/tournament_common/include/persistence/repository/TeamRepository.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tournament_common/include/persistence/repository/TournamentRepository.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/tournament_common/include/persistence/repository/TournamentRepository.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tournament_services/include/delegate/ITournamentDelegate.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/tournament_services/include/delegate/ITournamentDelegate.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tournament_services/include/delegate/TournamentDelegate.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/tournament_services/include/delegate/TournamentDelegate.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tournament_services/src/controller/TournamentController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tournament_services/src/controller/TournamentController.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tournament_services/src/delegate/TournamentDelegate.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tournament_services/src/delegate/TournamentDelegate.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tournament_services/tests/controller/TournamentControllerTest.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tournament_services/tests/controller/TournamentControllerTest.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tournament_common/include/persistence/repository/GroupRepository.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/tournament_common/include/persistence/repository/GroupRepository.hpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +28,29 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Leafarex"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Kicho115/round-robin-tournament.git",
+    "accountId": "9a0a7570-0986-4bd8-b3d4-058fb57fa6a9"
+  }
+}]]></component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 1
+}]]></component>
+  <component name="ProjectId" id="33iEduIUX72GA6ytHDZQP1g7Ve3" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
@@ -41,15 +58,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "C/C++ File.main.cpp.executor": "Debug",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.RadMigrateCodeStyle": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "#1 on Rafael",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "CMakeSettings",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\rafae\OneDrive\Documents\GitHub\round-robin-tournament\tournament_services\tests" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="main.cpp" type="CppFileRunConfiguration" factoryName="CppFileRunConfiguration" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="round-robin-tournament" TARGET_NAME="main.cpp" CONFIG_NAME="main.cpp">
+      <option name="sourceFile" value="tournament_services\main.cpp" />
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.runfile.CppFileBuildBeforeRunTaskProvider$BasicBuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -61,9 +105,13 @@
       <option name="presentableId" value="Default" />
       <updated>1759201764835</updated>
       <workItem from="1759201766398" duration="2878000" />
-      <workItem from="1759650182404" duration="3798000" />
+      <workItem from="1759650182404" duration="4443000" />
+      <workItem from="1759791586690" duration="451000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="VCPKGProject">
     <isAutomaticCheckingOnLaunch value="false" />

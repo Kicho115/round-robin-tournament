@@ -5,70 +5,119 @@
 #include "configuration/RouteDefinition.hpp"
 #include "controller/GroupController.hpp"
 #include "delegate/IGroupDelegate.hpp"
-#include "domain/Utilities.hpp"
+#include "domain/Group.hpp"
+#include "domain/Team.hpp"
 
 using nlohmann::json;
 
-static constexpr auto JSON_CT = "application/json";
+// Patrón simple para IDs (coincidir con el de tus otros controladores)
+namespace {
+    const std::regex ID_VALUE{R"(^[A-Za-z0-9-]+$)"};
+}
 
-GroupController::GroupController(std::shared_ptr<IGroupDelegate> delegate)
-: groupDelegate(std::move(delegate)) {}
+// === ctor/dtor como en el .hpp ===
+GroupController::GroupController(const std::shared_ptr<IGroupDelegate>& delegate)
+    : groupDelegate(delegate) {}
 
-crow::response GroupController::GetGroups(const crow::request&, const std::string& tid) const {
-    if (!std::regex_match(tid, ID_VALUE)) return crow::response{crow::BAD_REQUEST, "Invalid ID format"};
-    json body = groupDelegate->ReadByTournament(tid);
+GroupController::~GroupController() = default;
+
+// GET /tournaments/{tid}/groups
+crow::response GroupController::GetGroups(const std::string& tournamentId) {
+    if (!std::regex_match(tournamentId, ID_VALUE)) {
+        return crow::response{crow::BAD_REQUEST, "Invalid ID format"};
+    }
+
+    std::vector<std::shared_ptr<domain::Group>> groups;
+    if (auto err = groupDelegate->GetGroups(tournamentId, groups)) {
+        // Mapeo simple de errores
+        if (*err == "tournament_not_found") return crow::response{crow::NOT_FOUND, *err};
+        return crow::response{422, *err}; // 422 en lugar de crow::UNPROCESSABLE (no existe en algunas versiones)
+    }
+
+    json body = json::array();
+    for (auto& g : groups) body.push_back(json(*g));
     crow::response res{crow::OK, body.dump()};
-    res.add_header("content-type", JSON_CT);
+    res.add_header("content-type", "application/json");
     return res;
 }
 
-crow::response GroupController::CreateGroup(const crow::request& req, const std::string& tid) const {
-    if (!std::regex_match(tid, ID_VALUE)) return crow::response{crow::BAD_REQUEST, "Invalid ID format"};
-    if (!json::accept(req.body)) return crow::response{crow::BAD_REQUEST};
-
-    json in = json::parse(req.body);
-    std::string name = in.value("name", "");
-    json teams = in.value("teams", json::array());
-
-    auto created = groupDelegate->CreateGroup(tid, name, teams);
-    if (!created.has_value()) {
-        if (created.error() == "tournament_not_found") return crow::response{crow::NOT_FOUND, "tournament_not_found"};
-        if (created.error() == "duplicate_group_name") return crow::response{crow::CONFLICT, "duplicate_group_name"};
-        return crow::response{crow::UNPROCESSABLE, created.error()};
+// GET /tournaments/{tid}/groups/{gid}
+crow::response GroupController::GetGroup(const std::string& tournamentId, const std::string& groupId) {
+    if (!std::regex_match(tournamentId, ID_VALUE) || !std::regex_match(groupId, ID_VALUE)) {
+        return crow::response{crow::BAD_REQUEST, "Invalid ID format"};
     }
+
+    std::shared_ptr<domain::Group> group;
+    if (auto err = groupDelegate->GetGroup(tournamentId, groupId, group)) {
+        if (*err == "tournament_not_found" || *err == "group_not_found") {
+            return crow::response{crow::NOT_FOUND, *err};
+        }
+        return crow::response{422, *err};
+    }
+
+    json body = *group;
+    crow::response res{crow::OK, body.dump()};
+    res.add_header("content-type", "application/json");
+    return res;
+}
+
+// POST /tournaments/{tid}/groups
+crow::response GroupController::CreateGroup(const crow::request& request, const std::string& tournamentId) {
+    if (!std::regex_match(tournamentId, ID_VALUE)) {
+        return crow::response{crow::BAD_REQUEST, "Invalid ID format"};
+    }
+    if (!json::accept(request.body)) {
+        return crow::response{crow::BAD_REQUEST};
+    }
+
+    const auto body = json::parse(request.body);
+    domain::Group group = body; // requiere from_json(domain::Group)
+    std::string newGroupId;
+
+    if (auto err = groupDelegate->CreateGroup(tournamentId, group, newGroupId)) {
+        if (*err == "duplicate_group_name" || *err == "group_limit_reached") {
+            return crow::response{crow::CONFLICT, *err}; // 409
+        }
+        if (*err == "tournament_not_found") {
+            return crow::response{crow::NOT_FOUND, *err}; // 404
+        }
+        return crow::response{422, *err}; // genérico
+    }
+
     crow::response res{crow::CREATED};
-    res.add_header("location", ("/tournaments/" + tid + "/groups/" + created.value()).c_str());
+    // Según tests, a veces esperan solo el id; si prefieres ruta completa, cambia por "/tournaments/"+tournamentId+"/groups/"+newGroupId
+    res.add_header("location", newGroupId.c_str());
     return res;
 }
 
-crow::response GroupController::AddTeam(const crow::request& req, const std::string& tid, const std::string& gid) const {
-    if (!std::regex_match(tid, ID_VALUE) || !std::regex_match(gid, ID_VALUE)) return crow::response{crow::BAD_REQUEST, "Invalid ID format"};
-    if (!json::accept(req.body)) return crow::response{crow::BAD_REQUEST};
+// PATCH /tournaments/{tid}/groups  (según tu .hpp sin ids en ruta — aquí lo dejo como no implementado)
+crow::response GroupController::UpdateGroup(const crow::request& /*request*/) {
+    return crow::response{crow::NOT_IMPLEMENTED};
+}
 
-    auto in = json::parse(req.body);
-    if (!in.contains("id") || !in.contains("name")) return crow::response{crow::BAD_REQUEST, "missing team"};
-
-    auto r = groupDelegate->AddTeamToGroup(tid, gid, in.at("id").get<std::string>(), in.at("name").get<std::string>());
-    if (!r.has_value()) {
-        if (r.error()=="tournament_not_found")   return crow::response{crow::NOT_FOUND, "tournament_not_found"};
-        if (r.error()=="group_not_found")        return crow::response{crow::NOT_FOUND, "group_not_found"};
-        if (r.error()=="team_not_found")         return crow::response{crow::UNPROCESSABLE, "team_not_found"};
-        if (r.error()=="team_already_in_group")  return crow::response{crow::UNPROCESSABLE, "team_already_in_group"};
-        if (r.error()=="group_full")             return crow::response{crow::UNPROCESSABLE, "group_full"};
-        return crow::response{crow::UNPROCESSABLE, r.error()};
+// PUT /tournaments/{tid}/groups/{gid}/teams
+crow::response GroupController::UpdateTeams(const crow::request& request,
+                                            const std::string& tournamentId,
+                                            const std::string& groupId) {
+    if (!std::regex_match(tournamentId, ID_VALUE) || !std::regex_match(groupId, ID_VALUE)) {
+        return crow::response{crow::BAD_REQUEST, "Invalid ID format"};
     }
-    return crow::response{crow::CREATED};
+    if (!json::accept(request.body)) {
+        return crow::response{crow::BAD_REQUEST};
+    }
+
+    const std::vector<domain::Team> teams = json::parse(request.body);
+    if (auto err = groupDelegate->UpdateTeams(tournamentId, groupId, teams)) {
+        if (*err == "tournament_not_found" || *err == "group_not_found") {
+            return crow::response{crow::NOT_FOUND, *err};
+        }
+        if (*err == "group_full" || *err == "team_already_in_group" || *err == "team_not_found") {
+            return crow::response{422, *err}; // reglas de negocio
+        }
+        return crow::response{422, *err};
+    }
+
+    return crow::response{crow::NO_CONTENT};
 }
 
-// Igual que haces en Team/Tournament, registra rutas con macro
-REGISTER_ROUTE(GroupController, GetGroups,   "/tournaments/<string>/groups", "GET"_method)
-REGISTER_ROUTE(GroupController, CreateGroup, "/tournaments/<string>/groups", "POST"_method)
-REGISTER_ROUTE(GroupController, AddTeam,     "/tournaments/<string>/groups/<string>", "POST"_method)
-
-auto created = groupDelegate->CreateGroup(tid, name, teams);
-if (!created.has_value()) {
-    if (created.error() == "tournament_not_found") return crow::response{crow::NOT_FOUND, "tournament_not_found"};
-    if (created.error() == "duplicate_group_name") return crow::response{crow::CONFLICT, "duplicate_group_name"};
-    if (created.error() == "group_limit_reached")  return crow::response{crow::CONFLICT, "only_one_group_allowed"};
-    return crow::response{crow::UNPROCESSABLE, created.error()};
-}
+// Nota: No registramos rutas aquí si ya las defines en el .hpp con REGISTER_ROUTE.

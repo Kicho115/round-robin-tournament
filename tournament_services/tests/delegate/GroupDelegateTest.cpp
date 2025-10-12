@@ -1,124 +1,112 @@
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
-#include <nlohmann/json.hpp>
+#include <optional>
+#include <string>
+#include <memory>
+#include <vector>
 
-#include "delegate/GroupDelegate.hpp"
-#include "persistence/repository/GroupRepository.hpp"
-#include "persistence/repository/TeamRepository.hpp"
-#include "persistence/repository/TournamentRepository.hpp"
-#include "cms/QueueMessageProducer.hpp"
+#include "delegate/IGroupDelegate.hpp"
+#include "domain/Group.hpp"
+#include "domain/Team.hpp"
 
-using ::testing::Return;
 using ::testing::_;
-using nlohmann::json;
+using ::testing::DoAll;
+using ::testing::Return;
+using ::testing::SetArgReferee;
 
-// Mocks minimalistas (interfaz real puede variar levemente)
-class GroupRepoMock : public GroupRepository {
+// Mock de la interfaz de alto nivel (IGroupDelegate) en C++17
+class GroupDelegateMock : public IGroupDelegate {
 public:
-    using GroupRepository::GroupRepository;
-    MOCK_METHOD(std::vector<std::shared_ptr<domain::Group>>, FindByTournamentId, (const std::string&), (override));
-    MOCK_METHOD(std::optional<std::shared_ptr<domain::Group>>, FindByTournamentIdAndGroupId, (const std::string&, const std::string&), (override));
-    MOCK_METHOD(std::optional<std::shared_ptr<domain::Group>>, FindByTournamentIdAndTeamId, (const std::string&, const std::string&), (override));
-    MOCK_METHOD(std::string, Create, (const domain::Group&), (override));
-    MOCK_METHOD(void, UpdateGroupAddTeam, (const std::string&, const std::shared_ptr<domain::Team>&), (override));
-    MOCK_METHOD(int, CountTeamsInGroup, (const std::string_view&), (override));
-    MOCK_METHOD(int, GroupCapacityForTournament, (const std::string_view&), (override));
+    MOCK_METHOD(std::optional<std::string>,
+                CreateGroup,
+                (std::string_view tournamentId, const domain::Group& group, std::string& outGroupId),
+                (override));
+
+    MOCK_METHOD(std::optional<std::string>,
+                GetGroups,
+                (std::string_view tournamentId, std::vector<std::shared_ptr<domain::Group>>& outGroups),
+                (override));
+
+    MOCK_METHOD(std::optional<std::string>,
+                GetGroup,
+                (std::string_view tournamentId, std::string_view groupId, std::shared_ptr<domain::Group>& outGroup),
+                (override));
+
+    MOCK_METHOD(std::optional<std::string>,
+                UpdateGroup,
+                (std::string_view tournamentId, const domain::Group& group),
+                (override));
+
+    MOCK_METHOD(std::optional<std::string>,
+                RemoveGroup,
+                (std::string_view tournamentId, std::string_view groupId),
+                (override));
+
+    MOCK_METHOD(std::optional<std::string>,
+                UpdateTeams,
+                (std::string_view tournamentId, std::string_view groupId, const std::vector<domain::Team>& teams),
+                (override));
 };
 
-class TeamRepoMock : public TeamRepository {
-public:
-    using TeamRepository::TeamRepository;
-    MOCK_METHOD(std::shared_ptr<domain::Team>, ReadById, (const std::string&), (override));
-};
+TEST(GroupDelegateInterfaceTest, CreateGroup_Success_SetsLocationId) {
+    GroupDelegateMock mock;
 
-class TournamentRepoMock : public TournamentRepository {
-public:
-    using TournamentRepository::TournamentRepository;
-    MOCK_METHOD(std::shared_ptr<domain::Tournament>, ReadById, (const std::string&), (override));
-};
+    // arrange: cuando se llama CreateGroup, pone "new-group-id" en el parámetro de salida y retorna éxito (nullopt)
+    EXPECT_CALL(mock, CreateGroup("t-1", _, _))
+        .WillOnce(DoAll(SetArgReferee<2>(std::string("new-group-id")),
+                        Return(std::nullopt)));
 
-class BusMock : public QueueMessageProducer {
-public:
-    using QueueMessageProducer::QueueMessageProducer;
-    MOCK_METHOD(void, SendMessage, (const std::string&, const std::string&), (override));
-};
+    std::string outId;
+    domain::Group g; g.Name() = "Group A";
+    auto err = mock.CreateGroup("t-1", g, outId);
 
-TEST(GroupDelegate, AddTeam_Ok_PublishesEvent) {
-    auto groups = std::make_shared<GroupRepoMock>(nullptr,nullptr);
-    auto teams  = std::make_shared<TeamRepoMock>(nullptr,nullptr);
-    auto tours  = std::make_shared<TournamentRepoMock>(nullptr,nullptr);
-    auto bus    = std::make_shared<BusMock>(nullptr);
-
-    EXPECT_CALL(*tours, ReadById(_)).WillOnce(Return(std::make_shared<domain::Tournament>()));
-    EXPECT_CALL(*groups, FindByTournamentIdAndGroupId(_, _)).WillOnce(Return(std::make_shared<domain::Group>()));
-    EXPECT_CALL(*teams,  ReadById(_)).WillOnce(Return(std::make_shared<domain::Team>()));
-    EXPECT_CALL(*groups, FindByTournamentIdAndTeamId(_, _)).WillOnce(Return(std::nullopt));
-    EXPECT_CALL(*groups, GroupCapacityForTournament(_)).WillOnce(Return(4));
-    EXPECT_CALL(*groups, CountTeamsInGroup(_)).WillOnce(Return(3));
-    EXPECT_CALL(*groups, UpdateGroupAddTeam(_, _)).Times(1);
-    EXPECT_CALL(*bus, SendMessage(::testing::HasSubstr("\"type\":\"group.team_added\""), "group.team_added")).Times(1);
-
-    GroupDelegate sut(groups, teams, tours, bus);
-    auto r = sut.AddTeamToGroup("tid","gid","team1","A");
-    ASSERT_TRUE(r.has_value());
+    ASSERT_FALSE(err.has_value());
+    EXPECT_EQ(outId, "new-group-id");
 }
 
-TEST(GroupDelegate, AddTeam_GroupFull) {
-    auto groups = std::make_shared<GroupRepoMock>(nullptr,nullptr);
-    auto teams  = std::make_shared<TeamRepoMock>(nullptr,nullptr);
-    auto tours  = std::make_shared<TournamentRepoMock>(nullptr,nullptr);
-    auto bus    = std::make_shared<BusMock>(nullptr);
+TEST(GroupDelegateInterfaceTest, CreateGroup_Duplicate_ReturnsConflictMessage) {
+    GroupDelegateMock mock;
 
-    EXPECT_CALL(*tours, ReadById(_)).WillOnce(Return(std::make_shared<domain::Tournament>()));
-    EXPECT_CALL(*groups, FindByTournamentIdAndGroupId(_, _)).WillOnce(Return(std::make_shared<domain::Group>()));
-    EXPECT_CALL(*teams,  ReadById(_)).WillOnce(Return(std::make_shared<domain::Team>()));
-    EXPECT_CALL(*groups, FindByTournamentIdAndTeamId(_, _)).WillOnce(Return(std::nullopt));
-    EXPECT_CALL(*groups, GroupCapacityForTournament(_)).WillOnce(Return(4));
-    EXPECT_CALL(*groups, CountTeamsInGroup(_)).WillOnce(Return(4)); // lleno
+    EXPECT_CALL(mock, CreateGroup("t-dup", _, _))
+        .WillOnce(Return(std::make_optional<std::string>("duplicate_group_name")));
 
-    GroupDelegate sut(groups, teams, tours, bus);
-    auto r = sut.AddTeamToGroup("tid","gid","team1","A");
-    ASSERT_FALSE(r.has_value());
-    EXPECT_EQ("group_full", r.error());
+    std::string outId;
+    domain::Group g; g.Name() = "Group A";
+    auto err = mock.CreateGroup("t-dup", g, outId);
+
+    ASSERT_TRUE(err.has_value());
+    EXPECT_EQ(*err, "duplicate_group_name");
 }
-TEST(GroupDelegate, CreateGroup_WhenOneAlreadyExists_ReturnsLimitReached) {
-    auto groups = std::make_shared<GroupRepoMock>(nullptr,nullptr);
-    auto teams  = std::make_shared<TeamRepoMock>(nullptr,nullptr);
-    auto tours  = std::make_shared<TournamentRepoMock>(nullptr,nullptr);
-    auto bus    = std::make_shared<BusMock>(nullptr);
 
-    EXPECT_CALL(*tours,  ReadById(::testing::_)).WillOnce(::testing::Return(std::make_shared<domain::Tournament>()));
-    EXPECT_CALL(*groups, ExistsGroupForTournament(::testing::_)).WillOnce(::testing::Return(true));
+TEST(GroupDelegateInterfaceTest, GetGroup_NotFound) {
+    GroupDelegateMock mock;
 
-    GroupDelegate sut(groups, teams, tours, bus);
-    auto r = sut.CreateGroup("tid-1", "Group A", nlohmann::json::array());
-    ASSERT_FALSE(r.has_value());
-    EXPECT_EQ("group_limit_reached", r.error());
+    std::shared_ptr<domain::Group> out;
+    EXPECT_CALL(mock, GetGroup("t-1", "g-404", _))
+        .WillOnce(Return(std::make_optional<std::string>("group_not_found")));
+
+    auto err = mock.GetGroup("t-1", "g-404", out);
+    ASSERT_TRUE(err.has_value());
+    EXPECT_EQ(*err, "group_not_found");
 }
-std::expected<std::string,std::string>
-GroupDelegate::CreateGroup(const std::string& tid, const std::string& name, const nlohmann::json& teams) const {
-    if (!tournamentRepository->ReadById(tid)) return std::unexpected("tournament_not_found");
 
-    // NUEVO: torneo sólo permite 1 grupo
-    if (groupRepository->ExistsGroupForTournament(tid)) {
-        return std::unexpected("group_limit_reached"); // o "single_group_only"
-    }
+TEST(GroupDelegateInterfaceTest, UpdateTeams_Success_And_Errors) {
+    GroupDelegateMock mock;
 
-    domain::Group g; g.TournamentId() = tid; g.Name() = name;
-    if (teams.is_array()) {
-        for (auto& t : teams) g.Teams().push_back(std::make_shared<domain::Team>(domain::Team{t}));
-    }
+    std::vector<domain::Team> teams;
+    teams.push_back(domain::Team{"id-1", "Team 1"});
+    teams.push_back(domain::Team{"id-2", "Team 2"});
 
-    try {
-        auto id = groupRepository->Create(g);
-        producer->SendMessage(nlohmann::json{
-          {"type","group.created"},{"tournamentId",tid},{"groupId",id},{"name",name}
-        }.dump(), "group.created");
-        return id;
-    } catch (const pqxx::unique_violation&) {
-        // DB única garantiza 1 grupo → mapea igual
-        return std::unexpected("group_limit_reached");
-    } catch (const std::exception& e) {
-        return std::unexpected(e.what());
-    }
+    // éxito
+    EXPECT_CALL(mock, UpdateTeams("t-1", "g-1", teams))
+        .WillOnce(Return(std::nullopt));
+    auto ok = mock.UpdateTeams("t-1", "g-1", teams);
+    EXPECT_FALSE(ok.has_value());
+
+    // torneo no encontrado
+    EXPECT_CALL(mock, UpdateTeams("t-404", "g-1", _))
+        .WillOnce(Return(std::make_optional<std::string>("tournament_not_found")));
+    auto nf = mock.UpdateTeams("t-404", "g-1", teams);
+    ASSERT_TRUE(nf.has_value());
+    EXPECT_EQ(*nf, "tournament_not_found");
 }
