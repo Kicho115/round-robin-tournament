@@ -19,11 +19,7 @@
 #ifndef BOOST_REGEX_V5_REGEX_ITERATOR_HPP
 #define BOOST_REGEX_V5_REGEX_ITERATOR_HPP
 
-#include <boost/regex/v5/basic_regex.hpp>
-#include <boost/regex/v5/match_results.hpp>
-#ifndef BOOST_REGEX_AS_MODULE
 #include <memory>
-#endif
 
 namespace boost{
 
@@ -76,7 +72,7 @@ private:
    regex_iterator_implementation& operator=(const regex_iterator_implementation&);
 };
 
-BOOST_REGEX_MODULE_EXPORT template <class BidirectionalIterator,
+template <class BidirectionalIterator, 
           class charT = typename std::iterator_traits<BidirectionalIterator>::value_type,
           class traits = regex_traits<charT> >
 class regex_iterator 
@@ -152,20 +148,20 @@ private:
    }
 };
 
-BOOST_REGEX_MODULE_EXPORT typedef regex_iterator<const char*> cregex_iterator;
-BOOST_REGEX_MODULE_EXPORT typedef regex_iterator<std::string::const_iterator> sregex_iterator;
+typedef regex_iterator<const char*> cregex_iterator;
+typedef regex_iterator<std::string::const_iterator> sregex_iterator;
 #ifndef BOOST_NO_WREGEX
-BOOST_REGEX_MODULE_EXPORT typedef regex_iterator<const wchar_t*> wcregex_iterator;
-BOOST_REGEX_MODULE_EXPORT typedef regex_iterator<std::wstring::const_iterator> wsregex_iterator;
+typedef regex_iterator<const wchar_t*> wcregex_iterator;
+typedef regex_iterator<std::wstring::const_iterator> wsregex_iterator;
 #endif
 
 // make_regex_iterator:
-BOOST_REGEX_MODULE_EXPORT template <class charT, class traits>
+template <class charT, class traits>
 inline regex_iterator<const charT*, charT, traits> make_regex_iterator(const charT* p, const basic_regex<charT, traits>& e, regex_constants::match_flag_type m = regex_constants::match_default)
 {
    return regex_iterator<const charT*, charT, traits>(p, p+traits::length(p), e, m);
 }
-BOOST_REGEX_MODULE_EXPORT template <class charT, class traits, class ST, class SA>
+template <class charT, class traits, class ST, class SA>
 inline regex_iterator<typename std::basic_string<charT, ST, SA>::const_iterator, charT, traits> make_regex_iterator(const std::basic_string<charT, ST, SA>& p, const basic_regex<charT, traits>& e, regex_constants::match_flag_type m = regex_constants::match_default)
 {
    return regex_iterator<typename std::basic_string<charT, ST, SA>::const_iterator, charT, traits>(p.begin(), p.end(), e, m);

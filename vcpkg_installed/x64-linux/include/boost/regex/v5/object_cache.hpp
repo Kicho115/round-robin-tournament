@@ -20,7 +20,6 @@
 #define BOOST_REGEX_OBJECT_CACHE_HPP
 
 #include <boost/regex/config.hpp>
-#ifndef BOOST_REGEX_AS_MODULE
 #include <memory>
 #include <map>
 #include <list>
@@ -28,7 +27,6 @@
 #include <string>
 #ifdef BOOST_HAS_THREADS
 #include <mutex>
-#endif
 #endif
 
 namespace boost{

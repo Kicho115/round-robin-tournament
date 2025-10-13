@@ -2,5 +2,9 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/_deps/crow-src" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/_deps/libpqxx-src" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/_deps/nlohmann_json-src" vcs="Git" />
   </component>
 </project>

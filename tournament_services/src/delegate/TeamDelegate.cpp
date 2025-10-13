@@ -21,3 +21,7 @@ std::optional<std::string> TeamDelegate::UpdateTeam(const domain::Team& team) co
     teamRepository->Update(team);
     return std::nullopt; // OK
 }
+
+std::shared_ptr<domain::Team> TeamDelegate::GetTeam(const std::string& id) {
+    return teamRepository->ReadById(id);
+}

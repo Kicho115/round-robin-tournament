@@ -1,0 +1,71 @@
+Pruebas de código
+Se crearán pruebas unitarias en las partes principales del código que exista algún tipo de lógica, es decir en las clases Controller y Delegate.
+Las pruebas unitarias consisten en corroborar que el código se comporte de acuerdo a las reglas de negocio.
+
+
+Pruebas mínimas esperada en TeamController
+●	Al método que procesa la creación de equipo, validar la transformación de JSON al objeto de dominio Team y validar que el valor que se le transfiera a TeamDelegate es el esperado. Validar que la respuesta de esta función sea HTTP 201
+●	Al método que procesa la creación de equipo, validar la transformación de JSON al objeto de dominio Team y validar que el valor que se le transfiera a TeamDelegate es el esperado. Simular error de inserción en la base de datos y validar la respuesta HTTP 409
+●	Al método que procesa la búsqueda de un equipo por ID, validar que el valor que se le transfiera a TeamDelegate es el esperado. Simular el resultado con un objeto y validar la respuesta HTTP 200
+●	Al método que procesa la búsqueda de un equipo por ID, validar que el valor que se le transfiera a TeamDelegate es el esperado. Simular el resultado nulo y validar la respuesta HTTP 404
+●	Al método que procesa la búsqueda de equipos. Simular el resultado con una lista de objetos y la respuesta HTTP 200
+●	Al método que procesa la búsqueda de equipos. Simular el resultado con una lista vacía y la respuesta HTTP 200 
+●	Al método que procesa la actualización de un equipo, validar la transformación de JSON al objeto de dominio Team y validar que el valor que se le transfiera a TeamDelegate es el esperado. Validar que la respuesta de esta función sea HTTP 204
+●	Al método que procesa la actualización de un equipo, validar la transformación de JSON al objeto de dominio Team y validar que el valor que se le transfiera a TeamDelegate es el esperado. Simular ID no encontrado en el Delegate y validar que la respuesta de esta función sea HTTP 404
+Pruebas mínimas esperada en TeamDelegate
+●	Al método que procesa la creación de equipo, validar que el valor que se le transfiera a TeamRepository es el esperado. Simular una inserción válida y que la respuesta de esta función sea el ID generado
+●	Al método que procesa la creación de equipo, validar que el valor que se le transfiera a TeamRepository es el esperado. Simular una inserción fallida y que la respuesta de esta función sea un error o mensaje usando https://en.cppreference.com/w/cpp/utility/expected.html 
+●	Al método que procesa la búsqueda de un equipo por ID, validar que el valor que se le transfiera a TeamRepository es el esperado. Simular el resultado con un objeto y validar el objeto 
+●	Al método que procesa la búsqueda de un equipo por ID, validar que el valor que se le transfiera a TeamRepository es el esperado. Simular el resultado nulo y validar nullptr
+●	Al método que procesa la búsqueda de equipos. Simular el resultado con una lista de objetos de TeamRepository
+●	Al método que procesa la búsqueda de equipos. Simular el resultado con una lista vacía de TeamRepository
+●	Al método que procesa la actualización de un equipo, validar la búsqueda de TeamRepository por ID, validar el valor transferido a Update. Simular resultado exitoso
+●	Al método que procesa la actualización de un equipo, validar la búsqueda de TeamRepository por ID. Simular resultado de búsqueda no exitoso y regresar error o mensaje usando https://en.cppreference.com/w/cpp/utility/expected.html
+
+Pruebas de código 
+Pruebas mínimas esperada en TournamentController
+●	Al método que procesa la creación de torneo, validar la transformación de JSON al objeto de dominio Tournament y validar que el valor que se le transfiera a TournamentDelegate es el esperado. Validar que la respuesta de esta función sea HTTP 201
+●	Al método que procesa la creación de torneo, validar la transformación de JSON al objeto de dominio Tournament y validar que el valor que se le transfiera a TournamentDelegate es el esperado. Simular error de inserción en la base de datos y validar la respuesta HTTP 409
+●	Al método que procesa la búsqueda de un torneo por ID, validar que el valor que se le transfiera a TournamentDelegate es el esperado. Simular el resultado con un objeto y validar la respuesta HTTP 200
+●	Al método que procesa la búsqueda de un torneo por ID, validar que el valor que se le transfiera a TournamentDelegate es el esperado. Simular el resultado nulo y validar la respuesta HTTP 404
+●	Al método que procesa la búsqueda de torneos. Simular el resultado con una lista de objetos y la respuesta HTTP 200
+●	Al método que procesa la búsqueda de torneos. Simular el resultado con una lista vacía y la respuesta HTTP 200 
+●	Al método que procesa la actualización de un torneo, validar la transformación de JSON al objeto de dominio Tournament y validar que el valor que se le transfiera a TournamentDelegate es el esperado. Validar que la respuesta de esta función sea HTTP 204
+●	Al método que procesa la actualización de un torneo, validar la transformación de JSON al objeto de dominio Tournament y validar que el valor que se le transfiera a TournamemtDelegate es el esperado. Simular ID no encontrado en el Delegate y validar que la respuesta de esta función sea HTTP 404
+
+Pruebas mínimas esperada en TournamentDelegate
+●	Al método que procesa la creación de torneo, validar que el valor que se le transfiera a TournamentRepository es el esperado. Simular una inserción válida y que la respuesta de esta función sea el ID generado
+●	Al método que procesa la creación de torneo, validar que el valor que se le transfiera a TournamentRepository es el esperado. Simular una inserción fallida y que la respuesta de esta función sea un error o mensaje usando https://en.cppreference.com/w/cpp/utility/expected.html 
+●	Al método que procesa la búsqueda de un torneo por ID, validar que el valor que se le transfiera a TournamentRepository es el esperado. Simular el resultado con un objeto y validar valores del objeto 
+●	Al método que procesa la búsqueda de un torneo por ID, validar que el valor que se le transfiera a TournamentRepository es el esperado. Simular el resultado nulo y validar nullptr
+●	Al método que procesa la búsqueda de torneos. Simular el resultado con una lista de objetos de TournamentRepository
+●	Al método que procesa la búsqueda de torneos. Simular el resultado con una lista vacía de TournamentRepository
+●	Al método que procesa la actualización de un torneo, validar la búsqueda de TournamentRepository por ID, validar el valor transferido a Update. Simular resultado exitoso
+●	Al método que procesa la actualización de un torneo, validar la búsqueda de TournamentRepository por ID. Simular resultado de búsqueda no exitoso y regresar error o mensaje usando https://en.cppreference.com/w/cpp/utility/expected.html
+
+
+Evento al agregar un equipo (procesamiento de fondo para generar partidos)
+Al agregar un equipo o equipos, generar un evento por cada equipo generado que contenga la información necesario para identificar el equipo; el consumidor del evento se encargará de generar los partidos de acuerdo a las reglas del torneo en cuestión.
+Pruebas mínimas para Group controller
+●	Al método que procesa la creación de grupo para un torneo, validar la transformación de JSON al objeto de dominio Group y validar que el valor que se le transfiera a GroupDelegate es el esperado. Validar que la respuesta de esta función sea HTTP 201
+●	Al método que procesa la creación de grupo para un torneo, validar la transformación de JSON al objeto de dominio Group y validar que el valor que se le transfiera a GroupDelegate es el esperado. Simular error de inserción en la base de datos y validar la respuesta HTTP 409
+●	Al método que procesa la búsqueda de un grupo por ID y torneo por ID, validar que el valor que se le transfiera a GroupDelegate es el esperado. Simular el resultado con un objeto y validar la respuesta HTTP 200
+●	Al método que procesa la búsqueda de un grupo por ID y torneo por ID, validar que el valor que se le transfiera a GroupDelegate es el esperado. Simular el resultado nulo y validar la respuesta HTTP 404
+●	Al método que procesa la actualización de un grupo en un torneo, validar la transformación de JSON al objeto de dominio Group y validar que el valor que se le transfiera a GroupDelegate es el esperado. Validar que la respuesta de esta función sea HTTP 204
+●	Al método que procesa la actualización de un grupo en un torneo, validar la transformación de JSON al objeto de dominio Group y validar que el valor que se le transfiera a GroupDelegate es el esperado. Simular ID no encontrado en el Delegate y validar que la respuesta de esta función sea HTTP 404
+●	Al método que procesa la agregar un equipo a un grupo en un torneo, validar la transformación de JSON al objeto de dominio Team y validar que el valor que se le transfiera a GroupDelegate es el esperado. Validar que la respuesta de esta función sea HTTP 204
+●	Al método que procesa la agregar un equipo a un grupo en un torneo, validar la transformación de JSON al objeto de dominio Team y validar que el valor que se le transfiera a GroupDelegate es el esperado. Simular que el equipo no exista y el resultado sea HTTP 422
+●	Al método que procesa la agregar un equipo a un grupo en un torneo, validar la transformación de JSON al objeto de dominio Team y validar que el valor que se le transfiera a GroupDelegate es el esperado. Simular que el grupo este lleno el resultado sea HTTP 422
+
+Pruebas mínimas para Group delegate
+●	Al método que procesa la creación de grupo para un torneo, simular lectura de Tournament y validar que el valor que se le transfiera a GroupRepository es el esperado, validar que un evento es generado. Validar que la respuesta sea ID del grupo
+●	Al método que procesa la creación de grupo para un torneo, simular lectura de torneo por medio de TournamentRepository,  validar Group se le transfiera a GroupRepository es el esperado. Simular error de inserción cuando ya existe el grupo usando https://en.cppreference.com/w/cpp/utility/expected.html 
+●	Al método que procesa la creación de grupo para un torneo, simular lectura de torneo por medio de TournamentRepository, validar Group se le transfiera a GroupRepository es el esperado. Simular error de inserción cuando ya se llego al número máximo de equipos usando https://en.cppreference.com/w/cpp/utility/expected.html 
+●	Al método que procesa la búsqueda de un grupo por ID y torneo por ID, validar que el valor que se le transfiera a GroupRepository es el esperado. Simular el resultado con un objeto
+●	Al método que procesa la búsqueda de un grupo por ID y torneo por ID, validar que el valor que se le transfiera a GroupRepository es el esperado. Simular el resultado nulo
+●	Al método que procesa la actualización de un grupo en un torneo, validar el valor de Group transferido a GroupRepository es el esperado. Simular la actualización válida
+
+●	Al método que procesa la actualización de un grupo en un torneo, validar el valor de Group transferido a GroupRepository es el esperado. Simular ID no encontrado y regresar el valor usando https://en.cppreference.com/w/cpp/utility/expected.html
+●	Al método que procesa la agregar un equipo a un grupo en un torneo, validar Team se le transfiera a TeamRepository y GroupRepository es el esperado, validar que un mensaje sea publicado. Simular la respuesta de ID
+●	Al método que procesa la agregar un equipo a un grupo en un torneo, validar Team sea transferido a TeamRepository. Simular que el equipo no exista, regresar el valor https://en.cppreference.com/w/cpp/utility/expected.html
+●	Al método que procesa la agregar un equipo a un grupo en un torneo, validar Team sea transferido a TeamRepository y GroupRepository. Simular que el grupo este lleno, regresar el valor https://en.cppreference.com/w/cpp/utility/expected.html

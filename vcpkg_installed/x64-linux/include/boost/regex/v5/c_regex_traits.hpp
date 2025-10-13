@@ -19,16 +19,9 @@
 #ifndef BOOST_C_REGEX_TRAITS_HPP_INCLUDED
 #define BOOST_C_REGEX_TRAITS_HPP_INCLUDED
 
-#ifndef BOOST_REGEX_AS_MODULE
-#include <cctype>
-#include <cstdint>
-#include <cwctype>
-#endif
-
 #include <boost/regex/config.hpp>
 #include <boost/regex/v5/regex_workaround.hpp>
-#include <boost/regex/v5/primary_transform.hpp>
-#include <boost/regex/v5/regex_traits_defaults.hpp>
+#include <cctype>
 
 namespace boost{
 
@@ -56,10 +49,10 @@ namespace boost{
 
    }
 
-BOOST_REGEX_MODULE_EXPORT template <class charT>
+template <class charT>
 struct c_regex_traits;
 
-BOOST_REGEX_MODULE_EXPORT template<>
+template<>
 struct c_regex_traits<char>
 {
    c_regex_traits(){}
@@ -104,7 +97,7 @@ private:
 };
 
 #ifndef BOOST_NO_WREGEX
-BOOST_REGEX_MODULE_EXPORT template<>
+template<>
 struct c_regex_traits<wchar_t>
 {
    c_regex_traits(){}

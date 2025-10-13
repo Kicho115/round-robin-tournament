@@ -16,9 +16,7 @@ public:
         return teamRepository->ReadAll();
     }
 
-    std::shared_ptr<domain::Team> GetTeam(const std::string& id) override {
-        return teamRepository->ReadById(id);
-    }
+    std::shared_ptr<domain::Team> GetTeam(const std::string& id) override;
 
     // Devuelve id creado o "" si duplicado (el repo ya aplica unicidad)
     std::string SaveTeam(const domain::Team& team) override;

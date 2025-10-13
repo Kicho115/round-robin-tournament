@@ -36,30 +36,30 @@
 
 namespace boost{
 
-BOOST_REGEX_MODULE_EXPORT template <class charT>
+template <class charT>
 class cpp_regex_traits;
-BOOST_REGEX_MODULE_EXPORT template <class charT>
+template <class charT>
 struct c_regex_traits;
-BOOST_REGEX_MODULE_EXPORT template <class charT>
+template <class charT>
 class w32_regex_traits;
 
 #ifdef BOOST_REGEX_USE_WIN32_LOCALE
-BOOST_REGEX_MODULE_EXPORT template <class charT, class implementationT = w32_regex_traits<charT> >
+template <class charT, class implementationT = w32_regex_traits<charT> >
 struct regex_traits;
 #elif defined(BOOST_REGEX_USE_CPP_LOCALE)
-BOOST_REGEX_MODULE_EXPORT template <class charT, class implementationT = cpp_regex_traits<charT> >
+template <class charT, class implementationT = cpp_regex_traits<charT> >
 struct regex_traits;
 #else
-BOOST_REGEX_MODULE_EXPORT template <class charT, class implementationT = c_regex_traits<charT> >
+template <class charT, class implementationT = c_regex_traits<charT> >
 struct regex_traits;
 #endif
 
-BOOST_REGEX_MODULE_EXPORT template <class charT, class traits = regex_traits<charT> >
+template <class charT, class traits = regex_traits<charT> >
 class basic_regex;
 
-BOOST_REGEX_MODULE_EXPORT typedef basic_regex<char, regex_traits<char> > regex;
+typedef basic_regex<char, regex_traits<char> > regex;
 #ifndef BOOST_NO_WREGEX
-BOOST_REGEX_MODULE_EXPORT typedef basic_regex<wchar_t, regex_traits<wchar_t> > wregex;
+typedef basic_regex<wchar_t, regex_traits<wchar_t> > wregex;
 #endif
 
 } // namespace boost

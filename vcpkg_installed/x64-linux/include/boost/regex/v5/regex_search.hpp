@@ -20,12 +20,9 @@
 #define BOOST_REGEX_V5_REGEX_SEARCH_HPP
 
 
-#include <boost/regex/v5/match_results.hpp>
-#include <boost/regex/v5/perl_matcher.hpp>
-
 namespace boost{
 
-BOOST_REGEX_MODULE_EXPORT template <class BidiIterator, class Allocator, class charT, class traits>
+template <class BidiIterator, class Allocator, class charT, class traits>
 bool regex_search(BidiIterator first, BidiIterator last, 
                   match_results<BidiIterator, Allocator>& m, 
                   const basic_regex<charT, traits>& e, 
@@ -34,7 +31,7 @@ bool regex_search(BidiIterator first, BidiIterator last,
    return regex_search(first, last, m, e, flags, first);
 }
 
-BOOST_REGEX_MODULE_EXPORT template <class BidiIterator, class Allocator, class charT, class traits>
+template <class BidiIterator, class Allocator, class charT, class traits>
 bool regex_search(BidiIterator first, BidiIterator last, 
                   match_results<BidiIterator, Allocator>& m, 
                   const basic_regex<charT, traits>& e, 
@@ -45,13 +42,13 @@ bool regex_search(BidiIterator first, BidiIterator last,
       return false;
 
    BOOST_REGEX_DETAIL_NS::perl_matcher<BidiIterator, Allocator, traits> matcher(first, last, m, e, flags, base);
-   return BOOST_REGEX_DETAIL_NS::factory_find(matcher);
+   return matcher.find();
 }
 
 //
 // regex_search convenience interfaces:
 //
-BOOST_REGEX_MODULE_EXPORT template <class charT, class Allocator, class traits>
+template <class charT, class Allocator, class traits>
 inline bool regex_search(const charT* str, 
                         match_results<const charT*, Allocator>& m, 
                         const basic_regex<charT, traits>& e, 
@@ -60,7 +57,7 @@ inline bool regex_search(const charT* str,
    return regex_search(str, str + traits::length(str), m, e, flags);
 }
 
-BOOST_REGEX_MODULE_EXPORT template <class ST, class SA, class Allocator, class charT, class traits>
+template <class ST, class SA, class Allocator, class charT, class traits>
 inline bool regex_search(const std::basic_string<charT, ST, SA>& s, 
                  match_results<typename std::basic_string<charT, ST, SA>::const_iterator, Allocator>& m, 
                  const basic_regex<charT, traits>& e, 
@@ -69,7 +66,7 @@ inline bool regex_search(const std::basic_string<charT, ST, SA>& s,
    return regex_search(s.begin(), s.end(), m, e, flags);
 }
 
-BOOST_REGEX_MODULE_EXPORT template <class BidiIterator, class charT, class traits>
+template <class BidiIterator, class charT, class traits>
 bool regex_search(BidiIterator first, BidiIterator last, 
                   const basic_regex<charT, traits>& e, 
                   match_flag_type flags = match_default)
@@ -80,10 +77,10 @@ bool regex_search(BidiIterator first, BidiIterator last,
    match_results<BidiIterator> m;
    typedef typename match_results<BidiIterator>::allocator_type match_alloc_type;
    BOOST_REGEX_DETAIL_NS::perl_matcher<BidiIterator, match_alloc_type, traits> matcher(first, last, m, e, flags | regex_constants::match_any, first);
-   return BOOST_REGEX_DETAIL_NS::factory_find(matcher);
+   return matcher.find();
 }
 
-BOOST_REGEX_MODULE_EXPORT template <class charT, class traits>
+template <class charT, class traits>
 inline bool regex_search(const charT* str, 
                         const basic_regex<charT, traits>& e, 
                         match_flag_type flags = match_default)
@@ -91,7 +88,7 @@ inline bool regex_search(const charT* str,
    return regex_search(str, str + traits::length(str), e, flags);
 }
 
-BOOST_REGEX_MODULE_EXPORT template <class ST, class SA, class charT, class traits>
+template <class ST, class SA, class charT, class traits>
 inline bool regex_search(const std::basic_string<charT, ST, SA>& s, 
                  const basic_regex<charT, traits>& e, 
                  match_flag_type flags = match_default)

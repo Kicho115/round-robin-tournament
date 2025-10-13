@@ -50,6 +50,15 @@ namespace domain {
             return this->teams;
         }
     };
+
+    inline bool operator==(const Team& lhs, const Team& rhs) {
+        return lhs.Id == rhs.Id && lhs.Name == rhs.Name;
+    }
+
+    inline bool operator==(const Group& lhs, const Group& rhs) {
+        return lhs.Id() == rhs.Id() && lhs.Name() == rhs.Name() &&
+               lhs.TournamentId() == rhs.TournamentId() && lhs.Teams() == rhs.Teams();
+    }
 }
 
 #endif

@@ -3,13 +3,13 @@
   "spdxVersion": "SPDX-2.2",
   "dataLicense": "CC0-1.0",
   "SPDXID": "SPDXRef-DOCUMENT",
-  "documentNamespace": "https://spdx.org/spdxdocs/boost-uninstall-x64-linux-1.89.0-d8507ee6-8e69-4fc6-bc07-a586748f2f4d",
-  "name": "boost-uninstall:x64-linux@1.89.0 7cf71f9a0483f905d84d67514a2df8351c4daf303eca2bb1545b5de4648c0077",
+  "documentNamespace": "https://spdx.org/spdxdocs/boost-uninstall-x64-linux-1.88.0-60bd8cf5-4b56-421b-900f-d2b862dccdf0",
+  "name": "boost-uninstall:x64-linux@1.88.0 d948aed6ef3631777ac9bdbbbb1ccc3e44c806c8cfdb05771501a807fe707953",
   "creationInfo": {
     "creators": [
-      "Tool: vcpkg-2025-07-21-1.fc42"
+      "Tool: vcpkg-2025-09-03-4580816534ed8fd9634ac83d46471440edd82dfe"
     ],
-    "created": "2025-10-07T02:36:18Z"
+    "created": "2025-09-16T19:56:42Z"
   },
   "relationships": [
     {
@@ -20,49 +20,39 @@
     {
       "spdxElementId": "SPDXRef-port",
       "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-file-0"
+      "relatedSpdxElement": "SPDXRef-port-file-0"
     },
     {
       "spdxElementId": "SPDXRef-port",
       "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-file-1"
+      "relatedSpdxElement": "SPDXRef-port-file-1"
     },
     {
-      "spdxElementId": "SPDXRef-port",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-file-2"
-    },
-    {
-      "spdxElementId": "SPDXRef-binary",
-      "relationshipType": "GENERATED_FROM",
-      "relatedSpdxElement": "SPDXRef-port"
-    },
-    {
-      "spdxElementId": "SPDXRef-file-0",
-      "relationshipType": "CONTAINED_BY",
-      "relatedSpdxElement": "SPDXRef-port"
-    },
-    {
-      "spdxElementId": "SPDXRef-file-0",
+      "spdxElementId": "SPDXRef-port-file-1",
       "relationshipType": "DEPENDENCY_MANIFEST_OF",
       "relatedSpdxElement": "SPDXRef-port"
     },
     {
-      "spdxElementId": "SPDXRef-file-1",
-      "relationshipType": "CONTAINED_BY",
-      "relatedSpdxElement": "SPDXRef-port"
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-port-file-2"
     },
     {
-      "spdxElementId": "SPDXRef-file-2",
-      "relationshipType": "CONTAINED_BY",
-      "relatedSpdxElement": "SPDXRef-port"
+      "spdxElementId": "SPDXRef-binary",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-binary-file-0"
+    },
+    {
+      "spdxElementId": "SPDXRef-binary",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-binary-file-1"
     }
   ],
   "packages": [
     {
       "name": "boost-uninstall",
       "SPDXID": "SPDXRef-port",
-      "versionInfo": "1.89.0",
+      "versionInfo": "1.88.0",
       "downloadLocation": "git+https://github.com/Microsoft/vcpkg#ports/boost-uninstall",
       "licenseConcluded": "MIT",
       "licenseDeclared": "NOASSERTION",
@@ -73,7 +63,7 @@
     {
       "name": "boost-uninstall:x64-linux",
       "SPDXID": "SPDXRef-binary",
-      "versionInfo": "7cf71f9a0483f905d84d67514a2df8351c4daf303eca2bb1545b5de4648c0077",
+      "versionInfo": "d948aed6ef3631777ac9bdbbbb1ccc3e44c806c8cfdb05771501a807fe707953",
       "downloadLocation": "NONE",
       "licenseConcluded": "MIT",
       "licenseDeclared": "NOASSERTION",
@@ -83,20 +73,8 @@
   ],
   "files": [
     {
-      "fileName": "./vcpkg.json",
-      "SPDXID": "SPDXRef-file-0",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "acbd1253c9ec87c2722ab7184ecd1a85b2b4bcae9e54596d8142ecebc6bc14e8"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
       "fileName": "./portfile.cmake",
-      "SPDXID": "SPDXRef-file-1",
+      "SPDXID": "SPDXRef-port-file-0",
       "checksums": [
         {
           "algorithm": "SHA256",
@@ -107,12 +85,48 @@
       "copyrightText": "NOASSERTION"
     },
     {
+      "fileName": "./vcpkg.json",
+      "SPDXID": "SPDXRef-port-file-1",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "cb60547ce55b6277f01686131d7fc1950648575ed405721d568970bae06798b2"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    },
+    {
       "fileName": "./vcpkg-cmake-wrapper.cmake",
-      "SPDXID": "SPDXRef-file-2",
+      "SPDXID": "SPDXRef-port-file-2",
       "checksums": [
         {
           "algorithm": "SHA256",
           "checksumValue": "82aa8ef51ee2737c554493d9825a713641d1ec675fd04ef5462e94f2d2511e87"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    },
+    {
+      "fileName": "./share/boost/vcpkg-cmake-wrapper.cmake",
+      "SPDXID": "SPDXRef-binary-file-0",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "74543184cab766d15024db3b11b7feb986eda6f306da5e90bea4ec283414ccef"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    },
+    {
+      "fileName": "./BUILD_INFO",
+      "SPDXID": "SPDXRef-binary-file-1",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "915e2504cf717a2b79486313acd14e06d959d3ff6aeeb168e1c3ca7008c5e999"
         }
       ],
       "licenseConcluded": "NOASSERTION",

@@ -19,11 +19,13 @@
 // macros, see http://tinyurl.com/ycwdxco; 'defined(bitor)'
 // has to be checked in a separate condition, otherwise GCC complains 
 // about 'bitor' being an alternative token
-#if defined(_MSC_EXTENSIONS)
+#if defined(_MSC_VER) && !defined(__cplusplus) || defined(_MSC_EXTENSIONS)
+#ifndef __GCCXML__
 #if defined(bitor)
 #   pragma push_macro("bitor")
 #   undef bitor
 #   define bitor(x)
+#endif
 #endif
 #endif
 
@@ -32,9 +34,11 @@
 #define AUX778076_OP_TOKEN  |
 #include <boost/mpl/aux_/arithmetic_op.hpp>
 
-#if defined(_MSC_EXTENSIONS)
+#if defined(_MSC_VER) && !defined(__clang__) && !defined(__cplusplus) || defined(_MSC_EXTENSIONS)
+#ifndef __GCCXML__
 #if defined(bitor)
 #   pragma pop_macro("bitor")
+#endif
 #endif
 #endif
 

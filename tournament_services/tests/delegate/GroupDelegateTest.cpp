@@ -110,3 +110,71 @@ TEST(GroupDelegateInterfaceTest, UpdateTeams_Success_And_Errors) {
     ASSERT_TRUE(nf.has_value());
     EXPECT_EQ(*nf, "tournament_not_found");
 }
+
+TEST(GroupDelegate, CreateGroup_Success) {
+    GroupDelegateMock mock;
+    std::string outGroupId;
+    domain::Group group{"g1", "Group 1"};
+    EXPECT_CALL(mock, CreateGroup("t1", group, _))
+        .WillOnce(DoAll(SetArgReferee<2>("g1"), Return(std::nullopt)));
+    auto result = mock.CreateGroup("t1", group, outGroupId);
+    EXPECT_FALSE(result.has_value());
+    EXPECT_EQ(outGroupId, "g1");
+}
+
+TEST(GroupDelegate, CreateGroup_Fails) {
+    GroupDelegateMock mock;
+    std::string outGroupId;
+    domain::Group group{"g1", "Group 1"};
+    EXPECT_CALL(mock, CreateGroup("t1", group, _))
+        .WillOnce(Return(std::make_optional<std::string>("duplicate_group_name")));
+    auto result = mock.CreateGroup("t1", group, outGroupId);
+    EXPECT_TRUE(result.has_value());
+    EXPECT_EQ(result.value(), "duplicate_group_name");
+}
+
+TEST(GroupDelegate, GetGroups_ReturnsList) {
+    GroupDelegateMock mock;
+    std::vector<std::shared_ptr<domain::Group>> groups = {
+        std::make_shared<domain::Group>(domain::Group{"g1", "Group 1"}),
+        std::make_shared<domain::Group>(domain::Group{"g2", "Group 2"})
+    };
+    EXPECT_CALL(mock, GetGroups("t1", _))
+        .WillOnce(DoAll(SetArgReferee<1>(groups), Return(std::nullopt)));
+    std::vector<std::shared_ptr<domain::Group>> outGroups;
+    auto result = mock.GetGroups("t1", outGroups);
+    EXPECT_FALSE(result.has_value());
+    EXPECT_EQ(outGroups.size(), 2);
+    EXPECT_EQ(outGroups[0]->Id(), "g1");
+    EXPECT_EQ(outGroups[1]->Id(), "g2");
+}
+
+TEST(GroupDelegate, GetGroups_ReturnsEmptyList) {
+    GroupDelegateMock mock;
+    std::vector<std::shared_ptr<domain::Group>> groups;
+    EXPECT_CALL(mock, GetGroups("t1", _))
+        .WillOnce(DoAll(SetArgReferee<1>(groups), Return(std::nullopt)));
+    std::vector<std::shared_ptr<domain::Group>> outGroups;
+    auto result = mock.GetGroups("t1", outGroups);
+    EXPECT_FALSE(result.has_value());
+    EXPECT_TRUE(outGroups.empty());
+}
+
+TEST(GroupDelegate, UpdateGroup_Success) {
+    GroupDelegateMock mock;
+    domain::Group group{"g1", "Group 1"};
+    EXPECT_CALL(mock, UpdateGroup("t1", group))
+        .WillOnce(Return(std::nullopt));
+    auto result = mock.UpdateGroup("t1", group);
+    EXPECT_FALSE(result.has_value());
+}
+
+TEST(GroupDelegate, UpdateGroup_Fails) {
+    GroupDelegateMock mock;
+    domain::Group group{"g1", "Group 1"};
+    EXPECT_CALL(mock, UpdateGroup("t1", group))
+        .WillOnce(Return(std::make_optional<std::string>("group_not_found")));
+    auto result = mock.UpdateGroup("t1", group);
+    EXPECT_TRUE(result.has_value());
+    EXPECT_EQ(result.value(), "group_not_found");
+}

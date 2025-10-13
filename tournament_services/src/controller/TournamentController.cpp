@@ -19,10 +19,15 @@ crow::response TournamentController::CreateTournament(const crow::request &reque
     nlohmann::json body = nlohmann::json::parse(request.body);
     const std::shared_ptr<domain::Tournament> tournament = std::make_shared<domain::Tournament>(body);
 
-    const std::string id = tournamentDelegate->CreateTournament(tournament);
+    auto result = tournamentDelegate->CreateTournament(tournament);
     crow::response response;
-    response.code = crow::CREATED;
-    response.add_header("location", id);
+    if (result.has_value()) {
+        response.code = crow::CREATED;
+        response.add_header("location", result.value());
+    } else {
+        response.code = 422;
+        response.body = result.error();
+    }
     return response;
 }
 

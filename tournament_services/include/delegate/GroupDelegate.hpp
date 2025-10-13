@@ -19,11 +19,9 @@ public:
     GroupDelegate(std::shared_ptr<GroupRepository> groups,
                   std::shared_ptr<TeamRepository> teams,
                   std::shared_ptr<TournamentRepository> tours,
-                  std::shared_ptr<IQueueMessageProducer> bus)
-        : groupRepository(std::move(groups)),
-          teamRepository(std::move(teams)),
-          tournamentRepository(std::move(tours)),
-          producer(std::move(bus)) {}
+                  std::shared_ptr<IQueueMessageProducer> bus);
+
+    virtual ~GroupDelegate();
 
     std::optional<std::string>
     CreateGroup(std::string_view tournamentId, const domain::Group& group, std::string& outGroupId) override;

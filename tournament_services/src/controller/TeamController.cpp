@@ -65,6 +65,9 @@ crow::response TeamController::UpdateTeam(const crow::request& request,
     return crow::response{crow::NO_CONTENT};
 }
 
+TeamController::TeamController(const std::shared_ptr<ITeamDelegate>& teamDelegate)
+    : teamDelegate(teamDelegate) {}
+
 // === Registro de rutas ===
 // Importante: si ya registras rutas en el .hpp o en un router central, NO las dupliques aquí.
 // Además, evitar los literales "GET"_method / "POST"_method para no depender de crow::literals.

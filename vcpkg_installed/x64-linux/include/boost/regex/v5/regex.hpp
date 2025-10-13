@@ -46,17 +46,17 @@
 
 namespace boost{
 #ifdef BOOST_REGEX_NO_FWD
-BOOST_REGEX_MODULE_EXPORT typedef basic_regex<char, regex_traits<char> > regex;
+typedef basic_regex<char, regex_traits<char> > regex;
 #ifndef BOOST_NO_WREGEX
-BOOST_REGEX_MODULE_EXPORT typedef basic_regex<wchar_t, regex_traits<wchar_t> > wregex;
+typedef basic_regex<wchar_t, regex_traits<wchar_t> > wregex;
 #endif
 #endif
 
-BOOST_REGEX_MODULE_EXPORT typedef match_results<const char*> cmatch;
-BOOST_REGEX_MODULE_EXPORT typedef match_results<std::string::const_iterator> smatch;
+typedef match_results<const char*> cmatch;
+typedef match_results<std::string::const_iterator> smatch;
 #ifndef BOOST_NO_WREGEX
-BOOST_REGEX_MODULE_EXPORT typedef match_results<const wchar_t*> wcmatch;
-BOOST_REGEX_MODULE_EXPORT typedef match_results<std::wstring::const_iterator> wsmatch;
+typedef match_results<const wchar_t*> wcmatch;
+typedef match_results<std::wstring::const_iterator> wsmatch;
 #endif
 
 } // namespace boost

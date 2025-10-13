@@ -55,7 +55,9 @@ namespace config {
         builder.registerType<TeamRepository>().as<IRepository<domain::Team, std::string_view> >().singleInstance();
         builder.registerType<GroupRepository>().as<IGroupRepository>().singleInstance();
 
-        builder.registerType<TeamDelegate>().as<ITeamDelegate>().singleInstance();
+        builder.registerType<TeamDelegate>()
+            .as<ITeamDelegate>()
+            .singleInstance();
         builder.registerType<TeamController>().singleInstance();
 
         builder.registerType<TournamentRepository>().as<IRepository<domain::Tournament, std::string> >().

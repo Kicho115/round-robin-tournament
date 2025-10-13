@@ -222,4 +222,3 @@ TEST_F(TournamentDelegateTest, UpdateTournament_TournamentNotFound_ReturnsError)
     ASSERT_FALSE(result.has_value());
     EXPECT_EQ(result.error(), "Tournament not found");
 }
-

@@ -19,8 +19,6 @@
 #ifndef BOOST_REGEX_V5_REGBASE_HPP
 #define BOOST_REGEX_V5_REGBASE_HPP
 
-#include <boost/regex/config.hpp>
-
 namespace boost{
 //
 // class regbase
@@ -114,7 +112,7 @@ public:
 //
 namespace regex_constants{
 
-   BOOST_REGEX_MODULE_EXPORT enum flag_type_
+   enum flag_type_
    {
 
       no_except = ::boost::regbase::no_except,
@@ -150,7 +148,7 @@ namespace regex_constants{
       JavaScript = normal,
       JScript = normal
    };
-   BOOST_REGEX_MODULE_EXPORT typedef ::boost::regbase::flag_type syntax_option_type;
+   typedef ::boost::regbase::flag_type syntax_option_type;
 
 } // namespace regex_constants
 

@@ -13,11 +13,14 @@ using nlohmann::json;
 // T puede ser domain::Group o std::shared_ptr<domain::Group>
 template <typename Opt>
 static std::shared_ptr<domain::Group> to_shared_ptr(const Opt& opt) {
-    using ValT = typename std::decay_t<Opt>::value_type;
-    if constexpr (std::is_same_v<ValT, std::shared_ptr<domain::Group>>) {
-        return opt.value(); // ya es shared_ptr
+    if constexpr (std::is_same_v<Opt, std::shared_ptr<domain::Group>>) {
+        return opt; // ya es shared_ptr
+    } else if constexpr (std::is_same_v<Opt, std::optional<std::shared_ptr<domain::Group>>>) {
+        return opt.value(); // optional de shared_ptr
+    } else if constexpr (std::is_same_v<Opt, std::optional<domain::Group>>) {
+        return std::make_shared<domain::Group>(opt.value()); // optional de valor
     } else {
-        return std::make_shared<domain::Group>(opt.value()); // viene por valor
+        static_assert(sizeof(Opt) == 0, "Tipo no soportado en to_shared_ptr");
     }
 }
 
@@ -69,8 +72,27 @@ GroupDelegate::GetGroup(std::string_view tournamentId, std::string_view groupId,
 }
 
 std::optional<std::string>
-GroupDelegate::UpdateGroup(std::string_view /*tournamentId*/, const domain::Group& /*group*/) {
-    return std::make_optional<std::string>("not_implemented");
+GroupDelegate::UpdateGroup(std::string_view tournamentId, const domain::Group& group) {
+    if (!tournamentRepository->ReadById(std::string(tournamentId))) {
+        return std::make_optional<std::string>("tournament_not_found");
+    }
+    auto current = groupRepository->FindByTournamentIdAndGroupId(std::string(tournamentId), group.Id());
+    if (!current) {
+        return std::make_optional<std::string>("group_not_found");
+    }
+    try {
+        groupRepository->Update(group);
+        nlohmann::json ev{
+            {"type","group.updated"},
+            {"tournamentId", std::string(tournamentId)},
+            {"groupId", group.Id()},
+            {"name", group.Name()}
+        };
+        if (producer) producer->SendMessage(ev.dump(), "group.updated");
+        return std::nullopt;
+    } catch (const std::exception& e) {
+        return std::make_optional<std::string>(e.what());
+    }
 }
 
 std::optional<std::string>
@@ -101,3 +123,14 @@ GroupDelegate::UpdateTeams(std::string_view tournamentId, std::string_view group
         return std::make_optional<std::string>(e.what());
     }
 }
+
+GroupDelegate::GroupDelegate(std::shared_ptr<GroupRepository> groups,
+                            std::shared_ptr<TeamRepository> teams,
+                            std::shared_ptr<TournamentRepository> tours,
+                            std::shared_ptr<IQueueMessageProducer> bus)
+    : groupRepository(std::move(groups)),
+      teamRepository(std::move(teams)),
+      tournamentRepository(std::move(tours)),
+      producer(std::move(bus)) {}
+
+GroupDelegate::~GroupDelegate() = default;

@@ -32,8 +32,8 @@ top_builddir=$(INCLUDE)/../build-1
 APR_MAJOR_VERSION=1
 APR_DOTTED_VERSION=1.7.6
 
-CC=/usr/bin/cc
-CC_FOR_BUILD=/usr/bin/cc
+CC=/usr/sbin/cc
+CC_FOR_BUILD=/usr/sbin/cc
 RM=rm
 AWK=gawk
 SHELL=/bin/sh
