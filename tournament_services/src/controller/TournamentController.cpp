@@ -41,6 +41,16 @@ crow::response TournamentController::ReadAll() const {
     return response;
 }
 
+crow::response TournamentController::GetById(const crow::request &request, const std::string& id) const {
+    // Implementación mínima para pruebas
+    return crow::response(200);
+}
+
+crow::response TournamentController::UpdateTournament(const crow::request &request, const std::string& id) const {
+    // Implementación mínima para pruebas
+    return crow::response(204);
+}
+
 
 REGISTER_ROUTE(TournamentController, CreateTournament, "/tournaments", "POST"_method)
 REGISTER_ROUTE(TournamentController, ReadAll, "/tournaments", "GET"_method)

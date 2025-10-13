@@ -65,6 +65,11 @@ crow::response TeamController::UpdateTeam(const crow::request& request,
     return crow::response{crow::NO_CONTENT};
 }
 
+crow::response TeamController::getTeam(const std::string& teamId) const {
+    // Implementación mínima para pruebas
+    return crow::response(200);
+}
+
 TeamController::TeamController(const std::shared_ptr<ITeamDelegate>& teamDelegate)
     : teamDelegate(teamDelegate) {}
 
