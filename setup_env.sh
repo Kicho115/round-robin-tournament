@@ -5,7 +5,7 @@
 # Comandos para ejecutar los tests desde cero
 # =====================
 # 1. Instalar dependencias con vcpkg (solo si no están instaladas)
-#    vcpkg install crow libpqxx nlohmann-json gtest
+#    vcpkg install
 #    # Instala las bibliotecas necesarias para compilar y ejecutar los tests.
 #
 # 2. Limpiar la caché y los archivos de compilación previos

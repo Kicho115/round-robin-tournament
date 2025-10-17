@@ -12,8 +12,11 @@ echo "VCPKG_DEFAULT_TRIPLET=$VCPKG_DEFAULT_TRIPLET"
 echo "VCPKG_FEATURE_FLAGS=$VCPKG_FEATURE_FLAGS"
 
 # Comandos a correr para configurar paqueterias en computadora de Rafita (Falta por corroborar que esto funcione en otros equipos)
+# Cuando se abre nueva terminal ingresa comando: cd round-robin-tournament
+# Despues de eso puedes empezar con los comandos de abajo
+#
 # rm -rf cmake-build-debug CMakeCache.txt
-# source ./setup_env.sh
+# source ./set_env.sh
 #
 # cmake -S . -B cmake-build-debug -G Ninja \
 #   -DCMAKE_TOOLCHAIN_FILE="$CMAKE_TOOLCHAIN_FILE" \
