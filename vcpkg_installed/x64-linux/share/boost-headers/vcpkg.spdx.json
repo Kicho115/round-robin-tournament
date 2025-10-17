@@ -3,13 +3,13 @@
   "spdxVersion": "SPDX-2.2",
   "dataLicense": "CC0-1.0",
   "SPDXID": "SPDXRef-DOCUMENT",
-  "documentNamespace": "https://spdx.org/spdxdocs/boost-headers-x64-linux-1.88.0-cc8f5344-8fc8-499b-b32d-a277eae383aa",
-  "name": "boost-headers:x64-linux@1.88.0 cec1858f8da515dfcfc5e09879b65252804d9f06a8340f1b3f11639a7f10ce3e",
+  "documentNamespace": "https://spdx.org/spdxdocs/boost-headers-x64-linux-1.88.0-15655eb4-e36b-4c0b-a25c-c667594a287a",
+  "name": "boost-headers:x64-linux@1.88.0 8abfad6e2bf6228f4bdc2af2f546c4fe91da81cab1c1528e85fe672385941bc6",
   "creationInfo": {
     "creators": [
-      "Tool: vcpkg-2025-09-03-4580816534ed8fd9634ac83d46471440edd82dfe"
+      "Tool: vcpkg-2025-07-21-d4b65a2b83ae6c3526acd1c6f3b51aff2a884533"
     ],
-    "created": "2025-09-16T19:57:11Z"
+    "created": "2025-08-26T04:09:27Z"
   },
   "relationships": [
     {
@@ -20,47 +20,32 @@
     {
       "spdxElementId": "SPDXRef-port",
       "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-port-file-0"
+      "relatedSpdxElement": "SPDXRef-file-0"
     },
     {
       "spdxElementId": "SPDXRef-port",
       "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-port-file-1"
+      "relatedSpdxElement": "SPDXRef-file-1"
     },
     {
-      "spdxElementId": "SPDXRef-port-file-1",
+      "spdxElementId": "SPDXRef-binary",
+      "relationshipType": "GENERATED_FROM",
+      "relatedSpdxElement": "SPDXRef-port"
+    },
+    {
+      "spdxElementId": "SPDXRef-file-0",
+      "relationshipType": "CONTAINED_BY",
+      "relatedSpdxElement": "SPDXRef-port"
+    },
+    {
+      "spdxElementId": "SPDXRef-file-0",
       "relationshipType": "DEPENDENCY_MANIFEST_OF",
       "relatedSpdxElement": "SPDXRef-port"
     },
     {
-      "spdxElementId": "SPDXRef-binary",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-binary-file-0"
-    },
-    {
-      "spdxElementId": "SPDXRef-binary",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-binary-file-1"
-    },
-    {
-      "spdxElementId": "SPDXRef-binary",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-binary-file-2"
-    },
-    {
-      "spdxElementId": "SPDXRef-binary",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-binary-file-3"
-    },
-    {
-      "spdxElementId": "SPDXRef-binary",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-binary-file-4"
-    },
-    {
-      "spdxElementId": "SPDXRef-binary",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-binary-file-5"
+      "spdxElementId": "SPDXRef-file-1",
+      "relationshipType": "CONTAINED_BY",
+      "relatedSpdxElement": "SPDXRef-port"
     }
   ],
   "packages": [
@@ -79,7 +64,7 @@
     {
       "name": "boost-headers:x64-linux",
       "SPDXID": "SPDXRef-binary",
-      "versionInfo": "cec1858f8da515dfcfc5e09879b65252804d9f06a8340f1b3f11639a7f10ce3e",
+      "versionInfo": "8abfad6e2bf6228f4bdc2af2f546c4fe91da81cab1c1528e85fe672385941bc6",
       "downloadLocation": "NONE",
       "licenseConcluded": "BSL-1.0",
       "licenseDeclared": "NOASSERTION",
@@ -103,20 +88,8 @@
   ],
   "files": [
     {
-      "fileName": "./portfile.cmake",
-      "SPDXID": "SPDXRef-port-file-0",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "b036e049de1d4d07260c82a855a915ae6ea044824e68fce038fd2f8ca4b79dbe"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
       "fileName": "./vcpkg.json",
-      "SPDXID": "SPDXRef-port-file-1",
+      "SPDXID": "SPDXRef-file-0",
       "checksums": [
         {
           "algorithm": "SHA256",
@@ -127,72 +100,12 @@
       "copyrightText": "NOASSERTION"
     },
     {
-      "fileName": "./share/boost_headers/boost_headers-config.cmake",
-      "SPDXID": "SPDXRef-binary-file-0",
+      "fileName": "./portfile.cmake",
+      "SPDXID": "SPDXRef-file-1",
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "792f7857e96a00bbec6d0af27297ea1f08ee9fdfb5a64903b10d8d10aa47aa85"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": "./share/boost_headers/boost_headers-config-version.cmake",
-      "SPDXID": "SPDXRef-binary-file-1",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "085b73b114768f85b167769db10730a57201fa73a94eaeb3a6fbfc878f82889d"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": "./share/boost_headers/boost_headers-targets.cmake",
-      "SPDXID": "SPDXRef-binary-file-2",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "feec8e511f55fddba15c2baae1d06bd1d015bbe16d6f2daa2ce9aa2b12e8dac7"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": "./share/boost-headers/copyright",
-      "SPDXID": "SPDXRef-binary-file-3",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": "./include/boost/headers/.gitkeep",
-      "SPDXID": "SPDXRef-binary-file-4",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": "./BUILD_INFO",
-      "SPDXID": "SPDXRef-binary-file-5",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "b17d8abcb0fd6454b3c1ec6556988d624863978121b87c51af8b1b6d937db69a"
+          "checksumValue": "b036e049de1d4d07260c82a855a915ae6ea044824e68fce038fd2f8ca4b79dbe"
         }
       ],
       "licenseConcluded": "NOASSERTION",

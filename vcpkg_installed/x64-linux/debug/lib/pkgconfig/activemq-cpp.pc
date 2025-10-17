@@ -23,7 +23,7 @@ includedir=${prefix}/../include
 Name: ActiveMQ Client
 Description: ActiveMQ C++ library.
 Version: 3.9.5
-Libs.private =   "-L${prefix}/lib" -R${prefix}/lib -lapr-1 -luuid -lcrypt  -lpthread      
+Libs.private =   "-L${prefix}/lib" -R${prefix}/lib -lapr-1 -luuid -lcrypt  -lpthread     -lssl -lcrypto "-L${prefix}/lib"
 
 Libs: "-L${libdir}" -lactivemq-cpp -lpthread -ldl -luuid
 Requires: apr-1

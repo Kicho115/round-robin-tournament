@@ -3,13 +3,13 @@
   "spdxVersion": "SPDX-2.2",
   "dataLicense": "CC0-1.0",
   "SPDXID": "SPDXRef-DOCUMENT",
-  "documentNamespace": "https://spdx.org/spdxdocs/crow-x64-linux-1.2.1.2-1cc63547-64b4-449e-8490-0203d6a34883",
-  "name": "crow:x64-linux@1.2.1.2 a0627b748574a565baed76dd2cfdee02e706bcbef873c100d64d8971995c4586",
+  "documentNamespace": "https://spdx.org/spdxdocs/crow-x64-linux-1.2.1.2-7a45f521-2e52-4077-bee9-f06130207122",
+  "name": "crow:x64-linux@1.2.1.2 4dee1f480c07c17406abe9b42e4ad8edc3b991813cc03a3419685a13ad5cd3c5",
   "creationInfo": {
     "creators": [
-      "Tool: vcpkg-2025-09-03-4580816534ed8fd9634ac83d46471440edd82dfe"
+      "Tool: vcpkg-2025-07-21-d4b65a2b83ae6c3526acd1c6f3b51aff2a884533"
     ],
-    "created": "2025-09-16T19:56:09Z"
+    "created": "2025-08-26T04:08:50Z"
   },
   "relationships": [
     {
@@ -20,212 +20,32 @@
     {
       "spdxElementId": "SPDXRef-port",
       "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-port-file-0"
+      "relatedSpdxElement": "SPDXRef-file-0"
     },
     {
       "spdxElementId": "SPDXRef-port",
       "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-port-file-1"
+      "relatedSpdxElement": "SPDXRef-file-1"
     },
     {
-      "spdxElementId": "SPDXRef-port-file-1",
+      "spdxElementId": "SPDXRef-binary",
+      "relationshipType": "GENERATED_FROM",
+      "relatedSpdxElement": "SPDXRef-port"
+    },
+    {
+      "spdxElementId": "SPDXRef-file-0",
+      "relationshipType": "CONTAINED_BY",
+      "relatedSpdxElement": "SPDXRef-port"
+    },
+    {
+      "spdxElementId": "SPDXRef-file-0",
       "relationshipType": "DEPENDENCY_MANIFEST_OF",
       "relatedSpdxElement": "SPDXRef-port"
     },
     {
-      "spdxElementId": "SPDXRef-binary",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-binary-file-0"
-    },
-    {
-      "spdxElementId": "SPDXRef-binary",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-binary-file-1"
-    },
-    {
-      "spdxElementId": "SPDXRef-binary",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-binary-file-2"
-    },
-    {
-      "spdxElementId": "SPDXRef-binary",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-binary-file-3"
-    },
-    {
-      "spdxElementId": "SPDXRef-binary",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-binary-file-4"
-    },
-    {
-      "spdxElementId": "SPDXRef-binary",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-binary-file-5"
-    },
-    {
-      "spdxElementId": "SPDXRef-binary",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-binary-file-6"
-    },
-    {
-      "spdxElementId": "SPDXRef-binary",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-binary-file-7"
-    },
-    {
-      "spdxElementId": "SPDXRef-binary",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-binary-file-8"
-    },
-    {
-      "spdxElementId": "SPDXRef-binary",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-binary-file-9"
-    },
-    {
-      "spdxElementId": "SPDXRef-binary",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-binary-file-10"
-    },
-    {
-      "spdxElementId": "SPDXRef-binary",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-binary-file-11"
-    },
-    {
-      "spdxElementId": "SPDXRef-binary",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-binary-file-12"
-    },
-    {
-      "spdxElementId": "SPDXRef-binary",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-binary-file-13"
-    },
-    {
-      "spdxElementId": "SPDXRef-binary",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-binary-file-14"
-    },
-    {
-      "spdxElementId": "SPDXRef-binary",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-binary-file-15"
-    },
-    {
-      "spdxElementId": "SPDXRef-binary",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-binary-file-16"
-    },
-    {
-      "spdxElementId": "SPDXRef-binary",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-binary-file-17"
-    },
-    {
-      "spdxElementId": "SPDXRef-binary",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-binary-file-18"
-    },
-    {
-      "spdxElementId": "SPDXRef-binary",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-binary-file-19"
-    },
-    {
-      "spdxElementId": "SPDXRef-binary",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-binary-file-20"
-    },
-    {
-      "spdxElementId": "SPDXRef-binary",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-binary-file-21"
-    },
-    {
-      "spdxElementId": "SPDXRef-binary",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-binary-file-22"
-    },
-    {
-      "spdxElementId": "SPDXRef-binary",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-binary-file-23"
-    },
-    {
-      "spdxElementId": "SPDXRef-binary",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-binary-file-24"
-    },
-    {
-      "spdxElementId": "SPDXRef-binary",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-binary-file-25"
-    },
-    {
-      "spdxElementId": "SPDXRef-binary",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-binary-file-26"
-    },
-    {
-      "spdxElementId": "SPDXRef-binary",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-binary-file-27"
-    },
-    {
-      "spdxElementId": "SPDXRef-binary",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-binary-file-28"
-    },
-    {
-      "spdxElementId": "SPDXRef-binary",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-binary-file-29"
-    },
-    {
-      "spdxElementId": "SPDXRef-binary",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-binary-file-30"
-    },
-    {
-      "spdxElementId": "SPDXRef-binary",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-binary-file-31"
-    },
-    {
-      "spdxElementId": "SPDXRef-binary",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-binary-file-32"
-    },
-    {
-      "spdxElementId": "SPDXRef-binary",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-binary-file-33"
-    },
-    {
-      "spdxElementId": "SPDXRef-binary",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-binary-file-34"
-    },
-    {
-      "spdxElementId": "SPDXRef-binary",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-binary-file-35"
-    },
-    {
-      "spdxElementId": "SPDXRef-binary",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-binary-file-36"
-    },
-    {
-      "spdxElementId": "SPDXRef-binary",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-binary-file-37"
-    },
-    {
-      "spdxElementId": "SPDXRef-binary",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-binary-file-38"
+      "spdxElementId": "SPDXRef-file-1",
+      "relationshipType": "CONTAINED_BY",
+      "relatedSpdxElement": "SPDXRef-port"
     }
   ],
   "packages": [
@@ -244,7 +64,7 @@
     {
       "name": "crow:x64-linux",
       "SPDXID": "SPDXRef-binary",
-      "versionInfo": "a0627b748574a565baed76dd2cfdee02e706bcbef873c100d64d8971995c4586",
+      "versionInfo": "4dee1f480c07c17406abe9b42e4ad8edc3b991813cc03a3419685a13ad5cd3c5",
       "downloadLocation": "NONE",
       "licenseConcluded": "BSD-3-Clause",
       "licenseDeclared": "NOASSERTION",
@@ -268,20 +88,8 @@
   ],
   "files": [
     {
-      "fileName": "./portfile.cmake",
-      "SPDXID": "SPDXRef-port-file-0",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "e27d3d50df688e4a0be30b3d4b11ad329668aebbc1daccf6621d40bddfaa12ad"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
       "fileName": "./vcpkg.json",
-      "SPDXID": "SPDXRef-port-file-1",
+      "SPDXID": "SPDXRef-file-0",
       "checksums": [
         {
           "algorithm": "SHA256",
@@ -292,468 +100,12 @@
       "copyrightText": "NOASSERTION"
     },
     {
-      "fileName": "./share/crow/copyright",
-      "SPDXID": "SPDXRef-binary-file-0",
+      "fileName": "./portfile.cmake",
+      "SPDXID": "SPDXRef-file-1",
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "a6748e7da3a81c88da4c4ba1fdcaa887740adfce3ccf770087571c8710804b56"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": "./share/crow/CrowConfig.cmake",
-      "SPDXID": "SPDXRef-binary-file-1",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "029f0cf0048846f79078358416eb1dd16c162712072e2d8d481a226690deb501"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": "./share/crow/Findasio.cmake",
-      "SPDXID": "SPDXRef-binary-file-2",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "b681692784ff570757feb712f26bff01ac3651ba21d43e9c350c650e4830ff6a"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": "./share/crow/CrowTargets.cmake",
-      "SPDXID": "SPDXRef-binary-file-3",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "8407e674285ee7ee751abb0b915cec035e0abc7d6f5e50e99ed0f9716649ad1d"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": "./include/crow.h",
-      "SPDXID": "SPDXRef-binary-file-4",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "c71e166b59de109ed807d46515046b8274befc10befeb5cfdeaf45e6c206f35b"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": "./include/crow/http_connection.h",
-      "SPDXID": "SPDXRef-binary-file-5",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "cb25dc425bc67b01d3f1707f730ec1aeb7e19f888dc588c589b0911a29b1c7cf"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": "./include/crow/http_response.h",
-      "SPDXID": "SPDXRef-binary-file-6",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "d2b092e94e29ff54bc21dabc38ece2f8594aac41229678cccf602eb35791fdc7"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": "./include/crow/app.h",
-      "SPDXID": "SPDXRef-binary-file-7",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "08f329a4330b691ae44f203ebe162a6ff4342ce83d0550ac9d89fb47bdfac8a9"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": "./include/crow/http_parser_merged.h",
-      "SPDXID": "SPDXRef-binary-file-8",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "7956f5d5ca525fe9ecffd6a66e6d1e1d7b16c36a3646bc9f54770c96ba48ce80"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": "./include/crow/mime_types.h",
-      "SPDXID": "SPDXRef-binary-file-9",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "8e12882851c652717bbe7288f7527916b5795a7e1b51ef659196e0cb6881f8a3"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": "./include/crow/TinySHA1.hpp",
-      "SPDXID": "SPDXRef-binary-file-10",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "889425651736ddfd3ab956afc1d2fe1c26d13af8a485cc2263149dd4d98dc4a2"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": "./include/crow/mustache.h",
-      "SPDXID": "SPDXRef-binary-file-11",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "17022d2c04e7b6a5a841e3f6b51a2f4d5ac5616eadfda9e711d6e2d11110e7fd"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": "./include/crow/http_request.h",
-      "SPDXID": "SPDXRef-binary-file-12",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "1a2415ead005bdbe004fe6a6e49d43924ee141fd17cf99b60b56e79f1fbd9c32"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": "./include/crow/compression.h",
-      "SPDXID": "SPDXRef-binary-file-13",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "a6475bc0bceab452604e132f4b966f9fffbc8ea33e857c3a12f3519907fd7b2f"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": "./include/crow/http_server.h",
-      "SPDXID": "SPDXRef-binary-file-14",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "624f491e689a0b835d84195183727c0aa1cd8f3aef8c8ba1596e1e3b432a3c59"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": "./include/crow/settings.h",
-      "SPDXID": "SPDXRef-binary-file-15",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "9f32347eff05c140595e576ea9b00d32d6e1fb46f4f08170540f9ec255a9f28f"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": "./include/crow/multipart_view.h",
-      "SPDXID": "SPDXRef-binary-file-16",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "f383c34535dd44d378abfc8a392718e88612d185a876f4bc14a03201420b136b"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": "./include/crow/middleware_context.h",
-      "SPDXID": "SPDXRef-binary-file-17",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "065e7f8e87c9aa7c7c2889a4a886dbd0c288113cbb2c10aa90d831716a9766c0"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": "./include/crow/middleware.h",
-      "SPDXID": "SPDXRef-binary-file-18",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "37d795b20da25aef4bf6be2afda9afbdf9bc6eec74c76b515e7f702e02529102"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": "./include/crow/routing.h",
-      "SPDXID": "SPDXRef-binary-file-19",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "bc507fcdb6bffb862ac7230beb612bc04ac8faf0c3c34268565e82bc89d598d4"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": "./include/crow/ci_map.h",
-      "SPDXID": "SPDXRef-binary-file-20",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "08afd13185721a0550706dd34fd002cb6d817a577187c4e24289cdcd3e19c2ed"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": "./include/crow/version.h",
-      "SPDXID": "SPDXRef-binary-file-21",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "bb4d951d5128cc48fa0033ff9e863efc5259d6ff79b2745c79d15ed441502ac4"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": "./include/crow/logging.h",
-      "SPDXID": "SPDXRef-binary-file-22",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "de3e2eba5d1a4ede16c0297413822e6a187fe370b8d7f59d46ee0011804fcd84"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": "./include/crow/middlewares/utf-8.h",
-      "SPDXID": "SPDXRef-binary-file-23",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "88928433b1807399822bc2fb6d557f43c4def3e83edd71182cbde6562526365a"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": "./include/crow/middlewares/cors.h",
-      "SPDXID": "SPDXRef-binary-file-24",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "856b0ce4a7fa5b6eeab150cd65b2ba1e662002668616a6a840f0f8b25eac038e"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": "./include/crow/middlewares/session.h",
-      "SPDXID": "SPDXRef-binary-file-25",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "414ac6c34003180792b9708cb2046af51ea4188a51576f06309c11dc463d0bdb"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": "./include/crow/middlewares/cookie_parser.h",
-      "SPDXID": "SPDXRef-binary-file-26",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "5d40d2a6c4a67c4f00f69a8dbecf4a0b4eb2cbeeea5f8e3a9ee2f426f32d7bda"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": "./include/crow/utility.h",
-      "SPDXID": "SPDXRef-binary-file-27",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "8fbe7e33247b18fead359a9e536f1a8163896579ec194ff76782d9b8d5aa9de4"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": "./include/crow/query_string.h",
-      "SPDXID": "SPDXRef-binary-file-28",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "5d4d34e45f716cab18127ef0fa5c2657ec7c2470c75a9d2de04d26e193826ec6"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": "./include/crow/common.h",
-      "SPDXID": "SPDXRef-binary-file-29",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "512bb9d75b8804320ca99f2f9f39d8e189529ff21c12e62b23b5c175ad15d473"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": "./include/crow/parser.h",
-      "SPDXID": "SPDXRef-binary-file-30",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "9b9f5c795033859166f9c74cc202868ca37d168113f9edf6a0cf0e337b0b26da"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": "./include/crow/returnable.h",
-      "SPDXID": "SPDXRef-binary-file-31",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "b7d812993976e78d4e23b2e0c38071dbd190135806b3b16609c809f767295191"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": "./include/crow/task_timer.h",
-      "SPDXID": "SPDXRef-binary-file-32",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "fb66891d5f1a66eb66d158d1e0b175b54f69b718cb2b84b39ed7ab56b3c4c9e3"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": "./include/crow/json.h",
-      "SPDXID": "SPDXRef-binary-file-33",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "6a99b37eef78328333874e11d12dea6a271eb970ce36c2fc8ba33feb20340160"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": "./include/crow/websocket.h",
-      "SPDXID": "SPDXRef-binary-file-34",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "7a21eb24d554555a09658fb34903c61da08da30b3446011bd3113fcf93ed603d"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": "./include/crow/exceptions.h",
-      "SPDXID": "SPDXRef-binary-file-35",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "03587b61bcb6a413b8481a8f63cd75e5214fb968152ec700cbaff9083bad1987"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": "./include/crow/socket_adaptors.h",
-      "SPDXID": "SPDXRef-binary-file-36",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "a66ac2ce684ca5e88d1b141687c09f1ee78b9cc9dc32aaa454af74b0b6cae647"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": "./include/crow/multipart.h",
-      "SPDXID": "SPDXRef-binary-file-37",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "1cf748b6a6245920efedb84be7079c8e94057c89250441ac3b2c250325dc8662"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": "./BUILD_INFO",
-      "SPDXID": "SPDXRef-binary-file-38",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "b17d8abcb0fd6454b3c1ec6556988d624863978121b87c51af8b1b6d937db69a"
+          "checksumValue": "e27d3d50df688e4a0be30b3d4b11ad329668aebbc1daccf6621d40bddfaa12ad"
         }
       ],
       "licenseConcluded": "NOASSERTION",
