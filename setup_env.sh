@@ -1,5 +1,7 @@
 #!/bin/bash
 # Script para configurar CMAKE_PREFIX_PATH con todas las dependencias de vcpkg
+# Nota: Copiar el contenido de CMakeLists.txt dentro de round-robin-tournament en el CMakeLists.txt del proyecto creado y hacer las modificaiones necesarias.
+# Se puede no hacer lo que dice la nota pero requeriria otros pasos.
 
 # =====================
 # Comandos para ejecutar los tests desde cero
