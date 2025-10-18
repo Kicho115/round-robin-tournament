@@ -1,28 +1,31 @@
 #pragma once
 #include <memory>
 #include <optional>
-#include <string>
 #include <string_view>
 #include <vector>
-
 #include "delegate/IGroupDelegate.hpp"
-#include "persistence/repository/GroupRepository.hpp"
-#include "persistence/repository/TeamRepository.hpp"
-#include "persistence/repository/TournamentRepository.hpp"
-
-// IMPORTANTE: usar solo la interfaz, no la implementación concreta de ActiveMQ.
-// Ajusta la ruta según tu árbol: "cms/IQueueMessageProducer.hpp" o similar.
-#include "cms/IQueueMessageProducer.hpp"
+#include "persistence/repository/IGroupRepository.hpp"
+#include "persistence/repository/ITournamentRepository.hpp"
+#include "persistence/repository/ITeamRepository.hpp"
+#include "messaging/IEventBus.hpp"
 
 class GroupDelegate : public IGroupDelegate {
+    std::shared_ptr<IGroupRepository> groupRepo;
+    std::shared_ptr<ITournamentRepository> tournamentRepo; // puede ser nullptr
+    std::shared_ptr<ITeamRepository> teamRepo;             // puede ser nullptr
+    std::shared_ptr<IEventBus> eventBus;                   // puede ser nullptr
+
 public:
-    GroupDelegate(std::shared_ptr<GroupRepository> groups,
-                  std::shared_ptr<TeamRepository> teams,
-                  std::shared_ptr<TournamentRepository> tours,
-                  std::shared_ptr<IQueueMessageProducer> bus);
+    // Constructor existente (no lo quites):
+    explicit GroupDelegate(std::shared_ptr<IGroupRepository> groupRepo);
 
-    virtual ~GroupDelegate();
+    // inyección completa (para límites y eventos)
+    GroupDelegate(std::shared_ptr<IGroupRepository> groupRepo,
+                  std::shared_ptr<ITournamentRepository> tournamentRepo,
+                  std::shared_ptr<ITeamRepository> teamRepo,
+                  std::shared_ptr<IEventBus> eventBus);
 
+    // Métodos IGroupDelegate
     std::optional<std::string>
     CreateGroup(std::string_view tournamentId, const domain::Group& group, std::string& outGroupId) override;
 
@@ -40,10 +43,4 @@ public:
 
     std::optional<std::string>
     UpdateTeams(std::string_view tournamentId, std::string_view groupId, const std::vector<domain::Team>& teams) override;
-
-private:
-    std::shared_ptr<GroupRepository> groupRepository;
-    std::shared_ptr<TeamRepository> teamRepository;
-    std::shared_ptr<TournamentRepository> tournamentRepository;
-    std::shared_ptr<IQueueMessageProducer> producer; // interfaz -> no arrastra activemq-cpp
 };

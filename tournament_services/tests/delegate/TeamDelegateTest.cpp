@@ -22,6 +22,7 @@ TEST(TeamDelegate, SaveTeam_CallsRepoCreate) {
     EXPECT_EQ(id, "new-id");
 }
 
+// UpdateTeam – torneo no encontrado (HTTP 404 lógico en capa superior, aquí optional con mensaje)
 TEST(TeamDelegate, UpdateTeam_404_WhenNotExists) {
     auto repo = std::make_shared<TeamRepoMock>();
     EXPECT_CALL(*repo, ReadById(::testing::_))
@@ -29,8 +30,8 @@ TEST(TeamDelegate, UpdateTeam_404_WhenNotExists) {
     TeamDelegate sut(repo);
     domain::Team t{"id-x","A"};
     auto r = sut.UpdateTeam(t);
-    EXPECT_FALSE(r.has_value());
-    EXPECT_EQ("team_not_found", r.value());
+    EXPECT_TRUE(r.has_value());
+    EXPECT_EQ("team_not_found", *r);
 }
 
 TEST(TeamDelegate, SaveTeam_Fails_ReturnsError) {

@@ -59,10 +59,54 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09236c14-a96d-4b76-98f0-5140d31184db" name="Changes" comment="Groups, Teams y Tournament modificado y testings (no errores en testing)">
-      <change beforePath="$PROJECT_DIR$/.idea/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/editor.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tournament_common/include/persistence/repository/ITeamRepository.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tournament_common/include/persistence/repository/ITournamentRepository.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tournament_services/include/delegate/EventingGroupDelegate.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tournament_services/include/delegate/IEventPublisher.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tournament_services/include/delegate/IMatchScheduler.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tournament_services/include/delegate/KnockoutBracketBuilder.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tournament_services/include/delegate/RoundRobinGenerator.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tournament_services/include/delegate/RoundRobinMatchGenerator.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tournament_services/include/delegate/StandingsCalculator.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tournament_services/include/delegate/TeamAddedConsumer.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tournament_services/include/messaging/EventBus.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tournament_services/include/messaging/IEventBus.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tournament_services/include/messaging/TeamAddedConsumer.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tournament_services/include/messaging/Topics.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tournament_services/src/delegate/EventingGroupDelegate.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tournament_services/src/delegate/KnockoutBracketBuilder.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tournament_services/src/delegate/RoundRobinGenerator.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tournament_services/src/delegate/RoundRobinMatchGenerator.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tournament_services/src/delegate/StandingsCalculator.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tournament_services/src/delegate/TeamAddedConsumer.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tournament_services/tests/delegate/EventingGroupDelegateTest.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tournament_services/tests/delegate/GroupDelegateEventsAndLimitsTest.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tournament_services/tests/delegate/KnockoutBracketBuilderTest.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tournament_services/tests/delegate/RRGenerator_ThirtyTwoTeams_Test.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tournament_services/tests/delegate/RoundRobinMatchGeneratorTest.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tournament_services/tests/delegate/StandingsCalculatorTest.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tournament_services/tests/delegate/TeamAddedConsumerTest.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/set_env.sh" beforeDir="false" afterPath="$PROJECT_DIR$/set_env.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tournament_common/include/domain/Group.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/tournament_common/include/domain/Group.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tournament_common/include/domain/IMatchStrategy.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/tournament_common/include/domain/IMatchStrategy.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tournament_common/include/domain/Match.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/tournament_common/include/domain/Match.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tournament_common/include/persistence/repository/GroupRepository.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/tournament_common/include/persistence/repository/GroupRepository.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tournament_common/include/persistence/repository/IGroupRepository.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/tournament_common/include/persistence/repository/IGroupRepository.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tournament_common/include/persistence/repository/TournamentRepository.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/tournament_common/include/persistence/repository/TournamentRepository.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tournament_common/src/persistence/repository/GroupRepository.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tournament_common/src/persistence/repository/GroupRepository.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tournament_services/include/controller/GroupController.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/tournament_services/include/controller/GroupController.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tournament_services/include/controller/TeamController.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/tournament_services/include/controller/TeamController.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tournament_services/include/delegate/GroupDelegate.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/tournament_services/include/delegate/GroupDelegate.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tournament_services/src/controller/GroupController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tournament_services/src/controller/GroupController.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tournament_services/src/controller/TeamController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tournament_services/src/controller/TeamController.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tournament_services/src/controller/TournamentController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tournament_services/src/controller/TournamentController.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tournament_services/src/delegate/GroupDelegate.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tournament_services/src/delegate/GroupDelegate.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tournament_services/tests/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tournament_services/tests/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tournament_services/tests/controller/GroupControllerTest.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tournament_services/tests/controller/GroupControllerTest.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tournament_services/tests/controller/TeamControllerTest.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tournament_services/tests/controller/TeamControllerTest.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tournament_services/tests/delegate/TeamDelegateTest.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tournament_services/tests/delegate/TeamDelegateTest.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +121,21 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Leafarex&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Kicho115/round-robin-tournament.git&quot;,
+    &quot;accountId&quot;: &quot;bbcc8ca6-28c3-4fd9-863e-c6ce7f265db5&quot;
+  }
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectApplicationVersion">
     <option name="ide" value="CLion" />
     <option name="majorVersion" value="2025" />
@@ -87,6 +146,9 @@
   &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="33z9CIOvlx5UeCVgIQjFpOf4Q7S" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectStatusUIService">{
   &quot;uiKindId&quot;: &quot;Widget&quot;
 }</component>
@@ -114,6 +176,7 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;onboarding.tips.debug.path&quot;: &quot;/home/ricampos/tournaments/main.cpp&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -123,7 +186,7 @@
       <window_info id="Merge Requests" />
       <window_info id="Backup and Sync History" />
       <window_info id="Commit_Guest" show_stripe_button="false" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14661458" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24511719" />
       <window_info id="Commit" order="1" weight="0.14661458" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info id="Learn" order="3" weight="0.19108072" />
@@ -136,9 +199,9 @@
       <window_info anchor="bottom" id="clangd" />
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Problems" order="1" />
-      <window_info anchor="bottom" id="Problems View" order="2" weight="0.32994187" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="3" visible="true" weight="0.32994187" />
-      <window_info anchor="bottom" id="Services" order="4" weight="0.32994187" />
+      <window_info anchor="bottom" id="Problems View" order="2" weight="0.32964888" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="3" visible="true" weight="0.87561274" />
+      <window_info anchor="bottom" id="Services" order="4" weight="0.32964888" />
       <window_info anchor="bottom" id="CMake" order="5" weight="0.32994187" />
       <window_info anchor="bottom" id="Build" order="6" weight="0.3302696" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.41676867" />
@@ -157,7 +220,7 @@
       <window_info anchor="right" id="Maven" order="4" weight="0.25" />
       <window_info anchor="right" id="Meson" order="5" />
       <window_info anchor="right" id="Python Console" order="6" weight="0.32975262" />
-      <window_info active="true" anchor="right" id="GitHub Copilot Chat" order="7" visible="true" weight="0.32994792" />
+      <window_info active="true" anchor="right" id="GitHub Copilot Chat" order="7" visible="true" weight="0.01985677" />
       <window_info anchor="right" id="make" order="8" side_tool="true" weight="0.32975262" />
     </layout>
   </component>
@@ -167,11 +230,6 @@
     </key>
   </component>
   <component name="RunManager" selected="CMake Application.tournament_consumer">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="tournament_tests_runner" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Tournaments" TARGET_NAME="tournament_tests_runner" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Tournaments" RUN_TARGET_NAME="tournament_tests_runner" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -377,6 +435,9 @@
       <updated>1760308904345</updated>
       <workItem from="1760308905363" duration="12317000" />
       <workItem from="1760330999992" duration="2154000" />
+      <workItem from="1760759469297" duration="5895000" />
+      <workItem from="1760770896354" duration="6969000" />
+      <workItem from="1760778166772" duration="5678000" />
     </task>
     <task id="LOCAL-00001" summary="Groups, Teams y Tournament modificado y testings (no errores en testing)">
       <option name="closed" value="true" />

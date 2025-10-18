@@ -18,7 +18,10 @@ echo "VCPKG_FEATURE_FLAGS=$VCPKG_FEATURE_FLAGS"
 # rm -rf cmake-build-debug CMakeCache.txt
 # source ./set_env.sh
 #
-# cmake -S . -B cmake-build-debug -G Ninja \
+# cmake -S . -B cmake-build-debug -G Ninja \cmake -S . -B cmake-build-debug -G Ninja -DCMAKE_TOOLCHAIN_FILE="$CMAKE_TOOLCHAIN_FILE" -DVCPKG_TARGET_TRIPLET="$VCPKG_DEFAULT_TRIPLET"
+                                            #cmake -S . -B cmake-build-debug
+                                            #cmake --build cmake-build-debug --target tournament_tests_runner
+                                            #./cmake-build-debug/tournament_services/tests/tournament_tests_runner
 #   -DCMAKE_TOOLCHAIN_FILE="$CMAKE_TOOLCHAIN_FILE" \
 #   -DVCPKG_TARGET_TRIPLET="$VCPKG_DEFAULT_TRIPLET"
 #

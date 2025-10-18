@@ -1,20 +1,20 @@
-//
-// Created by tsuny on 9/1/25.
-//
-
 #ifndef TOURNAMENTS_TOURNAMENTREPOSITORY_HPP
 #define TOURNAMENTS_TOURNAMENTREPOSITORY_HPP
+
 #include <string>
+#include <memory>
+#include <vector>
 
-#include "IRepository.hpp"
-#include "domain/Tournament.hpp"
+#include "persistence/repository/ITournamentRepository.hpp"
 #include "persistence/configuration/IDbConnectionProvider.hpp"
+#include "domain/Tournament.hpp"
 
-
-class TournamentRepository : public IRepository<domain::Tournament, std::string> {
+class TournamentRepository : public ITournamentRepository {
     std::shared_ptr<IDbConnectionProvider> connectionProvider;
+
 public:
     explicit TournamentRepository(std::shared_ptr<IDbConnectionProvider> connectionProvider);
+
     std::shared_ptr<domain::Tournament> ReadById(std::string id) override;
     std::string Create (const domain::Tournament & entity) override;
     std::string Update (const domain::Tournament & entity) override;
@@ -22,4 +22,4 @@ public:
     std::vector<std::shared_ptr<domain::Tournament>> ReadAll() override;
 };
 
-#endif //TOURNAMENTS_TOURNAMENTREPOSITORY_HPP
+#endif // TOURNAMENTS_TOURNAMENTREPOSITORY_HPP

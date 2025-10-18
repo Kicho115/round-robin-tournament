@@ -2,19 +2,33 @@ cmake_minimum_required(VERSION 3.16)
 project(tournament_tests)
 
 set(TEST_SOURCES
-    controller/TeamControllerTest.cpp
-    controller/TournamentControllerTest.cpp
-    controller/GroupControllerTest.cpp
-    delegate/TournamentDelegateTest.cpp
-    delegate/GroupDelegateTest.cpp
-    delegate/TeamDelegateTest.cpp
-    ../src/controller/TeamController.cpp
-    ../src/controller/TournamentController.cpp
-    ../src/controller/GroupController.cpp
-    ../src/delegate/TournamentDelegate.cpp
-    ../src/delegate/GroupDelegate.cpp
-    ../src/delegate/TeamDelegate.cpp
+        controller/GroupControllerTest.cpp
+        controller/TeamControllerTest.cpp
+        controller/TournamentControllerTest.cpp
+        delegate/EventingGroupDelegateTest.cpp
+        delegate/GroupDelegateTest.cpp
+        delegate/RoundRobinMatchGeneratorTest.cpp
+        delegate/TeamAddedConsumerTest.cpp
+        delegate/TeamDelegateTest.cpp
+        delegate/TournamentDelegateTest.cpp
+        delegate/RRGenerator_ThirtyTwoTeams_Test.cpp
+        delegate/StandingsCalculatorTest.cpp
+        delegate/KnockoutBracketBuilderTest.cpp
+        ../src/delegate/StandingsCalculator.cpp
+        ../src/delegate/KnockoutBracketBuilder.cpp
+        ../src/controller/GroupController.cpp
+        ../src/controller/TeamController.cpp
+        ../src/controller/TournamentController.cpp
+        ../src/delegate/EventingGroupDelegate.cpp
+        ../src/delegate/GroupDelegate.cpp
+        ../src/delegate/RoundRobinGenerator.cpp
+        ../src/delegate/RoundRobinMatchGenerator.cpp
+        ../src/delegate/TeamAddedConsumer.cpp
+        ../src/delegate/TeamDelegate.cpp
+        ../src/delegate/TournamentDelegate.cpp
 )
+
+
 
 set(SOURCES ${TEST_SOURCES})
 include_directories(../include)
