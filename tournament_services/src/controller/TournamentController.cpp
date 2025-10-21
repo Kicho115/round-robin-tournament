@@ -159,4 +159,6 @@ crow::response TournamentController::UpdateTournament(const crow::request &reque
 }
 
 REGISTER_ROUTE(TournamentController, CreateTournament, "/tournaments", "POST"_method)
-REGISTER_ROUTE(TournamentController, ReadAll,         "/tournaments", "GET"_method)
+REGISTER_ROUTE(TournamentController, ReadAll, "/tournaments", "GET"_method)
+REGISTER_ROUTE(TournamentController, GetById, "/tournaments/<string>", "GET"_method)
+REGISTER_ROUTE(TournamentController, UpdateTournament, "/tournaments/<string>", "PATCH"_method)
