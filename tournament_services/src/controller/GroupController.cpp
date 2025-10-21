@@ -172,3 +172,11 @@ crow::response GroupController::AddTeam(const crow::request& request,
 
     return crow::response{crow::CREATED};
 }
+
+// Rutas
+REGISTER_ROUTE(GroupController, GetGroups,   "/tournaments/<string>/groups",                 "GET"_method)
+REGISTER_ROUTE(GroupController, GetGroup,    "/tournaments/<string>/groups/<string>",       "GET"_method)
+REGISTER_ROUTE(GroupController, CreateGroup, "/tournaments/<string>/groups",                "POST"_method)
+REGISTER_ROUTE(GroupController, UpdateGroup, "/tournaments/<string>/groups/<string>",       "PATCH"_method)
+REGISTER_ROUTE(GroupController, UpdateTeams, "/tournaments/<string>/groups/<string>/teams", "PATCH"_method)
+REGISTER_ROUTE(GroupController, AddTeam,     "/tournaments/<string>/groups/<string>",       "POST"_method)

@@ -48,12 +48,4 @@ public:
                            const std::string& groupId);
 };
 
-// Rutas
-REGISTER_ROUTE(GroupController, GetGroups,   "/tournaments/<string>/groups",                 "GET"_method)
-REGISTER_ROUTE(GroupController, GetGroup,    "/tournaments/<string>/groups/<string>",       "GET"_method)
-REGISTER_ROUTE(GroupController, CreateGroup, "/tournaments/<string>/groups",                "POST"_method)
-REGISTER_ROUTE(GroupController, UpdateGroup, "/tournaments/<string>/groups/<string>",       "PATCH"_method)
-REGISTER_ROUTE(GroupController, UpdateTeams, "/tournaments/<string>/groups/<string>/teams", "PATCH"_method)
-REGISTER_ROUTE(GroupController, AddTeam,     "/tournaments/<string>/groups/<string>",       "POST"_method)
-
 #endif /* A7B3517D_1DC1_4B59_A78C_D3E03D29710C */
