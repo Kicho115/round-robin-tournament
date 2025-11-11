@@ -1,0 +1,25 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
+# The set of languages for which implicit dependencies are needed:
+set(CMAKE_DEPENDS_LANGUAGES
+  )
+
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/ricampos/tournaments/tournament_common/src/persistence/repository/GroupRepository.cpp" "tournament_common/CMakeFiles/tournament_common.dir/src/persistence/repository/GroupRepository.cpp.o" "gcc" "tournament_common/CMakeFiles/tournament_common.dir/src/persistence/repository/GroupRepository.cpp.o.d"
+  "/home/ricampos/tournaments/tournament_common/src/persistence/repository/TeamRepository.cpp" "tournament_common/CMakeFiles/tournament_common.dir/src/persistence/repository/TeamRepository.cpp.o" "gcc" "tournament_common/CMakeFiles/tournament_common.dir/src/persistence/repository/TeamRepository.cpp.o.d"
+  "/home/ricampos/tournaments/tournament_common/src/persistence/repository/TournamentRepository.cpp" "tournament_common/CMakeFiles/tournament_common.dir/src/persistence/repository/TournamentRepository.cpp.o" "gcc" "tournament_common/CMakeFiles/tournament_common.dir/src/persistence/repository/TournamentRepository.cpp.o.d"
+  )
+
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
+  )
+
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_FORWARD_LINKED_INFO_FILES
+  )
+
+# Fortran module output directory.
+set(CMAKE_Fortran_TARGET_MODULE_DIR "")

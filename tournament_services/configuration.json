@@ -1,14 +1,14 @@
 {
-    "runConfig": {
-        "port": 8080,
-        "concurrency": 4
+    "runConfig" : {
+        "port" : 8080,
+        "concurrency" : 4
     },
-    "databaseConfig": {
-        "provider": "postgres",
+    "databaseConfig" : {
+        "provider" : "postgres",
         "poolSize": 2,
-        "connectionString": "postgresql://tournament_svc:password@169.254.1.2:5432/tournament_db"
+        "connectionString" : "postgresql://tournament_db:password@tournament_db:5432/tournament_db"
     },
     "activemq": {
-        "broker-url": "tcp://169.254.1.2:61616"
+        "broker-url" : "failover://(tcp://artemis:61616)"
     }
 }

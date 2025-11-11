@@ -1,0 +1,3121 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      The system is: Linux - 6.6.87.2-microsoft-standard-WSL2 - x86_64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /usr/sbin/cc 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is GNU, found in:
+        /home/ricampos/tournaments/CMakeFiles/3.31.6/CompilerIdC/a.out
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /usr/sbin/c++ 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is GNU, found in:
+        /home/ricampos/tournaments/CMakeFiles/3.31.6/CompilerIdCXX/a.out
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/home/ricampos/tournaments/CMakeFiles/CMakeScratch/TryCompile-F78nnR"
+      binary: "/home/ricampos/tournaments/CMakeFiles/CMakeScratch/TryCompile-F78nnR"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/CMakeFiles/CMakeScratch/TryCompile-F78nnR'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_37b97/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_37b97.dir/build.make CMakeFiles/cmTC_37b97.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/CMakeFiles/CMakeScratch/TryCompile-F78nnR'
+        Building C object CMakeFiles/cmTC_37b97.dir/CMakeCCompilerABI.c.o
+        /usr/sbin/cc   -v -o CMakeFiles/cmTC_37b97.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
+        Using built-in specs.
+        COLLECT_GCC=/usr/sbin/cc
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-redhat-linux
+        Configured with: ../configure --enable-bootstrap --enable-languages=c,c++,fortran,objc,obj-c++,ada,go,d,m2,cobol,lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --enable-libstdcxx-backtrace --with-libstdcxx-zoneinfo=/usr/share/zoneinfo --with-linker-hash-style=gnu --enable-plugin --enable-initfini-array --with-isl=/builddir/build/BUILD/gcc-15.2.1-build/gcc-15.2.1-20250808/obj-x86_64-redhat-linux/isl-install --enable-offload-targets=nvptx-none,amdgcn-amdhsa --enable-offload-defaulted --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_32=i686 --build=x86_64-redhat-linux --with-build-config=bootstrap-lto --enable-link-serialization=1
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 15.2.1 20250808 (Red Hat 15.2.1-1) (GCC) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_37b97.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_37b97.dir/'
+         /usr/libexec/gcc/x86_64-redhat-linux/15/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_37b97.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o /tmp/cczMF7gE.s
+        GNU C23 (GCC) version 15.2.1 20250808 (Red Hat 15.2.1-1) (x86_64-redhat-linux)
+        	compiled by GNU C version 15.2.1 20250808 (Red Hat 15.2.1-1), GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.3.1, isl version isl-0.24-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/15/include-fixed"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/15/../../../../x86_64-redhat-linux/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/gcc/x86_64-redhat-linux/15/include
+         /usr/local/include
+         /usr/include
+        End of search list.
+        Compiler executable checksum: 2f5fb64c856191160801414dd9eb2451
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_37b97.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_37b97.dir/'
+         as -v --64 -o CMakeFiles/cmTC_37b97.dir/CMakeCCompilerABI.c.o /tmp/cczMF7gE.s
+        GNU assembler version 2.44 (x86_64-redhat-linux) using BFD version version 2.44-6.fc42
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/15/:/usr/libexec/gcc/x86_64-redhat-linux/15/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/15/:/usr/lib/gcc/x86_64-redhat-linux/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/15/:/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/15/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_37b97.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_37b97.dir/CMakeCCompilerABI.c.'
+        Linking C executable cmTC_37b97
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_37b97.dir/link.txt --verbose=1
+        Using built-in specs.
+        COLLECT_GCC=/usr/sbin/cc
+        COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/15/lto-wrapper
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-redhat-linux
+        Configured with: ../configure --enable-bootstrap --enable-languages=c,c++,fortran,objc,obj-c++,ada,go,d,m2,cobol,lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --enable-libstdcxx-backtrace --with-libstdcxx-zoneinfo=/usr/share/zoneinfo --with-linker-hash-style=gnu --enable-plugin --enable-initfini-array --with-isl=/builddir/build/BUILD/gcc-15.2.1-build/gcc-15.2.1-20250808/obj-x86_64-redhat-linux/isl-install --enable-offload-targets=nvptx-none,amdgcn-amdhsa --enable-offload-defaulted --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_32=i686 --build=x86_64-redhat-linux --with-build-config=bootstrap-lto --enable-link-serialization=1
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 15.2.1 20250808 (Red Hat 15.2.1-1) (GCC) 
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/15/:/usr/libexec/gcc/x86_64-redhat-linux/15/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/15/:/usr/lib/gcc/x86_64-redhat-linux/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/15/:/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/15/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_37b97' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_37b97.'
+         /usr/libexec/gcc/x86_64-redhat-linux/15/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/15/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/15/lto-wrapper -plugin-opt=-fresolution=/tmp/ccGLs7RV.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_37b97 /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/15/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/15 -L/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/15/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_37b97.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-redhat-linux/15/crtend.o /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crtn.o
+        collect2 version 15.2.1 20250808 (Red Hat 15.2.1-1)
+        /usr/sbin/ld -plugin /usr/libexec/gcc/x86_64-redhat-linux/15/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/15/lto-wrapper -plugin-opt=-fresolution=/tmp/ccGLs7RV.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_37b97 /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/15/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/15 -L/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/15/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_37b97.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-redhat-linux/15/crtend.o /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crtn.o
+        GNU ld version 2.44-6.fc42
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_37b97' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_37b97.'
+        /usr/sbin/cc  -v -Wl,-v CMakeFiles/cmTC_37b97.dir/CMakeCCompilerABI.c.o -o cmTC_37b97
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/CMakeFiles/CMakeScratch/TryCompile-F78nnR'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/lib/gcc/x86_64-redhat-linux/15/include]
+          add: [/usr/local/include]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/lib/gcc/x86_64-redhat-linux/15/include] ==> [/usr/lib/gcc/x86_64-redhat-linux/15/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/lib/gcc/x86_64-redhat-linux/15/include;/usr/local/include;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
+        ignore line: [Change Dir: '/home/ricampos/tournaments/CMakeFiles/CMakeScratch/TryCompile-F78nnR']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_37b97/fast]
+        ignore line: [/usr/sbin/gmake  -f CMakeFiles/cmTC_37b97.dir/build.make CMakeFiles/cmTC_37b97.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/ricampos/tournaments/CMakeFiles/CMakeScratch/TryCompile-F78nnR']
+        ignore line: [Building C object CMakeFiles/cmTC_37b97.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/sbin/cc   -v -o CMakeFiles/cmTC_37b97.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/sbin/cc]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-redhat-linux]
+        ignore line: [Configured with: ../configure --enable-bootstrap --enable-languages=c c++ fortran objc obj-c++ ada go d m2 cobol lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --enable-libstdcxx-backtrace --with-libstdcxx-zoneinfo=/usr/share/zoneinfo --with-linker-hash-style=gnu --enable-plugin --enable-initfini-array --with-isl=/builddir/build/BUILD/gcc-15.2.1-build/gcc-15.2.1-20250808/obj-x86_64-redhat-linux/isl-install --enable-offload-targets=nvptx-none amdgcn-amdhsa --enable-offload-defaulted --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_32=i686 --build=x86_64-redhat-linux --with-build-config=bootstrap-lto --enable-link-serialization=1]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 15.2.1 20250808 (Red Hat 15.2.1-1) (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_37b97.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_37b97.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-redhat-linux/15/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_37b97.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o /tmp/cczMF7gE.s]
+        ignore line: [GNU C23 (GCC) version 15.2.1 20250808 (Red Hat 15.2.1-1) (x86_64-redhat-linux)]
+        ignore line: [	compiled by GNU C version 15.2.1 20250808 (Red Hat 15.2.1-1)  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.3.1  isl version isl-0.24-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/15/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/15/../../../../x86_64-redhat-linux/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/gcc/x86_64-redhat-linux/15/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [Compiler executable checksum: 2f5fb64c856191160801414dd9eb2451]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_37b97.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_37b97.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_37b97.dir/CMakeCCompilerABI.c.o /tmp/cczMF7gE.s]
+        ignore line: [GNU assembler version 2.44 (x86_64-redhat-linux) using BFD version version 2.44-6.fc42]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/15/:/usr/libexec/gcc/x86_64-redhat-linux/15/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/15/:/usr/lib/gcc/x86_64-redhat-linux/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/15/:/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/15/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_37b97.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_37b97.dir/CMakeCCompilerABI.c.']
+        ignore line: [Linking C executable cmTC_37b97]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_37b97.dir/link.txt --verbose=1]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/sbin/cc]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/15/lto-wrapper]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-redhat-linux]
+        ignore line: [Configured with: ../configure --enable-bootstrap --enable-languages=c c++ fortran objc obj-c++ ada go d m2 cobol lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --enable-libstdcxx-backtrace --with-libstdcxx-zoneinfo=/usr/share/zoneinfo --with-linker-hash-style=gnu --enable-plugin --enable-initfini-array --with-isl=/builddir/build/BUILD/gcc-15.2.1-build/gcc-15.2.1-20250808/obj-x86_64-redhat-linux/isl-install --enable-offload-targets=nvptx-none amdgcn-amdhsa --enable-offload-defaulted --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_32=i686 --build=x86_64-redhat-linux --with-build-config=bootstrap-lto --enable-link-serialization=1]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 15.2.1 20250808 (Red Hat 15.2.1-1) (GCC) ]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/15/:/usr/libexec/gcc/x86_64-redhat-linux/15/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/15/:/usr/lib/gcc/x86_64-redhat-linux/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/15/:/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/15/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_37b97' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_37b97.']
+        link line: [ /usr/libexec/gcc/x86_64-redhat-linux/15/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/15/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/15/lto-wrapper -plugin-opt=-fresolution=/tmp/ccGLs7RV.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_37b97 /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/15/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/15 -L/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/15/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_37b97.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-redhat-linux/15/crtend.o /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crtn.o]
+          arg [/usr/libexec/gcc/x86_64-redhat-linux/15/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/libexec/gcc/x86_64-redhat-linux/15/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/15/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccGLs7RV.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--no-add-needed] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_37b97] ==> ignore
+          arg [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crt1.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crt1.o]
+          arg [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crti.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crti.o]
+          arg [/usr/lib/gcc/x86_64-redhat-linux/15/crtbegin.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/15/crtbegin.o]
+          arg [-L/usr/lib/gcc/x86_64-redhat-linux/15] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/15]
+          arg [-L/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64]
+          arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+          arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+          arg [-L/usr/lib/gcc/x86_64-redhat-linux/15/../../..] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/15/../../..]
+          arg [-L/lib] ==> dir [/lib]
+          arg [-L/usr/lib] ==> dir [/usr/lib]
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_37b97.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [-lc] ==> lib [c]
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [/usr/lib/gcc/x86_64-redhat-linux/15/crtend.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/15/crtend.o]
+          arg [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crtn.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crtn.o]
+        ignore line: [collect2 version 15.2.1 20250808 (Red Hat 15.2.1-1)]
+        ignore line: [/usr/sbin/ld -plugin /usr/libexec/gcc/x86_64-redhat-linux/15/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/15/lto-wrapper -plugin-opt=-fresolution=/tmp/ccGLs7RV.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_37b97 /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/15/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/15 -L/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/15/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_37b97.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-redhat-linux/15/crtend.o /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crtn.o]
+        linker tool for 'C': /usr/sbin/ld
+        collapse obj [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crt1.o] ==> [/usr/lib64/crt1.o]
+        collapse obj [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crti.o] ==> [/usr/lib64/crti.o]
+        collapse obj [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crtn.o] ==> [/usr/lib64/crtn.o]
+        collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/15] ==> [/usr/lib/gcc/x86_64-redhat-linux/15]
+        collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64] ==> [/usr/lib64]
+        collapse library dir [/lib/../lib64] ==> [/lib64]
+        collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+        collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/15/../../..] ==> [/usr/lib]
+        collapse library dir [/lib] ==> [/lib]
+        collapse library dir [/usr/lib] ==> [/usr/lib]
+        implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+        implicit objs: [/usr/lib64/crt1.o;/usr/lib64/crti.o;/usr/lib/gcc/x86_64-redhat-linux/15/crtbegin.o;/usr/lib/gcc/x86_64-redhat-linux/15/crtend.o;/usr/lib64/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-redhat-linux/15;/usr/lib64;/lib64;/usr/lib;/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Running the C compiler's linker: "/usr/sbin/ld" "-v"
+      GNU ld version 2.44-6.fc42
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/home/ricampos/tournaments/CMakeFiles/CMakeScratch/TryCompile-ThdK8F"
+      binary: "/home/ricampos/tournaments/CMakeFiles/CMakeScratch/TryCompile-ThdK8F"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/CMakeFiles/CMakeScratch/TryCompile-ThdK8F'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_06c62/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_06c62.dir/build.make CMakeFiles/cmTC_06c62.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/CMakeFiles/CMakeScratch/TryCompile-ThdK8F'
+        Building CXX object CMakeFiles/cmTC_06c62.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/sbin/c++   -v -o CMakeFiles/cmTC_06c62.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        Using built-in specs.
+        COLLECT_GCC=/usr/sbin/c++
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-redhat-linux
+        Configured with: ../configure --enable-bootstrap --enable-languages=c,c++,fortran,objc,obj-c++,ada,go,d,m2,cobol,lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --enable-libstdcxx-backtrace --with-libstdcxx-zoneinfo=/usr/share/zoneinfo --with-linker-hash-style=gnu --enable-plugin --enable-initfini-array --with-isl=/builddir/build/BUILD/gcc-15.2.1-build/gcc-15.2.1-20250808/obj-x86_64-redhat-linux/isl-install --enable-offload-targets=nvptx-none,amdgcn-amdhsa --enable-offload-defaulted --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_32=i686 --build=x86_64-redhat-linux --with-build-config=bootstrap-lto --enable-link-serialization=1
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 15.2.1 20250808 (Red Hat 15.2.1-1) (GCC) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_06c62.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_06c62.dir/'
+         /usr/libexec/gcc/x86_64-redhat-linux/15/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_06c62.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/ccbZQso6.s
+        GNU C++17 (GCC) version 15.2.1 20250808 (Red Hat 15.2.1-1) (x86_64-redhat-linux)
+        	compiled by GNU C version 15.2.1 20250808 (Red Hat 15.2.1-1), GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.3.1, isl version isl-0.24-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/15/include-fixed"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/15/../../../../x86_64-redhat-linux/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/gcc/x86_64-redhat-linux/15/../../../../include/c++/15
+         /usr/lib/gcc/x86_64-redhat-linux/15/../../../../include/c++/15/x86_64-redhat-linux
+         /usr/lib/gcc/x86_64-redhat-linux/15/../../../../include/c++/15/backward
+         /usr/lib/gcc/x86_64-redhat-linux/15/include
+         /usr/local/include
+         /usr/include
+        End of search list.
+        Compiler executable checksum: 7616bbd86ab77c360311eb36cf6ebbe2
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_06c62.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_06c62.dir/'
+         as -v --64 -o CMakeFiles/cmTC_06c62.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccbZQso6.s
+        GNU assembler version 2.44 (x86_64-redhat-linux) using BFD version version 2.44-6.fc42
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/15/:/usr/libexec/gcc/x86_64-redhat-linux/15/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/15/:/usr/lib/gcc/x86_64-redhat-linux/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/15/:/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/15/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_06c62.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_06c62.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_06c62
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_06c62.dir/link.txt --verbose=1
+        Using built-in specs.
+        COLLECT_GCC=/usr/sbin/c++
+        COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/15/lto-wrapper
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-redhat-linux
+        Configured with: ../configure --enable-bootstrap --enable-languages=c,c++,fortran,objc,obj-c++,ada,go,d,m2,cobol,lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --enable-libstdcxx-backtrace --with-libstdcxx-zoneinfo=/usr/share/zoneinfo --with-linker-hash-style=gnu --enable-plugin --enable-initfini-array --with-isl=/builddir/build/BUILD/gcc-15.2.1-build/gcc-15.2.1-20250808/obj-x86_64-redhat-linux/isl-install --enable-offload-targets=nvptx-none,amdgcn-amdhsa --enable-offload-defaulted --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_32=i686 --build=x86_64-redhat-linux --with-build-config=bootstrap-lto --enable-link-serialization=1
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 15.2.1 20250808 (Red Hat 15.2.1-1) (GCC) 
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/15/:/usr/libexec/gcc/x86_64-redhat-linux/15/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/15/:/usr/lib/gcc/x86_64-redhat-linux/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/15/:/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/15/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_06c62' '-foffload-options=-l_GCC_stdc++' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_06c62.'
+         /usr/libexec/gcc/x86_64-redhat-linux/15/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/15/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/15/lto-wrapper -plugin-opt=-fresolution=/tmp/cckmNh1Y.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_06c62 /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/15/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/15 -L/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/15/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_06c62.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/15/crtend.o /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crtn.o
+        collect2 version 15.2.1 20250808 (Red Hat 15.2.1-1)
+        /usr/sbin/ld -plugin /usr/libexec/gcc/x86_64-redhat-linux/15/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/15/lto-wrapper -plugin-opt=-fresolution=/tmp/cckmNh1Y.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_06c62 /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/15/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/15 -L/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/15/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_06c62.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/15/crtend.o /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crtn.o
+        GNU ld version 2.44-6.fc42
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_06c62' '-foffload-options=-l_GCC_stdc++' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_06c62.'
+        /usr/sbin/c++  -v -Wl,-v CMakeFiles/cmTC_06c62.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_06c62
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/CMakeFiles/CMakeScratch/TryCompile-ThdK8F'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../include/c++/15]
+          add: [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../include/c++/15/x86_64-redhat-linux]
+          add: [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../include/c++/15/backward]
+          add: [/usr/lib/gcc/x86_64-redhat-linux/15/include]
+          add: [/usr/local/include]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../include/c++/15] ==> [/usr/include/c++/15]
+        collapse include dir [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../include/c++/15/x86_64-redhat-linux] ==> [/usr/include/c++/15/x86_64-redhat-linux]
+        collapse include dir [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../include/c++/15/backward] ==> [/usr/include/c++/15/backward]
+        collapse include dir [/usr/lib/gcc/x86_64-redhat-linux/15/include] ==> [/usr/lib/gcc/x86_64-redhat-linux/15/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/include/c++/15;/usr/include/c++/15/x86_64-redhat-linux;/usr/include/c++/15/backward;/usr/lib/gcc/x86_64-redhat-linux/15/include;/usr/local/include;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
+        ignore line: [Change Dir: '/home/ricampos/tournaments/CMakeFiles/CMakeScratch/TryCompile-ThdK8F']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_06c62/fast]
+        ignore line: [/usr/sbin/gmake  -f CMakeFiles/cmTC_06c62.dir/build.make CMakeFiles/cmTC_06c62.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/ricampos/tournaments/CMakeFiles/CMakeScratch/TryCompile-ThdK8F']
+        ignore line: [Building CXX object CMakeFiles/cmTC_06c62.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/sbin/c++   -v -o CMakeFiles/cmTC_06c62.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/sbin/c++]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-redhat-linux]
+        ignore line: [Configured with: ../configure --enable-bootstrap --enable-languages=c c++ fortran objc obj-c++ ada go d m2 cobol lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --enable-libstdcxx-backtrace --with-libstdcxx-zoneinfo=/usr/share/zoneinfo --with-linker-hash-style=gnu --enable-plugin --enable-initfini-array --with-isl=/builddir/build/BUILD/gcc-15.2.1-build/gcc-15.2.1-20250808/obj-x86_64-redhat-linux/isl-install --enable-offload-targets=nvptx-none amdgcn-amdhsa --enable-offload-defaulted --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_32=i686 --build=x86_64-redhat-linux --with-build-config=bootstrap-lto --enable-link-serialization=1]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 15.2.1 20250808 (Red Hat 15.2.1-1) (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_06c62.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_06c62.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-redhat-linux/15/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_06c62.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/ccbZQso6.s]
+        ignore line: [GNU C++17 (GCC) version 15.2.1 20250808 (Red Hat 15.2.1-1) (x86_64-redhat-linux)]
+        ignore line: [	compiled by GNU C version 15.2.1 20250808 (Red Hat 15.2.1-1)  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.3.1  isl version isl-0.24-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/15/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/15/../../../../x86_64-redhat-linux/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/gcc/x86_64-redhat-linux/15/../../../../include/c++/15]
+        ignore line: [ /usr/lib/gcc/x86_64-redhat-linux/15/../../../../include/c++/15/x86_64-redhat-linux]
+        ignore line: [ /usr/lib/gcc/x86_64-redhat-linux/15/../../../../include/c++/15/backward]
+        ignore line: [ /usr/lib/gcc/x86_64-redhat-linux/15/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [Compiler executable checksum: 7616bbd86ab77c360311eb36cf6ebbe2]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_06c62.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_06c62.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_06c62.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccbZQso6.s]
+        ignore line: [GNU assembler version 2.44 (x86_64-redhat-linux) using BFD version version 2.44-6.fc42]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/15/:/usr/libexec/gcc/x86_64-redhat-linux/15/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/15/:/usr/lib/gcc/x86_64-redhat-linux/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/15/:/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/15/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_06c62.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_06c62.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_06c62]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_06c62.dir/link.txt --verbose=1]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/sbin/c++]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/15/lto-wrapper]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-redhat-linux]
+        ignore line: [Configured with: ../configure --enable-bootstrap --enable-languages=c c++ fortran objc obj-c++ ada go d m2 cobol lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --enable-libstdcxx-backtrace --with-libstdcxx-zoneinfo=/usr/share/zoneinfo --with-linker-hash-style=gnu --enable-plugin --enable-initfini-array --with-isl=/builddir/build/BUILD/gcc-15.2.1-build/gcc-15.2.1-20250808/obj-x86_64-redhat-linux/isl-install --enable-offload-targets=nvptx-none amdgcn-amdhsa --enable-offload-defaulted --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_32=i686 --build=x86_64-redhat-linux --with-build-config=bootstrap-lto --enable-link-serialization=1]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 15.2.1 20250808 (Red Hat 15.2.1-1) (GCC) ]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/15/:/usr/libexec/gcc/x86_64-redhat-linux/15/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/15/:/usr/lib/gcc/x86_64-redhat-linux/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/15/:/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/15/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_06c62' '-foffload-options=-l_GCC_stdc++' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_06c62.']
+        link line: [ /usr/libexec/gcc/x86_64-redhat-linux/15/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/15/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/15/lto-wrapper -plugin-opt=-fresolution=/tmp/cckmNh1Y.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_06c62 /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/15/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/15 -L/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/15/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_06c62.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/15/crtend.o /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crtn.o]
+          arg [/usr/libexec/gcc/x86_64-redhat-linux/15/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/libexec/gcc/x86_64-redhat-linux/15/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/15/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/cckmNh1Y.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--no-add-needed] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_06c62] ==> ignore
+          arg [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crt1.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crt1.o]
+          arg [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crti.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crti.o]
+          arg [/usr/lib/gcc/x86_64-redhat-linux/15/crtbegin.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/15/crtbegin.o]
+          arg [-L/usr/lib/gcc/x86_64-redhat-linux/15] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/15]
+          arg [-L/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64]
+          arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+          arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+          arg [-L/usr/lib/gcc/x86_64-redhat-linux/15/../../..] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/15/../../..]
+          arg [-L/lib] ==> dir [/lib]
+          arg [-L/usr/lib] ==> dir [/usr/lib]
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_06c62.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lm] ==> lib [m]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [/usr/lib/gcc/x86_64-redhat-linux/15/crtend.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/15/crtend.o]
+          arg [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crtn.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crtn.o]
+        ignore line: [collect2 version 15.2.1 20250808 (Red Hat 15.2.1-1)]
+        ignore line: [/usr/sbin/ld -plugin /usr/libexec/gcc/x86_64-redhat-linux/15/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/15/lto-wrapper -plugin-opt=-fresolution=/tmp/cckmNh1Y.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_06c62 /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/15/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/15 -L/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/15/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_06c62.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/15/crtend.o /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crtn.o]
+        linker tool for 'CXX': /usr/sbin/ld
+        collapse obj [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crt1.o] ==> [/usr/lib64/crt1.o]
+        collapse obj [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crti.o] ==> [/usr/lib64/crti.o]
+        collapse obj [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crtn.o] ==> [/usr/lib64/crtn.o]
+        collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/15] ==> [/usr/lib/gcc/x86_64-redhat-linux/15]
+        collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64] ==> [/usr/lib64]
+        collapse library dir [/lib/../lib64] ==> [/lib64]
+        collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+        collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/15/../../..] ==> [/usr/lib]
+        collapse library dir [/lib] ==> [/lib]
+        collapse library dir [/usr/lib] ==> [/usr/lib]
+        implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+        implicit objs: [/usr/lib64/crt1.o;/usr/lib64/crti.o;/usr/lib/gcc/x86_64-redhat-linux/15/crtbegin.o;/usr/lib/gcc/x86_64-redhat-linux/15/crtend.o;/usr/lib64/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-redhat-linux/15;/usr/lib64;/lib64;/usr/lib;/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Running the CXX compiler's linker: "/usr/sbin/ld" "-v"
+      GNU ld version 2.44-6.fc42
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "/usr/share/cmake/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "_deps/crow-src/cmake/Findasio.cmake:17 (find_package)"
+      - "_deps/crow-src/CMakeLists.txt:65 (find_package)"
+    directories:
+      source: "/home/ricampos/tournaments/CMakeFiles/CMakeScratch/TryCompile-AVMZuR"
+      binary: "/home/ricampos/tournaments/CMakeFiles/CMakeScratch/TryCompile-AVMZuR"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/crow-src/cmake"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/CMakeFiles/CMakeScratch/TryCompile-AVMZuR'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_b7844/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_b7844.dir/build.make CMakeFiles/cmTC_b7844.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/CMakeFiles/CMakeScratch/TryCompile-AVMZuR'
+        Building C object CMakeFiles/cmTC_b7844.dir/src.c.o
+        /usr/sbin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_b7844.dir/src.c.o -c /home/ricampos/tournaments/CMakeFiles/CMakeScratch/TryCompile-AVMZuR/src.c
+        Linking C executable cmTC_b7844
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b7844.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_b7844.dir/src.c.o -o cmTC_b7844
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/CMakeFiles/CMakeScratch/TryCompile-AVMZuR'
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:37 (check_function_exists)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    checks:
+      - "Looking for poll"
+    directories:
+      source: "/home/ricampos/tournaments/CMakeFiles/CMakeScratch/TryCompile-SW4CXh"
+      binary: "/home/ricampos/tournaments/CMakeFiles/CMakeScratch/TryCompile-SW4CXh"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_POLL"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/CMakeFiles/CMakeScratch/TryCompile-SW4CXh'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_5e5b4/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_5e5b4.dir/build.make CMakeFiles/cmTC_5e5b4.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/CMakeFiles/CMakeScratch/TryCompile-SW4CXh'
+        Building C object CMakeFiles/cmTC_5e5b4.dir/CheckFunctionExists.c.o
+        /usr/sbin/cc   -DCHECK_FUNCTION_EXISTS=poll -o CMakeFiles/cmTC_5e5b4.dir/CheckFunctionExists.c.o -c /home/ricampos/tournaments/CMakeFiles/CMakeScratch/TryCompile-SW4CXh/CheckFunctionExists.c
+        Linking C executable cmTC_5e5b4
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5e5b4.dir/link.txt --verbose=1
+        /usr/sbin/cc  -DCHECK_FUNCTION_EXISTS=poll CMakeFiles/cmTC_5e5b4.dir/CheckFunctionExists.c.o -o cmTC_5e5b4
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/CMakeFiles/CMakeScratch/TryCompile-SW4CXh'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:2 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_CHARCONV_FLOAT"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_4f4f3/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_4f4f3.dir/build.make CMakeFiles/cmTC_4f4f3.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_4f4f3.dir/PQXX_HAVE_CHARCONV_FLOAT.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_4f4f3.dir/PQXX_HAVE_CHARCONV_FLOAT.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_CHARCONV_FLOAT.cxx
+        Linking CXX executable cmTC_4f4f3
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4f4f3.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_4f4f3.dir/PQXX_HAVE_CHARCONV_FLOAT.cxx.o -o cmTC_4f4f3
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:6 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_CHARCONV_INT"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_87538/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_87538.dir/build.make CMakeFiles/cmTC_87538.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_87538.dir/PQXX_HAVE_CHARCONV_INT.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_87538.dir/PQXX_HAVE_CHARCONV_INT.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_CHARCONV_INT.cxx
+        Linking CXX executable cmTC_87538
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_87538.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_87538.dir/PQXX_HAVE_CHARCONV_INT.cxx.o -o cmTC_87538
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:10 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_CMP"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_e694b/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_e694b.dir/build.make CMakeFiles/cmTC_e694b.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_e694b.dir/PQXX_HAVE_CMP.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_e694b.dir/PQXX_HAVE_CMP.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_CMP.cxx
+        Linking CXX executable cmTC_e694b
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e694b.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_e694b.dir/PQXX_HAVE_CMP.cxx.o -o cmTC_e694b
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:14 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_CONCEPTS"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_b2813/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_b2813.dir/build.make CMakeFiles/cmTC_b2813.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_b2813.dir/PQXX_HAVE_CONCEPTS.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_b2813.dir/PQXX_HAVE_CONCEPTS.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_CONCEPTS.cxx
+        Linking CXX executable cmTC_b2813
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b2813.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_b2813.dir/PQXX_HAVE_CONCEPTS.cxx.o -o cmTC_b2813
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:18 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_CXA_DEMANGLE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_b29e6/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_b29e6.dir/build.make CMakeFiles/cmTC_b29e6.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_b29e6.dir/PQXX_HAVE_CXA_DEMANGLE.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_b29e6.dir/PQXX_HAVE_CXA_DEMANGLE.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_CXA_DEMANGLE.cxx
+        Linking CXX executable cmTC_b29e6
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b29e6.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_b29e6.dir/PQXX_HAVE_CXA_DEMANGLE.cxx.o -o cmTC_b29e6
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:22 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_GCC_PURE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_02790/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_02790.dir/build.make CMakeFiles/cmTC_02790.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_02790.dir/PQXX_HAVE_GCC_PURE.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_02790.dir/PQXX_HAVE_GCC_PURE.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_GCC_PURE.cxx
+        Linking CXX executable cmTC_02790
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_02790.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_02790.dir/PQXX_HAVE_GCC_PURE.cxx.o -o cmTC_02790
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:26 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_GCC_VISIBILITY"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_3fcd7/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_3fcd7.dir/build.make CMakeFiles/cmTC_3fcd7.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_3fcd7.dir/PQXX_HAVE_GCC_VISIBILITY.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_3fcd7.dir/PQXX_HAVE_GCC_VISIBILITY.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_GCC_VISIBILITY.cxx
+        Linking CXX executable cmTC_3fcd7
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3fcd7.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_3fcd7.dir/PQXX_HAVE_GCC_VISIBILITY.cxx.o -o cmTC_3fcd7
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:30 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_LIKELY"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_3dcc7/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_3dcc7.dir/build.make CMakeFiles/cmTC_3dcc7.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_3dcc7.dir/PQXX_HAVE_LIKELY.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_3dcc7.dir/PQXX_HAVE_LIKELY.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_LIKELY.cxx
+        Linking CXX executable cmTC_3dcc7
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3dcc7.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_3dcc7.dir/PQXX_HAVE_LIKELY.cxx.o -o cmTC_3dcc7
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:34 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_MULTIDIM"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_ca812/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_ca812.dir/build.make CMakeFiles/cmTC_ca812.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_ca812.dir/PQXX_HAVE_MULTIDIM.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_ca812.dir/PQXX_HAVE_MULTIDIM.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_MULTIDIM.cxx
+        Linking CXX executable cmTC_ca812
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ca812.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_ca812.dir/PQXX_HAVE_MULTIDIM.cxx.o -o cmTC_ca812
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:38 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_PATH"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_5470c/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_5470c.dir/build.make CMakeFiles/cmTC_5470c.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_5470c.dir/PQXX_HAVE_PATH.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_5470c.dir/PQXX_HAVE_PATH.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_PATH.cxx
+        Linking CXX executable cmTC_5470c
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5470c.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_5470c.dir/PQXX_HAVE_PATH.cxx.o -o cmTC_5470c
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:42 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_POLL"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_d4f29/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_d4f29.dir/build.make CMakeFiles/cmTC_d4f29.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_d4f29.dir/PQXX_HAVE_POLL.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_d4f29.dir/PQXX_HAVE_POLL.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_POLL.cxx
+        Linking CXX executable cmTC_d4f29
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d4f29.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_d4f29.dir/PQXX_HAVE_POLL.cxx.o -o cmTC_d4f29
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:46 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_SLEEP_FOR"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_f9349/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_f9349.dir/build.make CMakeFiles/cmTC_f9349.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_f9349.dir/PQXX_HAVE_SLEEP_FOR.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_f9349.dir/PQXX_HAVE_SLEEP_FOR.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_SLEEP_FOR.cxx
+        Linking CXX executable cmTC_f9349
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f9349.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_f9349.dir/PQXX_HAVE_SLEEP_FOR.cxx.o -o cmTC_f9349
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:50 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_SOURCE_LOCATION"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_82a98/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_82a98.dir/build.make CMakeFiles/cmTC_82a98.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_82a98.dir/PQXX_HAVE_SOURCE_LOCATION.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_82a98.dir/PQXX_HAVE_SOURCE_LOCATION.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_SOURCE_LOCATION.cxx
+        Linking CXX executable cmTC_82a98
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_82a98.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_82a98.dir/PQXX_HAVE_SOURCE_LOCATION.cxx.o -o cmTC_82a98
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:54 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_SPAN"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_52d36/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_52d36.dir/build.make CMakeFiles/cmTC_52d36.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_52d36.dir/PQXX_HAVE_SPAN.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_52d36.dir/PQXX_HAVE_SPAN.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_SPAN.cxx
+        Linking CXX executable cmTC_52d36
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_52d36.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_52d36.dir/PQXX_HAVE_SPAN.cxx.o -o cmTC_52d36
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:58 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_SSIZE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_92718/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_92718.dir/build.make CMakeFiles/cmTC_92718.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_92718.dir/PQXX_HAVE_SSIZE.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_92718.dir/PQXX_HAVE_SSIZE.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_SSIZE.cxx
+        Linking CXX executable cmTC_92718
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_92718.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_92718.dir/PQXX_HAVE_SSIZE.cxx.o -o cmTC_92718
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:62 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_STRERROR_R"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_14857/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_14857.dir/build.make CMakeFiles/cmTC_14857.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_14857.dir/PQXX_HAVE_STRERROR_R.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_14857.dir/PQXX_HAVE_STRERROR_R.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_STRERROR_R.cxx
+        Linking CXX executable cmTC_14857
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_14857.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_14857.dir/PQXX_HAVE_STRERROR_R.cxx.o -o cmTC_14857
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:66 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_STRERROR_S"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_7b223/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_7b223.dir/build.make CMakeFiles/cmTC_7b223.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_7b223.dir/PQXX_HAVE_STRERROR_S.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_7b223.dir/PQXX_HAVE_STRERROR_S.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_STRERROR_S.cxx
+        /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_STRERROR_S.cxx: In function ‘int main()’:
+        /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_STRERROR_S.cxx:10:10: error: ‘strerror_s’ was not declared in this scope; did you mean ‘strerror_r’?
+           10 |   return strerror_s(buf, 200, 1);
+              |          ^~~~~~~~~~
+              |          strerror_r
+        gmake[1]: *** [CMakeFiles/cmTC_7b223.dir/build.make:81: CMakeFiles/cmTC_7b223.dir/PQXX_HAVE_STRERROR_S.cxx.o] Error 1
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        gmake: *** [Makefile:134: cmTC_7b223/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:70 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_THREAD_LOCAL"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_9b58c/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_9b58c.dir/build.make CMakeFiles/cmTC_9b58c.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_9b58c.dir/PQXX_HAVE_THREAD_LOCAL.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_9b58c.dir/PQXX_HAVE_THREAD_LOCAL.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_THREAD_LOCAL.cxx
+        Linking CXX executable cmTC_9b58c
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9b58c.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_9b58c.dir/PQXX_HAVE_THREAD_LOCAL.cxx.o -o cmTC_9b58c
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:74 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_YEAR_MONTH_DAY"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_be65d/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_be65d.dir/build.make CMakeFiles/cmTC_be65d.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_be65d.dir/PQXX_HAVE_YEAR_MONTH_DAY.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_be65d.dir/PQXX_HAVE_YEAR_MONTH_DAY.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_YEAR_MONTH_DAY.cxx
+        Linking CXX executable cmTC_be65d
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_be65d.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_be65d.dir/PQXX_HAVE_YEAR_MONTH_DAY.cxx.o -o cmTC_be65d
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:78 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "no_need_fslib"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_cec64/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_cec64.dir/build.make CMakeFiles/cmTC_cec64.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_cec64.dir/no_need_fslib.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_cec64.dir/no_need_fslib.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/no_need_fslib.cxx
+        Linking CXX executable cmTC_cec64
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cec64.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_cec64.dir/no_need_fslib.cxx.o -o cmTC_cec64
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:2 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_CHARCONV_FLOAT"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_63f14/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_63f14.dir/build.make CMakeFiles/cmTC_63f14.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_63f14.dir/PQXX_HAVE_CHARCONV_FLOAT.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_63f14.dir/PQXX_HAVE_CHARCONV_FLOAT.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_CHARCONV_FLOAT.cxx
+        Linking CXX executable cmTC_63f14
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_63f14.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_63f14.dir/PQXX_HAVE_CHARCONV_FLOAT.cxx.o -o cmTC_63f14
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:6 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_CHARCONV_INT"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_b4369/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_b4369.dir/build.make CMakeFiles/cmTC_b4369.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_b4369.dir/PQXX_HAVE_CHARCONV_INT.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_b4369.dir/PQXX_HAVE_CHARCONV_INT.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_CHARCONV_INT.cxx
+        Linking CXX executable cmTC_b4369
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b4369.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_b4369.dir/PQXX_HAVE_CHARCONV_INT.cxx.o -o cmTC_b4369
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:10 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_CMP"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_c1d49/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_c1d49.dir/build.make CMakeFiles/cmTC_c1d49.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_c1d49.dir/PQXX_HAVE_CMP.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_c1d49.dir/PQXX_HAVE_CMP.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_CMP.cxx
+        Linking CXX executable cmTC_c1d49
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c1d49.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_c1d49.dir/PQXX_HAVE_CMP.cxx.o -o cmTC_c1d49
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:14 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_CONCEPTS"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_a1fd1/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_a1fd1.dir/build.make CMakeFiles/cmTC_a1fd1.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_a1fd1.dir/PQXX_HAVE_CONCEPTS.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_a1fd1.dir/PQXX_HAVE_CONCEPTS.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_CONCEPTS.cxx
+        Linking CXX executable cmTC_a1fd1
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a1fd1.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_a1fd1.dir/PQXX_HAVE_CONCEPTS.cxx.o -o cmTC_a1fd1
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:18 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_CXA_DEMANGLE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_45f14/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_45f14.dir/build.make CMakeFiles/cmTC_45f14.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_45f14.dir/PQXX_HAVE_CXA_DEMANGLE.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_45f14.dir/PQXX_HAVE_CXA_DEMANGLE.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_CXA_DEMANGLE.cxx
+        Linking CXX executable cmTC_45f14
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_45f14.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_45f14.dir/PQXX_HAVE_CXA_DEMANGLE.cxx.o -o cmTC_45f14
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:22 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_GCC_PURE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_68e6b/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_68e6b.dir/build.make CMakeFiles/cmTC_68e6b.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_68e6b.dir/PQXX_HAVE_GCC_PURE.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_68e6b.dir/PQXX_HAVE_GCC_PURE.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_GCC_PURE.cxx
+        Linking CXX executable cmTC_68e6b
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_68e6b.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_68e6b.dir/PQXX_HAVE_GCC_PURE.cxx.o -o cmTC_68e6b
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:26 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_GCC_VISIBILITY"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_e5fd7/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_e5fd7.dir/build.make CMakeFiles/cmTC_e5fd7.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_e5fd7.dir/PQXX_HAVE_GCC_VISIBILITY.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_e5fd7.dir/PQXX_HAVE_GCC_VISIBILITY.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_GCC_VISIBILITY.cxx
+        Linking CXX executable cmTC_e5fd7
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e5fd7.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_e5fd7.dir/PQXX_HAVE_GCC_VISIBILITY.cxx.o -o cmTC_e5fd7
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:30 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_LIKELY"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_b526b/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_b526b.dir/build.make CMakeFiles/cmTC_b526b.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_b526b.dir/PQXX_HAVE_LIKELY.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_b526b.dir/PQXX_HAVE_LIKELY.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_LIKELY.cxx
+        Linking CXX executable cmTC_b526b
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b526b.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_b526b.dir/PQXX_HAVE_LIKELY.cxx.o -o cmTC_b526b
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:34 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_MULTIDIM"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_11fdb/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_11fdb.dir/build.make CMakeFiles/cmTC_11fdb.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_11fdb.dir/PQXX_HAVE_MULTIDIM.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_11fdb.dir/PQXX_HAVE_MULTIDIM.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_MULTIDIM.cxx
+        Linking CXX executable cmTC_11fdb
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_11fdb.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_11fdb.dir/PQXX_HAVE_MULTIDIM.cxx.o -o cmTC_11fdb
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:38 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_PATH"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_23991/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_23991.dir/build.make CMakeFiles/cmTC_23991.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_23991.dir/PQXX_HAVE_PATH.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_23991.dir/PQXX_HAVE_PATH.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_PATH.cxx
+        Linking CXX executable cmTC_23991
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_23991.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_23991.dir/PQXX_HAVE_PATH.cxx.o -o cmTC_23991
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:42 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_POLL"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_05504/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_05504.dir/build.make CMakeFiles/cmTC_05504.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_05504.dir/PQXX_HAVE_POLL.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_05504.dir/PQXX_HAVE_POLL.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_POLL.cxx
+        Linking CXX executable cmTC_05504
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_05504.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_05504.dir/PQXX_HAVE_POLL.cxx.o -o cmTC_05504
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:46 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_SLEEP_FOR"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_99032/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_99032.dir/build.make CMakeFiles/cmTC_99032.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_99032.dir/PQXX_HAVE_SLEEP_FOR.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_99032.dir/PQXX_HAVE_SLEEP_FOR.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_SLEEP_FOR.cxx
+        Linking CXX executable cmTC_99032
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_99032.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_99032.dir/PQXX_HAVE_SLEEP_FOR.cxx.o -o cmTC_99032
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:50 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_SOURCE_LOCATION"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_d4dcc/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_d4dcc.dir/build.make CMakeFiles/cmTC_d4dcc.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_d4dcc.dir/PQXX_HAVE_SOURCE_LOCATION.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_d4dcc.dir/PQXX_HAVE_SOURCE_LOCATION.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_SOURCE_LOCATION.cxx
+        Linking CXX executable cmTC_d4dcc
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d4dcc.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_d4dcc.dir/PQXX_HAVE_SOURCE_LOCATION.cxx.o -o cmTC_d4dcc
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:54 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_SPAN"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_49dd9/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_49dd9.dir/build.make CMakeFiles/cmTC_49dd9.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_49dd9.dir/PQXX_HAVE_SPAN.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_49dd9.dir/PQXX_HAVE_SPAN.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_SPAN.cxx
+        Linking CXX executable cmTC_49dd9
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_49dd9.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_49dd9.dir/PQXX_HAVE_SPAN.cxx.o -o cmTC_49dd9
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:58 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_SSIZE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_4ffb8/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_4ffb8.dir/build.make CMakeFiles/cmTC_4ffb8.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_4ffb8.dir/PQXX_HAVE_SSIZE.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_4ffb8.dir/PQXX_HAVE_SSIZE.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_SSIZE.cxx
+        Linking CXX executable cmTC_4ffb8
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4ffb8.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_4ffb8.dir/PQXX_HAVE_SSIZE.cxx.o -o cmTC_4ffb8
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:62 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_STRERROR_R"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_f6b84/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_f6b84.dir/build.make CMakeFiles/cmTC_f6b84.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_f6b84.dir/PQXX_HAVE_STRERROR_R.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_f6b84.dir/PQXX_HAVE_STRERROR_R.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_STRERROR_R.cxx
+        Linking CXX executable cmTC_f6b84
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f6b84.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_f6b84.dir/PQXX_HAVE_STRERROR_R.cxx.o -o cmTC_f6b84
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:66 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_STRERROR_S"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_6c55c/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_6c55c.dir/build.make CMakeFiles/cmTC_6c55c.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_6c55c.dir/PQXX_HAVE_STRERROR_S.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_6c55c.dir/PQXX_HAVE_STRERROR_S.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_STRERROR_S.cxx
+        /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_STRERROR_S.cxx: In function ‘int main()’:
+        /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_STRERROR_S.cxx:10:10: error: ‘strerror_s’ was not declared in this scope; did you mean ‘strerror_r’?
+           10 |   return strerror_s(buf, 200, 1);
+              |          ^~~~~~~~~~
+              |          strerror_r
+        gmake[1]: *** [CMakeFiles/cmTC_6c55c.dir/build.make:81: CMakeFiles/cmTC_6c55c.dir/PQXX_HAVE_STRERROR_S.cxx.o] Error 1
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        gmake: *** [Makefile:134: cmTC_6c55c/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:70 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_THREAD_LOCAL"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_bb4a3/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_bb4a3.dir/build.make CMakeFiles/cmTC_bb4a3.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_bb4a3.dir/PQXX_HAVE_THREAD_LOCAL.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_bb4a3.dir/PQXX_HAVE_THREAD_LOCAL.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_THREAD_LOCAL.cxx
+        Linking CXX executable cmTC_bb4a3
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bb4a3.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_bb4a3.dir/PQXX_HAVE_THREAD_LOCAL.cxx.o -o cmTC_bb4a3
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:74 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_YEAR_MONTH_DAY"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_0505f/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_0505f.dir/build.make CMakeFiles/cmTC_0505f.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_0505f.dir/PQXX_HAVE_YEAR_MONTH_DAY.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_0505f.dir/PQXX_HAVE_YEAR_MONTH_DAY.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_YEAR_MONTH_DAY.cxx
+        Linking CXX executable cmTC_0505f
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0505f.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_0505f.dir/PQXX_HAVE_YEAR_MONTH_DAY.cxx.o -o cmTC_0505f
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:78 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "no_need_fslib"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_eda69/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_eda69.dir/build.make CMakeFiles/cmTC_eda69.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_eda69.dir/no_need_fslib.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_eda69.dir/no_need_fslib.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/no_need_fslib.cxx
+        Linking CXX executable cmTC_eda69
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_eda69.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_eda69.dir/no_need_fslib.cxx.o -o cmTC_eda69
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:2 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_CHARCONV_FLOAT"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_c4edf/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_c4edf.dir/build.make CMakeFiles/cmTC_c4edf.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_c4edf.dir/PQXX_HAVE_CHARCONV_FLOAT.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_c4edf.dir/PQXX_HAVE_CHARCONV_FLOAT.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_CHARCONV_FLOAT.cxx
+        Linking CXX executable cmTC_c4edf
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c4edf.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_c4edf.dir/PQXX_HAVE_CHARCONV_FLOAT.cxx.o -o cmTC_c4edf
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:6 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_CHARCONV_INT"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_cbb64/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_cbb64.dir/build.make CMakeFiles/cmTC_cbb64.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_cbb64.dir/PQXX_HAVE_CHARCONV_INT.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_cbb64.dir/PQXX_HAVE_CHARCONV_INT.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_CHARCONV_INT.cxx
+        Linking CXX executable cmTC_cbb64
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cbb64.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_cbb64.dir/PQXX_HAVE_CHARCONV_INT.cxx.o -o cmTC_cbb64
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:10 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_CMP"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_6a23a/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_6a23a.dir/build.make CMakeFiles/cmTC_6a23a.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_6a23a.dir/PQXX_HAVE_CMP.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_6a23a.dir/PQXX_HAVE_CMP.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_CMP.cxx
+        Linking CXX executable cmTC_6a23a
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6a23a.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_6a23a.dir/PQXX_HAVE_CMP.cxx.o -o cmTC_6a23a
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:14 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_CONCEPTS"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_593c9/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_593c9.dir/build.make CMakeFiles/cmTC_593c9.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_593c9.dir/PQXX_HAVE_CONCEPTS.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_593c9.dir/PQXX_HAVE_CONCEPTS.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_CONCEPTS.cxx
+        Linking CXX executable cmTC_593c9
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_593c9.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_593c9.dir/PQXX_HAVE_CONCEPTS.cxx.o -o cmTC_593c9
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:18 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_CXA_DEMANGLE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_e1e92/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_e1e92.dir/build.make CMakeFiles/cmTC_e1e92.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_e1e92.dir/PQXX_HAVE_CXA_DEMANGLE.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_e1e92.dir/PQXX_HAVE_CXA_DEMANGLE.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_CXA_DEMANGLE.cxx
+        Linking CXX executable cmTC_e1e92
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e1e92.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_e1e92.dir/PQXX_HAVE_CXA_DEMANGLE.cxx.o -o cmTC_e1e92
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:22 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_GCC_PURE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_fc7a4/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_fc7a4.dir/build.make CMakeFiles/cmTC_fc7a4.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_fc7a4.dir/PQXX_HAVE_GCC_PURE.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_fc7a4.dir/PQXX_HAVE_GCC_PURE.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_GCC_PURE.cxx
+        Linking CXX executable cmTC_fc7a4
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fc7a4.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_fc7a4.dir/PQXX_HAVE_GCC_PURE.cxx.o -o cmTC_fc7a4
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:26 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_GCC_VISIBILITY"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_9b34a/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_9b34a.dir/build.make CMakeFiles/cmTC_9b34a.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_9b34a.dir/PQXX_HAVE_GCC_VISIBILITY.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_9b34a.dir/PQXX_HAVE_GCC_VISIBILITY.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_GCC_VISIBILITY.cxx
+        Linking CXX executable cmTC_9b34a
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9b34a.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_9b34a.dir/PQXX_HAVE_GCC_VISIBILITY.cxx.o -o cmTC_9b34a
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:30 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_LIKELY"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_ca22c/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_ca22c.dir/build.make CMakeFiles/cmTC_ca22c.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_ca22c.dir/PQXX_HAVE_LIKELY.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_ca22c.dir/PQXX_HAVE_LIKELY.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_LIKELY.cxx
+        Linking CXX executable cmTC_ca22c
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ca22c.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_ca22c.dir/PQXX_HAVE_LIKELY.cxx.o -o cmTC_ca22c
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:34 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_MULTIDIM"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_1d610/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_1d610.dir/build.make CMakeFiles/cmTC_1d610.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_1d610.dir/PQXX_HAVE_MULTIDIM.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_1d610.dir/PQXX_HAVE_MULTIDIM.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_MULTIDIM.cxx
+        Linking CXX executable cmTC_1d610
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1d610.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_1d610.dir/PQXX_HAVE_MULTIDIM.cxx.o -o cmTC_1d610
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:38 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_PATH"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_4c148/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_4c148.dir/build.make CMakeFiles/cmTC_4c148.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_4c148.dir/PQXX_HAVE_PATH.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_4c148.dir/PQXX_HAVE_PATH.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_PATH.cxx
+        Linking CXX executable cmTC_4c148
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4c148.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_4c148.dir/PQXX_HAVE_PATH.cxx.o -o cmTC_4c148
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:42 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_POLL"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_ccf5e/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_ccf5e.dir/build.make CMakeFiles/cmTC_ccf5e.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_ccf5e.dir/PQXX_HAVE_POLL.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_ccf5e.dir/PQXX_HAVE_POLL.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_POLL.cxx
+        Linking CXX executable cmTC_ccf5e
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ccf5e.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_ccf5e.dir/PQXX_HAVE_POLL.cxx.o -o cmTC_ccf5e
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:46 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_SLEEP_FOR"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_41d6d/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_41d6d.dir/build.make CMakeFiles/cmTC_41d6d.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_41d6d.dir/PQXX_HAVE_SLEEP_FOR.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_41d6d.dir/PQXX_HAVE_SLEEP_FOR.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_SLEEP_FOR.cxx
+        Linking CXX executable cmTC_41d6d
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_41d6d.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_41d6d.dir/PQXX_HAVE_SLEEP_FOR.cxx.o -o cmTC_41d6d
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:50 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_SOURCE_LOCATION"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_07338/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_07338.dir/build.make CMakeFiles/cmTC_07338.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_07338.dir/PQXX_HAVE_SOURCE_LOCATION.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_07338.dir/PQXX_HAVE_SOURCE_LOCATION.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_SOURCE_LOCATION.cxx
+        Linking CXX executable cmTC_07338
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_07338.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_07338.dir/PQXX_HAVE_SOURCE_LOCATION.cxx.o -o cmTC_07338
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:54 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_SPAN"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_971cb/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_971cb.dir/build.make CMakeFiles/cmTC_971cb.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_971cb.dir/PQXX_HAVE_SPAN.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_971cb.dir/PQXX_HAVE_SPAN.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_SPAN.cxx
+        Linking CXX executable cmTC_971cb
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_971cb.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_971cb.dir/PQXX_HAVE_SPAN.cxx.o -o cmTC_971cb
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:58 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_SSIZE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_5fe70/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_5fe70.dir/build.make CMakeFiles/cmTC_5fe70.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_5fe70.dir/PQXX_HAVE_SSIZE.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_5fe70.dir/PQXX_HAVE_SSIZE.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_SSIZE.cxx
+        Linking CXX executable cmTC_5fe70
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5fe70.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_5fe70.dir/PQXX_HAVE_SSIZE.cxx.o -o cmTC_5fe70
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:62 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_STRERROR_R"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_dd075/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_dd075.dir/build.make CMakeFiles/cmTC_dd075.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_dd075.dir/PQXX_HAVE_STRERROR_R.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_dd075.dir/PQXX_HAVE_STRERROR_R.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_STRERROR_R.cxx
+        Linking CXX executable cmTC_dd075
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dd075.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_dd075.dir/PQXX_HAVE_STRERROR_R.cxx.o -o cmTC_dd075
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:66 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_STRERROR_S"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_84e53/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_84e53.dir/build.make CMakeFiles/cmTC_84e53.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_84e53.dir/PQXX_HAVE_STRERROR_S.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_84e53.dir/PQXX_HAVE_STRERROR_S.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_STRERROR_S.cxx
+        /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_STRERROR_S.cxx: In function ‘int main()’:
+        /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_STRERROR_S.cxx:10:10: error: ‘strerror_s’ was not declared in this scope; did you mean ‘strerror_r’?
+           10 |   return strerror_s(buf, 200, 1);
+              |          ^~~~~~~~~~
+              |          strerror_r
+        gmake[1]: *** [CMakeFiles/cmTC_84e53.dir/build.make:81: CMakeFiles/cmTC_84e53.dir/PQXX_HAVE_STRERROR_S.cxx.o] Error 1
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        gmake: *** [Makefile:134: cmTC_84e53/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:70 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_THREAD_LOCAL"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_c6e1b/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_c6e1b.dir/build.make CMakeFiles/cmTC_c6e1b.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_c6e1b.dir/PQXX_HAVE_THREAD_LOCAL.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_c6e1b.dir/PQXX_HAVE_THREAD_LOCAL.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_THREAD_LOCAL.cxx
+        Linking CXX executable cmTC_c6e1b
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c6e1b.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_c6e1b.dir/PQXX_HAVE_THREAD_LOCAL.cxx.o -o cmTC_c6e1b
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:74 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_YEAR_MONTH_DAY"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_277f0/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_277f0.dir/build.make CMakeFiles/cmTC_277f0.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_277f0.dir/PQXX_HAVE_YEAR_MONTH_DAY.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_277f0.dir/PQXX_HAVE_YEAR_MONTH_DAY.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_YEAR_MONTH_DAY.cxx
+        Linking CXX executable cmTC_277f0
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_277f0.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_277f0.dir/PQXX_HAVE_YEAR_MONTH_DAY.cxx.o -o cmTC_277f0
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:78 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "no_need_fslib"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_dcecb/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_dcecb.dir/build.make CMakeFiles/cmTC_dcecb.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_dcecb.dir/no_need_fslib.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_dcecb.dir/no_need_fslib.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/no_need_fslib.cxx
+        Linking CXX executable cmTC_dcecb
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dcecb.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_dcecb.dir/no_need_fslib.cxx.o -o cmTC_dcecb
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:2 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_CHARCONV_FLOAT"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_0fe12/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_0fe12.dir/build.make CMakeFiles/cmTC_0fe12.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_0fe12.dir/PQXX_HAVE_CHARCONV_FLOAT.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_0fe12.dir/PQXX_HAVE_CHARCONV_FLOAT.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_CHARCONV_FLOAT.cxx
+        Linking CXX executable cmTC_0fe12
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0fe12.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_0fe12.dir/PQXX_HAVE_CHARCONV_FLOAT.cxx.o -o cmTC_0fe12
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:6 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_CHARCONV_INT"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_a19e2/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_a19e2.dir/build.make CMakeFiles/cmTC_a19e2.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_a19e2.dir/PQXX_HAVE_CHARCONV_INT.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_a19e2.dir/PQXX_HAVE_CHARCONV_INT.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_CHARCONV_INT.cxx
+        Linking CXX executable cmTC_a19e2
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a19e2.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_a19e2.dir/PQXX_HAVE_CHARCONV_INT.cxx.o -o cmTC_a19e2
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:10 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_CMP"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_8244a/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_8244a.dir/build.make CMakeFiles/cmTC_8244a.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_8244a.dir/PQXX_HAVE_CMP.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_8244a.dir/PQXX_HAVE_CMP.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_CMP.cxx
+        Linking CXX executable cmTC_8244a
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8244a.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_8244a.dir/PQXX_HAVE_CMP.cxx.o -o cmTC_8244a
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:14 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_CONCEPTS"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_b81f1/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_b81f1.dir/build.make CMakeFiles/cmTC_b81f1.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_b81f1.dir/PQXX_HAVE_CONCEPTS.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_b81f1.dir/PQXX_HAVE_CONCEPTS.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_CONCEPTS.cxx
+        Linking CXX executable cmTC_b81f1
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b81f1.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_b81f1.dir/PQXX_HAVE_CONCEPTS.cxx.o -o cmTC_b81f1
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:18 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_CXA_DEMANGLE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_1234e/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_1234e.dir/build.make CMakeFiles/cmTC_1234e.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_1234e.dir/PQXX_HAVE_CXA_DEMANGLE.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_1234e.dir/PQXX_HAVE_CXA_DEMANGLE.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_CXA_DEMANGLE.cxx
+        Linking CXX executable cmTC_1234e
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1234e.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_1234e.dir/PQXX_HAVE_CXA_DEMANGLE.cxx.o -o cmTC_1234e
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:22 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_GCC_PURE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_7741e/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_7741e.dir/build.make CMakeFiles/cmTC_7741e.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_7741e.dir/PQXX_HAVE_GCC_PURE.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_7741e.dir/PQXX_HAVE_GCC_PURE.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_GCC_PURE.cxx
+        Linking CXX executable cmTC_7741e
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7741e.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_7741e.dir/PQXX_HAVE_GCC_PURE.cxx.o -o cmTC_7741e
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:26 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_GCC_VISIBILITY"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_d0349/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_d0349.dir/build.make CMakeFiles/cmTC_d0349.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_d0349.dir/PQXX_HAVE_GCC_VISIBILITY.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_d0349.dir/PQXX_HAVE_GCC_VISIBILITY.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_GCC_VISIBILITY.cxx
+        Linking CXX executable cmTC_d0349
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d0349.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_d0349.dir/PQXX_HAVE_GCC_VISIBILITY.cxx.o -o cmTC_d0349
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:30 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_LIKELY"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_58267/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_58267.dir/build.make CMakeFiles/cmTC_58267.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_58267.dir/PQXX_HAVE_LIKELY.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_58267.dir/PQXX_HAVE_LIKELY.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_LIKELY.cxx
+        Linking CXX executable cmTC_58267
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_58267.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_58267.dir/PQXX_HAVE_LIKELY.cxx.o -o cmTC_58267
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:34 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_MULTIDIM"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_6cfbe/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_6cfbe.dir/build.make CMakeFiles/cmTC_6cfbe.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_6cfbe.dir/PQXX_HAVE_MULTIDIM.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_6cfbe.dir/PQXX_HAVE_MULTIDIM.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_MULTIDIM.cxx
+        Linking CXX executable cmTC_6cfbe
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6cfbe.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_6cfbe.dir/PQXX_HAVE_MULTIDIM.cxx.o -o cmTC_6cfbe
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:38 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_PATH"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_236c4/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_236c4.dir/build.make CMakeFiles/cmTC_236c4.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_236c4.dir/PQXX_HAVE_PATH.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_236c4.dir/PQXX_HAVE_PATH.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_PATH.cxx
+        Linking CXX executable cmTC_236c4
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_236c4.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_236c4.dir/PQXX_HAVE_PATH.cxx.o -o cmTC_236c4
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:42 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_POLL"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_f5dd6/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_f5dd6.dir/build.make CMakeFiles/cmTC_f5dd6.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_f5dd6.dir/PQXX_HAVE_POLL.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_f5dd6.dir/PQXX_HAVE_POLL.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_POLL.cxx
+        Linking CXX executable cmTC_f5dd6
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f5dd6.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_f5dd6.dir/PQXX_HAVE_POLL.cxx.o -o cmTC_f5dd6
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:46 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_SLEEP_FOR"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_74afe/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_74afe.dir/build.make CMakeFiles/cmTC_74afe.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_74afe.dir/PQXX_HAVE_SLEEP_FOR.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_74afe.dir/PQXX_HAVE_SLEEP_FOR.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_SLEEP_FOR.cxx
+        Linking CXX executable cmTC_74afe
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_74afe.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_74afe.dir/PQXX_HAVE_SLEEP_FOR.cxx.o -o cmTC_74afe
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:50 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_SOURCE_LOCATION"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_c787e/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_c787e.dir/build.make CMakeFiles/cmTC_c787e.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_c787e.dir/PQXX_HAVE_SOURCE_LOCATION.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_c787e.dir/PQXX_HAVE_SOURCE_LOCATION.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_SOURCE_LOCATION.cxx
+        Linking CXX executable cmTC_c787e
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c787e.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_c787e.dir/PQXX_HAVE_SOURCE_LOCATION.cxx.o -o cmTC_c787e
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:54 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_SPAN"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_8bce0/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_8bce0.dir/build.make CMakeFiles/cmTC_8bce0.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_8bce0.dir/PQXX_HAVE_SPAN.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_8bce0.dir/PQXX_HAVE_SPAN.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_SPAN.cxx
+        Linking CXX executable cmTC_8bce0
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8bce0.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_8bce0.dir/PQXX_HAVE_SPAN.cxx.o -o cmTC_8bce0
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:58 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_SSIZE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_f9942/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_f9942.dir/build.make CMakeFiles/cmTC_f9942.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_f9942.dir/PQXX_HAVE_SSIZE.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_f9942.dir/PQXX_HAVE_SSIZE.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_SSIZE.cxx
+        Linking CXX executable cmTC_f9942
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f9942.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_f9942.dir/PQXX_HAVE_SSIZE.cxx.o -o cmTC_f9942
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:62 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_STRERROR_R"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_a1d8c/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_a1d8c.dir/build.make CMakeFiles/cmTC_a1d8c.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_a1d8c.dir/PQXX_HAVE_STRERROR_R.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_a1d8c.dir/PQXX_HAVE_STRERROR_R.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_STRERROR_R.cxx
+        Linking CXX executable cmTC_a1d8c
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a1d8c.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_a1d8c.dir/PQXX_HAVE_STRERROR_R.cxx.o -o cmTC_a1d8c
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:66 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_STRERROR_S"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_4c597/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_4c597.dir/build.make CMakeFiles/cmTC_4c597.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_4c597.dir/PQXX_HAVE_STRERROR_S.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_4c597.dir/PQXX_HAVE_STRERROR_S.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_STRERROR_S.cxx
+        /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_STRERROR_S.cxx: In function ‘int main()’:
+        /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_STRERROR_S.cxx:10:10: error: ‘strerror_s’ was not declared in this scope; did you mean ‘strerror_r’?
+           10 |   return strerror_s(buf, 200, 1);
+              |          ^~~~~~~~~~
+              |          strerror_r
+        gmake[1]: *** [CMakeFiles/cmTC_4c597.dir/build.make:81: CMakeFiles/cmTC_4c597.dir/PQXX_HAVE_STRERROR_S.cxx.o] Error 1
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        gmake: *** [Makefile:134: cmTC_4c597/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:70 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_THREAD_LOCAL"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_ddff5/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_ddff5.dir/build.make CMakeFiles/cmTC_ddff5.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_ddff5.dir/PQXX_HAVE_THREAD_LOCAL.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_ddff5.dir/PQXX_HAVE_THREAD_LOCAL.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_THREAD_LOCAL.cxx
+        Linking CXX executable cmTC_ddff5
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ddff5.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_ddff5.dir/PQXX_HAVE_THREAD_LOCAL.cxx.o -o cmTC_ddff5
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:74 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "PQXX_HAVE_YEAR_MONTH_DAY"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_7f9c0/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_7f9c0.dir/build.make CMakeFiles/cmTC_7f9c0.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_7f9c0.dir/PQXX_HAVE_YEAR_MONTH_DAY.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_7f9c0.dir/PQXX_HAVE_YEAR_MONTH_DAY.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/PQXX_HAVE_YEAR_MONTH_DAY.cxx
+        Linking CXX executable cmTC_7f9c0
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7f9c0.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_7f9c0.dir/PQXX_HAVE_YEAR_MONTH_DAY.cxx.o -o cmTC_7f9c0
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "_deps/libpqxx-src/cmake/pqxx_cxx_feature_checks.cmake:78 (try_compile)"
+      - "_deps/libpqxx-src/cmake/config.cmake:44 (include)"
+      - "_deps/libpqxx-src/CMakeLists.txt:27 (include)"
+    directories:
+      source: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+      binary: "/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/ricampos/tournaments/_deps/libpqxx-src/cmake"
+    buildResult:
+      variable: "no_need_fslib"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/sbin/gmake -f Makefile cmTC_918a1/fast
+        /usr/sbin/gmake  -f CMakeFiles/cmTC_918a1.dir/build.make CMakeFiles/cmTC_918a1.dir/build
+        gmake[1]: Entering directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_918a1.dir/no_need_fslib.cxx.o
+        /usr/sbin/c++   -std=c++23 -o CMakeFiles/cmTC_918a1.dir/no_need_fslib.cxx.o -c /home/ricampos/tournaments/_deps/libpqxx-src/config-tests/no_need_fslib.cxx
+        Linking CXX executable cmTC_918a1
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_918a1.dir/link.txt --verbose=1
+        /usr/sbin/c++ CMakeFiles/cmTC_918a1.dir/no_need_fslib.cxx.o -o cmTC_918a1
+        gmake[1]: Leaving directory '/home/ricampos/tournaments/_deps/libpqxx-build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+...

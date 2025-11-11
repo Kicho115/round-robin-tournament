@@ -1,0 +1,2 @@
+/usr/sbin/ar qc libtournament_common.a CMakeFiles/tournament_common.dir/src/persistence/repository/TournamentRepository.cpp.o CMakeFiles/tournament_common.dir/src/persistence/repository/GroupRepository.cpp.o CMakeFiles/tournament_common.dir/src/persistence/repository/TeamRepository.cpp.o
+/usr/sbin/ranlib libtournament_common.a
