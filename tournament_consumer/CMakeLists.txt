@@ -2,7 +2,12 @@ project(tournament_consumer)
 
 set(CMAKE_CXX_STANDARD 23)
 set(CONSUMER_SOURCES
+        src/consumer/MatchGenerationConsumer.cpp
+        src/consumer/ScoreProcessingConsumer.cpp
 )
+
+include(CTest)
+enable_testing()
 
 find_package(libpqxx CONFIG REQUIRED)
 find_path(HYPODERMIC_INCLUDE_DIRS "Hypodermic/ActivatedRegistrationInfo.h")
@@ -33,6 +38,9 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
 )
 
 target_include_directories(${PROJECT_NAME} PRIVATE ${HYPODERMIC_INCLUDE_DIRS})
+
+# Tests
+add_subdirectory(tests)
 
 configure_file(
         ${CMAKE_SOURCE_DIR}/${PROJECT_NAME}/configuration.json   # source file

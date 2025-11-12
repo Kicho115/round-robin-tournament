@@ -47,6 +47,57 @@ public:
                 where id = $1
             )");
 
+            // Match prepared statements
+            connectionPool.back()->prepare("insert_match", "insert into MATCHES (document) values($1) RETURNING id");
+            connectionPool.back()->prepare("update_match", "update MATCHES set document = $2, last_update_date = CURRENT_TIMESTAMP where id = $1::uuid");
+            connectionPool.back()->prepare("select_matches_by_tournament", R"(
+                select * from MATCHES 
+                where document->>'tournamentId' = $1
+                order by (document->>'round')::int, created_at
+            )");
+            connectionPool.back()->prepare("select_matches_by_tournament_played", R"(
+                select * from MATCHES 
+                where document->>'tournamentId' = $1
+                and document ? 'homeScore'
+                and document ? 'awayScore'
+                order by (document->>'round')::int, created_at
+            )");
+            connectionPool.back()->prepare("select_matches_by_tournament_pending", R"(
+                select * from MATCHES 
+                where document->>'tournamentId' = $1
+                and (not document ? 'homeScore' or not document ? 'awayScore')
+                order by (document->>'round')::int, created_at
+            )");
+            connectionPool.back()->prepare("select_match_by_tournament_and_id", R"(
+                select * from MATCHES 
+                where document->>'tournamentId' = $1
+                and id = $2::uuid
+            )");
+            connectionPool.back()->prepare("update_match_score", R"(
+                update MATCHES 
+                set document = jsonb_set(
+                    jsonb_set(document, '{homeScore}', $2::text::jsonb),
+                    '{awayScore}', $3::text::jsonb
+                ),
+                last_update_date = CURRENT_TIMESTAMP
+                where id = $1::uuid
+            )");
+            connectionPool.back()->prepare("count_completed_matches_by_tournament", R"(
+                select count(*) from MATCHES 
+                where document->>'tournamentId' = $1
+                and document ? 'homeScore'
+                and document ? 'awayScore'
+            )");
+            connectionPool.back()->prepare("count_total_matches_by_tournament", R"(
+                select count(*) from MATCHES 
+                where document->>'tournamentId' = $1
+            )");
+            connectionPool.back()->prepare("select_matches_by_group", R"(
+                select * from MATCHES 
+                where document->>'groupId' = $1
+                order by (document->>'round')::int, created_at
+            )");
+
         }
     }
 

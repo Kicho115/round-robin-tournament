@@ -5,12 +5,14 @@ set(TEST_SOURCES
         controller/GroupControllerTest.cpp
         controller/TeamControllerTest.cpp
         controller/TournamentControllerTest.cpp
+        controller/MatchControllerTest.cpp
         delegate/EventingGroupDelegateTest.cpp
         delegate/GroupDelegateTest.cpp
         delegate/RoundRobinMatchGeneratorTest.cpp
         delegate/TeamAddedConsumerTest.cpp
         delegate/TeamDelegateTest.cpp
         delegate/TournamentDelegateTest.cpp
+        delegate/MatchDelegateTest.cpp
         delegate/RRGenerator_ThirtyTwoTeams_Test.cpp
         delegate/StandingsCalculatorTest.cpp
         delegate/KnockoutBracketBuilderTest.cpp
@@ -19,6 +21,7 @@ set(TEST_SOURCES
         ../src/controller/GroupController.cpp
         ../src/controller/TeamController.cpp
         ../src/controller/TournamentController.cpp
+        ../src/controller/MatchController.cpp
         ../src/delegate/EventingGroupDelegate.cpp
         ../src/delegate/GroupDelegate.cpp
         ../src/delegate/RoundRobinGenerator.cpp
@@ -26,6 +29,7 @@ set(TEST_SOURCES
         ../src/delegate/TeamAddedConsumer.cpp
         ../src/delegate/TeamDelegate.cpp
         ../src/delegate/TournamentDelegate.cpp
+        ../src/delegate/MatchDelegate.cpp
 )
 
 

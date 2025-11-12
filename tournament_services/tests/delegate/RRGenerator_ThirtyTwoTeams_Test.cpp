@@ -4,7 +4,7 @@
 #include <set>
 #include "domain/Team.hpp"
 #include "domain/Match.hpp"
-#include "delegate/RoundRobinGenerator.hpp"
+#include "util/RoundRobinGenerator.hpp"
 
 using namespace std;
 

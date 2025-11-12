@@ -6,7 +6,7 @@
     "databaseConfig": {
         "provider": "postgres",
         "poolSize": 2,
-        "connectionString": "postgresql://tournament_svc:password@169.254.1.2:5432/tournament_db"
+        "connectionString": "postgresql://tournament_svc:password@tournament_db:5432/tournament_db"
     },
     "activemq": {
         "broker-url": "tcp://169.254.1.2:61616"
