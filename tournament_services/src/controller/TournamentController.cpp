@@ -81,8 +81,25 @@ crow::response TournamentController::CreateTournament(const crow::request &reque
         return error_json(crow::BAD_REQUEST, "invalid_json");
     }
 
-    // No hidratamos desde JSON para evitar type_error.302 si algún campo no es string.
-    auto tournament = std::make_shared<domain::Tournament>();
+    auto body = nlohmann::json::parse(request.body);
+    
+    // Parse tournament data from JSON
+    std::string name;
+    int groupsCount = 1;
+    int maxTeamsPerGroup = 16;
+    
+    if (body.contains("name") && body["name"].is_string()) {
+        name = body["name"].get<std::string>();
+    }
+    if (body.contains("groupsCount") && body["groupsCount"].is_number_integer()) {
+        groupsCount = body["groupsCount"].get<int>();
+    }
+    if (body.contains("maxTeamsPerGroup") && body["maxTeamsPerGroup"].is_number_integer()) {
+        maxTeamsPerGroup = body["maxTeamsPerGroup"].get<int>();
+    }
+    
+    auto format = domain::TournamentFormat(groupsCount, maxTeamsPerGroup, domain::TournamentType::ROUND_ROBIN);
+    auto tournament = std::make_shared<domain::Tournament>(name, format);
 
     auto res = tournamentDelegate->CreateTournament(tournament);
     if (res.has_value()) {
