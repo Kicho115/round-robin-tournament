@@ -15,9 +15,17 @@
 #include "cms/ConnectionManager.hpp"
 #include "persistence/repository/IRepository.hpp"
 #include "persistence/repository/TeamRepository.hpp"
+#include "persistence/repository/MatchRepository.hpp"
+#include "persistence/repository/IMatchRepository.hpp"
+#include "persistence/repository/GroupRepository.hpp"
+#include "persistence/repository/IGroupRepository.hpp"
 #include "persistence/configuration/PostgresConnectionProvider.hpp"
 #include "persistence/repository/TournamentRepository.hpp"
 #include "cms/QueueMessageConsumer.hpp"
+#include "consumer/MatchGenerationConsumer.hpp"
+#include "consumer/ScoreProcessingConsumer.hpp"
+#include "domain/Team.hpp"
+#include "domain/Tournament.hpp"
 
 namespace config {
     inline std::shared_ptr<Hypodermic::Container> containerSetup() {
@@ -37,18 +45,16 @@ namespace config {
             .singleInstance();
 
         builder.registerType<QueueMessageConsumer>();
-            // .onActivated([](Hypodermic::ComponentContext& , const std::shared_ptr<QueueMessageConsumer>& instance) {
-            //     instance->QueueName() = "tournament.created";
-            //     instance->start();
-            // }).singleInstance();
 
-        // builder.registerType<QueueMessageProducer>().named("tournamentAddTeamQueue");
-        // builder.registerType<QueueResolver>().as<IResolver<IQueueMessageProducer> >().named("queueResolver").
-        //         singleInstance();
-
+        // Repositories
         builder.registerType<TeamRepository>().as<IRepository<domain::Team, std::string_view>>().singleInstance();
-
         builder.registerType<TournamentRepository>().as<IRepository<domain::Tournament, std::string>>().singleInstance();
+        builder.registerType<MatchRepository>().as<IMatchRepository>().singleInstance();
+        builder.registerType<GroupRepository>().as<IGroupRepository>().singleInstance();
+
+        // Consumers
+        builder.registerType<MatchGenerationConsumer>().singleInstance();
+        builder.registerType<ScoreProcessingConsumer>().singleInstance();
 
         return builder.build();
     }
