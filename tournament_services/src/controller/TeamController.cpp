@@ -8,8 +8,8 @@
 #include <string_view>
 
 #include "domain/Team.hpp"
+#include "configuration/RouteDefinition.hpp"
 
-// --------------------------------------------------------
 
 TeamController::TeamController(const std::shared_ptr<ITeamDelegate>& teamDelegate)
     : teamDelegate(teamDelegate) {}
@@ -37,12 +37,12 @@ crow::response TeamController::getTeam(const std::string& teamId) const {
     return res;
 }
 
-// GET /teams  (firma usada por los tests)
+// GET /teams
 crow::response TeamController::GetTeams(const crow::request& /*request*/) const {
     return getAllTeams();
 }
 
-// Helper GET /teams (sin request)
+// Helper GET /teams
 crow::response TeamController::getAllTeams() const {
     const auto teams = teamDelegate->GetAllTeams();
 
@@ -72,7 +72,7 @@ crow::response TeamController::SaveTeam(const crow::request& request) const {
     const auto body = nlohmann::json::parse(request.body);
 
     domain::Team team;
-    // 'id' es opcional: normalmente lo genera la BD
+    // 'id' es opcional
     if (body.contains("id") && body["id"].is_string()) {
         team.Id = body["id"].get<std::string>();
     }
@@ -83,7 +83,7 @@ crow::response TeamController::SaveTeam(const crow::request& request) const {
     try {
         std::string createdId = teamDelegate->SaveTeam(team);
 
-        // Contrato: "" => duplicado (o cualquier error de conflicto)
+        // duplicado (o cualquier error de conflicto)
         if (createdId.empty()) {
             return crow::response{crow::CONFLICT, "duplicate team"};
         }
@@ -120,7 +120,7 @@ crow::response TeamController::UpdateTeam(const crow::request& request,
         team.Name = body["name"].get<std::string>();
     }
 
-    // Contrato: nullopt => OK; string => mensaje de error
+    // nullopt => OK; string => mensaje de error
     auto err = teamDelegate->UpdateTeam(team);
     if (err.has_value()) {
         if (*err == "team_not_found") {
@@ -131,3 +131,9 @@ crow::response TeamController::UpdateTeam(const crow::request& request,
 
     return crow::response{crow::NO_CONTENT};
 }
+
+// Rutas
+REGISTER_ROUTE(TeamController, GetTeams,   "/teams",            "GET"_method)
+REGISTER_ROUTE(TeamController, getTeam,    "/teams/<string>",   "GET"_method)
+REGISTER_ROUTE(TeamController, SaveTeam,   "/teams",            "POST"_method)
+REGISTER_ROUTE(TeamController, UpdateTeam, "/teams/<string>",   "PATCH"_method)
