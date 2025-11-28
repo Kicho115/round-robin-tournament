@@ -16,8 +16,6 @@ set(TEST_SOURCES
         delegate/RRGenerator_ThirtyTwoTeams_Test.cpp
         delegate/StandingsCalculatorTest.cpp
         delegate/KnockoutBracketBuilderTest.cpp
-        ../src/delegate/StandingsCalculator.cpp
-        ../src/delegate/KnockoutBracketBuilder.cpp
         ../src/controller/GroupController.cpp
         ../src/controller/TeamController.cpp
         ../src/controller/TournamentController.cpp

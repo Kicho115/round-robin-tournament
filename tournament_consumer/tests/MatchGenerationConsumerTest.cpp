@@ -113,7 +113,8 @@ TEST_F(MatchGenerationConsumerTest, GenerateMatches_EvenTeams_CreatesMatches) {
     EXPECT_CALL(*mockGroupRepo, CountTeamsInGroup("group-1"))
         .WillOnce(::testing::Return(4));
     
-    EXPECT_CALL(*mockMatchRepo, FindByGroupId("group-1"))
+    // Check for existing matches by tournament ID instead of group ID
+    EXPECT_CALL(*mockMatchRepo, FindByTournamentId("tourn-1", ::testing::_))
         .WillOnce(::testing::Return(std::vector<std::shared_ptr<domain::Match>>{}));
     
     auto group = std::make_shared<domain::Group>();
@@ -154,7 +155,8 @@ TEST_F(MatchGenerationConsumerTest, GenerateMatches_OddTeams_CreatesMatches) {
     EXPECT_CALL(*mockGroupRepo, CountTeamsInGroup("group-1"))
         .WillOnce(::testing::Return(3));
     
-    EXPECT_CALL(*mockMatchRepo, FindByGroupId("group-1"))
+    // Check for existing matches by tournament ID instead of group ID
+    EXPECT_CALL(*mockMatchRepo, FindByTournamentId("tourn-1", ::testing::_))
         .WillOnce(::testing::Return(std::vector<std::shared_ptr<domain::Match>>{}));
     
     auto group = std::make_shared<domain::Group>();
@@ -194,7 +196,7 @@ TEST_F(MatchGenerationConsumerTest, NoGeneration_IncompleteGroup) {
         .WillOnce(::testing::Return(2));  // Only 2 of 4 teams
     
     // Should not attempt to find existing matches or create new ones
-    EXPECT_CALL(*mockMatchRepo, FindByGroupId(::testing::_))
+    EXPECT_CALL(*mockMatchRepo, FindByTournamentId(::testing::_, ::testing::_))
         .Times(0);
     EXPECT_CALL(*mockMatchRepo, Create(::testing::_))
         .Times(0);
@@ -218,9 +220,9 @@ TEST_F(MatchGenerationConsumerTest, NoRegeneration_MatchesExist) {
     EXPECT_CALL(*mockGroupRepo, CountTeamsInGroup("group-1"))
         .WillOnce(::testing::Return(4));
     
-    // Matches already exist
+    // Matches already exist for tournament
     auto existingMatch = std::make_shared<domain::Match>();
-    EXPECT_CALL(*mockMatchRepo, FindByGroupId("group-1"))
+    EXPECT_CALL(*mockMatchRepo, FindByTournamentId("tourn-1", ::testing::_))
         .WillOnce(::testing::Return(std::vector<std::shared_ptr<domain::Match>>{existingMatch}));
     
     // Should not create new matches

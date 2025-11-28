@@ -50,18 +50,21 @@ bool MatchGenerationConsumer::ShouldGenerateMatches(const std::string& groupId, 
         return false;  // Not all teams added yet
     }
     
-    // Check if matches already exist for this group
-    auto existingMatches = matchRepo->FindByGroupId(groupId);
-    if (!existingMatches.empty()) {
-        std::cout << "MatchGenerationConsumer: Matches already exist for group " << groupId << std::endl;
-        return false;  // Matches already generated
-    }
+    // For round-robin, matches are associated with the tournament, not the group
+    // We'll check in GenerateMatchesForGroup using tournamentId
     
     return true;
 }
 
 void MatchGenerationConsumer::GenerateMatchesForGroup(const std::string& tournamentId, const std::string& groupId) {
     try {
+        // Check if matches already exist for this tournament
+        auto existingMatches = matchRepo->FindByTournamentId(tournamentId);
+        if (!existingMatches.empty()) {
+            std::cout << "MatchGenerationConsumer: Matches already exist for tournament " << tournamentId << std::endl;
+            return;
+        }
+        
         // Get group with teams
         std::shared_ptr<domain::Group> group;
         auto error = groupRepo->GetGroup(tournamentId, groupId, group);
@@ -71,11 +74,12 @@ void MatchGenerationConsumer::GenerateMatchesForGroup(const std::string& tournam
             return;
         }
         
-        // Generate matches using RoundRobinGenerator
-        auto matches = RoundRobinGenerator::Generate(group->Teams(), tournamentId, groupId);
+        // Generate matches using RoundRobinGenerator with empty groupId
+        // Round-robin tournaments don't use groups for matches
+        auto matches = RoundRobinGenerator::Generate(group->Teams(), tournamentId, "");
         
         std::cout << "MatchGenerationConsumer: Generated " << matches.size() 
-                  << " matches for group " << groupId << std::endl;
+                  << " round-robin matches for tournament " << tournamentId << std::endl;
         
         // Persist matches
         for (const auto& match : matches) {
@@ -86,7 +90,7 @@ void MatchGenerationConsumer::GenerateMatchesForGroup(const std::string& tournam
             }
         }
         
-        std::cout << "MatchGenerationConsumer: Successfully created matches for group " << groupId << std::endl;
+        std::cout << "MatchGenerationConsumer: Successfully created matches for tournament " << tournamentId << std::endl;
         
     } catch (const std::exception& e) {
         std::cerr << "MatchGenerationConsumer: Error generating matches: " << e.what() << std::endl;

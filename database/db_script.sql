@@ -23,7 +23,8 @@ GRANT CREATE ON SCHEMA public TO tournament_admin;
 
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
-CREATE TABLE TEAMS (
+-- Tabla de equipos
+CREATE TABLE teams (
     id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
     document JSONB NOT NULL,
     last_update_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -31,31 +32,45 @@ CREATE TABLE TEAMS (
 );
 CREATE UNIQUE INDEX team_unique_name_idx ON teams ((document->>'name'));
 
-CREATE TABLE TOURNAMENTS (
+-- Tabla de torneos
+CREATE TABLE tournaments (
     id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
     document JSONB NOT NULL,
     last_update_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-CREATE UNIQUE INDEX tournament_unique_name_idx ON TOURNAMENTS ((document->>'name'));
+CREATE UNIQUE INDEX tournament_unique_name_idx ON tournaments ((document->>'name'));
 
-CREATE TABLE GROUPS (
+-- Tabla de grupos (con foreign key correcta a tournaments)
+CREATE TABLE groups (
     id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-    TOURNAMENT_ID UUID not null references TOURNAMENTS(ID),
+    name TEXT,
+    tournament_id UUID NOT NULL REFERENCES tournaments(id) ON DELETE CASCADE,
     document JSONB NOT NULL,
     last_update_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-CREATE UNIQUE INDEX tournament_group_unique_name_idx ON GROUPS (tournament_id,(document->>'name'));
+CREATE UNIQUE INDEX tournament_group_unique_name_idx ON groups (tournament_id, (document->>'name'));
 
-CREATE TABLE MATCHES (
+-- Tabla de relación grupo-equipo
+CREATE TABLE group_teams (
+    group_id UUID NOT NULL REFERENCES groups(id) ON DELETE CASCADE,
+    team_id UUID NOT NULL,
+    team_name TEXT NOT NULL,
+    PRIMARY KEY (group_id, team_id)
+);
+
+-- Tabla de partidos
+CREATE TABLE matches (
     id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
     document JSONB NOT NULL,
     last_update_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-GRANT SELECT ON ALL TABLES IN SCHEMA public TO tournament_svc;
-GRANT DELETE ON ALL TABLES IN SCHEMA public TO tournament_svc;
-GRANT UPDATE ON ALL TABLES IN SCHEMA public TO tournament_svc;
-GRANT INSERT ON ALL TABLES IN SCHEMA public TO tournament_svc;
+-- Permisos para tournament_svc (deben estar AL FINAL después de crear todas las tablas)
+GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO tournament_svc;
+GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO tournament_svc;
+
+-- Asegurar permisos específicos en tablas críticas
+GRANT SELECT, INSERT, UPDATE, DELETE ON teams, tournaments, groups, group_teams, matches TO tournament_svc;

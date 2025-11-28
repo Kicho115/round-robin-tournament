@@ -4,29 +4,42 @@
 #include <string_view>
 #include <memory>
 #include <expected>
+#include <format>
 
 #include "delegate/TournamentDelegate.hpp"
-
 #include "persistence/repository/IRepository.hpp"
+#include "domain/Group.hpp"
 
-TournamentDelegate::TournamentDelegate(std::shared_ptr<IRepository<domain::Tournament, std::string> > repository, std::shared_ptr<IQueueMessageProducer> producer) : tournamentRepository(std::move(repository)), producer(std::move(producer)) {
+TournamentDelegate::TournamentDelegate(std::shared_ptr<IRepository<domain::Tournament, std::string> > repository,
+                                       std::shared_ptr<IGroupRepository> groupRepository,
+                                       std::shared_ptr<IQueueMessageProducer> producer) 
+    : tournamentRepository(std::move(repository)),
+      groupRepository(std::move(groupRepository)),
+      producer(std::move(producer)) {
 }
 
 std::expected<std::string, std::string> TournamentDelegate::CreateTournament(std::shared_ptr<domain::Tournament> tournament) {
     try {
-        //fill groups according to max groups
         std::shared_ptr<domain::Tournament> tp = std::move(tournament);
-        // for (auto[i, g] = std::tuple{0, 'A'}; i < tp->Format().NumberOfGroups(); i++,g++) {
-        //     tp->Groups().push_back(domain::Group{std::format("Tournament {}", g)});
-        // }
 
+        // Create the tournament first
         std::string id = tournamentRepository->Create(*tp);
         if (id.empty()) {
             return std::unexpected("Failed to create tournament");
         }
         producer->SendMessage(id, "tournament.created");
 
-        //if groups are completed also create matches
+        // For round-robin tournaments, create a single group as a team container
+        // This group is used to hold all teams, and matches will be generated
+        // automatically when all teams are added
+        domain::Group group;
+        group.Name() = "All Teams";
+        group.TournamentId() = id;
+        
+        std::string groupId = groupRepository->Create(group);
+        if (groupId.empty()) {
+            return std::unexpected("Failed to create teams container");
+        }
 
         return id;
     } catch (const std::exception& e) {

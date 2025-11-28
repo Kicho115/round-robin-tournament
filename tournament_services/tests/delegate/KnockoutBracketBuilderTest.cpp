@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "delegate/KnockoutBracketBuilder.hpp"
+#include "util/KnockoutBracketBuilder.hpp"
 
 using standings::Row;
 using domain::MatchPhase;

@@ -6,6 +6,8 @@ set(COMMON_SOURCES
         src/persistence/repository/GroupRepository.cpp
         src/persistence/repository/TeamRepository.cpp
         src/persistence/repository/MatchRepository.cpp
+        src/util/StandingsCalculator.cpp
+        src/util/KnockoutBracketBuilder.cpp
 )
 
 include_directories(include)

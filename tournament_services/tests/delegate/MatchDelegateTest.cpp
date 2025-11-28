@@ -5,7 +5,7 @@
 
 #include "delegate/MatchDelegate.hpp"
 #include "persistence/repository/IMatchRepository.hpp"
-#include "persistence/repository/ITeamRepository.hpp"
+#include "persistence/repository/IRepository.hpp"
 #include "persistence/repository/ITournamentRepository.hpp"
 #include "messaging/IEventBus.hpp"
 #include "domain/Match.hpp"
@@ -34,12 +34,12 @@ public:
     MOCK_METHOD(std::vector<std::shared_ptr<domain::Match>>, FindByGroupId, (std::string_view groupId), (override));
 };
 
-class MockTeamRepository : public ITeamRepository {
+class MockTeamRepository : public IRepository<domain::Team, std::string_view> {
 public:
-    MOCK_METHOD(std::shared_ptr<domain::Team>, ReadById, (std::string id), (override));
-    MOCK_METHOD(std::string, Create, (const domain::Team& entity), (override));
-    MOCK_METHOD(std::string, Update, (const domain::Team& entity), (override));
-    MOCK_METHOD(void, Delete, (std::string id), (override));
+    MOCK_METHOD(std::shared_ptr<domain::Team>, ReadById, (std::string_view id), (override));
+    MOCK_METHOD(std::string_view, Create, (const domain::Team& entity), (override));
+    MOCK_METHOD(std::string_view, Update, (const domain::Team& entity), (override));
+    MOCK_METHOD(void, Delete, (std::string_view id), (override));
     MOCK_METHOD(std::vector<std::shared_ptr<domain::Team>>, ReadAll, (), (override));
 };
 

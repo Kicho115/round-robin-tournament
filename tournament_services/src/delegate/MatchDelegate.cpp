@@ -5,7 +5,7 @@
 #include <nlohmann/json.hpp>
 
 MatchDelegate::MatchDelegate(std::shared_ptr<IMatchRepository> matchRepo,
-                             std::shared_ptr<ITeamRepository> teamRepo,
+                             std::shared_ptr<IRepository<domain::Team, std::string_view>> teamRepo,
                              std::shared_ptr<ITournamentRepository> tournamentRepo,
                              std::shared_ptr<IEventBus> eventBus)
     : matchRepo(std::move(matchRepo)),

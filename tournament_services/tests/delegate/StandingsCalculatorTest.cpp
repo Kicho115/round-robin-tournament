@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 #include <vector>
-#include "delegate/StandingsCalculator.hpp"
+#include "util/StandingsCalculator.hpp"
 #include "domain/Match.hpp"
 
 using namespace standings;

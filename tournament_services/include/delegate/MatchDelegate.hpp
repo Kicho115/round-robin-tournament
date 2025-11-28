@@ -9,19 +9,20 @@
 
 #include "delegate/IMatchDelegate.hpp"
 #include "persistence/repository/IMatchRepository.hpp"
-#include "persistence/repository/ITeamRepository.hpp"
+#include "persistence/repository/IRepository.hpp"
 #include "persistence/repository/ITournamentRepository.hpp"
+#include "domain/Team.hpp"
 #include "messaging/IEventBus.hpp"
 
 class MatchDelegate : public IMatchDelegate {
     std::shared_ptr<IMatchRepository> matchRepo;
-    std::shared_ptr<ITeamRepository> teamRepo;
+    std::shared_ptr<IRepository<domain::Team, std::string_view>> teamRepo;
     std::shared_ptr<ITournamentRepository> tournamentRepo;
     std::shared_ptr<IEventBus> eventBus;
 
 public:
     MatchDelegate(std::shared_ptr<IMatchRepository> matchRepo,
-                  std::shared_ptr<ITeamRepository> teamRepo,
+                  std::shared_ptr<IRepository<domain::Team, std::string_view>> teamRepo,
                   std::shared_ptr<ITournamentRepository> tournamentRepo,
                   std::shared_ptr<IEventBus> eventBus);
 

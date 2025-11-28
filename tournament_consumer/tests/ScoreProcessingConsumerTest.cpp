@@ -9,6 +9,8 @@
 #include "domain/Tournament.hpp"
 #include "domain/Match.hpp"
 
+using namespace domain;
+
 // Mocks
 class MockMatchRepository : public IMatchRepository {
 public:
@@ -57,10 +59,23 @@ protected:
             mockTournamentRepo
         );
     }
+
+    std::shared_ptr<Match> createMatch(const std::string& id, MatchPhase phase, int homeScore = -1, int awayScore = -1) {
+        auto m = std::make_shared<Match>();
+        m->Id = id;
+        m->TournamentId = "tourn-1";
+        m->Phase = phase;
+        m->HomeTeamId = "H";
+        m->AwayTeamId = "A";
+        if (homeScore >= 0 && awayScore >= 0) {
+            m->SetScore(homeScore, awayScore);
+        }
+        return m;
+    }
 };
 
-// Test: Process score update when tournament is not complete
-TEST_F(ScoreProcessingConsumerTest, ProcessScore_TournamentNotComplete) {
+// Test: Process score update when RR is not complete
+TEST_F(ScoreProcessingConsumerTest, ProcessScore_RRNotComplete) {
     nlohmann::json event = {
         {"tournamentId", "tourn-1"},
         {"matchId", "match-1"},
@@ -68,61 +83,106 @@ TEST_F(ScoreProcessingConsumerTest, ProcessScore_TournamentNotComplete) {
         {"awayScore", 1}
     };
     
-    EXPECT_CALL(*mockMatchRepo, CountTotalMatchesByTournament("tourn-1"))
-        .WillOnce(::testing::Return(6));
+    auto m1 = createMatch("match-1", MatchPhase::RoundRobin, 2, 1);
+    auto m2 = createMatch("match-2", MatchPhase::RoundRobin, -1, -1); // Pending
+    std::vector<std::shared_ptr<Match>> matches = {m1, m2};
+
+    EXPECT_CALL(*mockMatchRepo, FindByTournamentIdAndMatchId("tourn-1", "match-1"))
+        .WillOnce(::testing::Return(m1));
+
+    EXPECT_CALL(*mockMatchRepo, FindByTournamentId("tourn-1", MatchFilter::All))
+        .WillOnce(::testing::Return(matches));
     
-    EXPECT_CALL(*mockMatchRepo, CountCompletedMatchesByTournament("tourn-1"))
-        .WillOnce(::testing::Return(3));  // Only 3 of 6 matches complete
-    
-    // Should not attempt to update tournament
-    EXPECT_CALL(*mockTournamentRepo, ReadById(::testing::_))
-        .Times(0);
+    // Should not generate playoffs or complete tournament
+    EXPECT_CALL(*mockMatchRepo, Create(::testing::_)).Times(0);
     
     consumer->Handle(event);
 }
 
-// Test: Detect tournament completion when all matches are scored
-TEST_F(ScoreProcessingConsumerTest, ProcessScore_TournamentComplete) {
+// Test: RR Complete, Generate Playoffs
+TEST_F(ScoreProcessingConsumerTest, ProcessScore_RRComplete_GeneratesPlayoffs) {
     nlohmann::json event = {
         {"tournamentId", "tourn-1"},
-        {"matchId", "match-6"},
-        {"homeScore", 1},
-        {"awayScore", 1}
+        {"matchId", "match-6"}
     };
     
-    EXPECT_CALL(*mockMatchRepo, CountTotalMatchesByTournament("tourn-1"))
-        .WillOnce(::testing::Return(6));
+    // 4 Teams -> 6 Matches
+    std::vector<std::shared_ptr<Match>> matches;
+    for(int i=0; i<6; ++i) {
+        auto m = createMatch("match-"+std::to_string(i), MatchPhase::RoundRobin, 1, 0);
+        m->HomeTeamId = "T" + std::to_string(i%4);
+        m->AwayTeamId = "T" + std::to_string((i+1)%4);
+        matches.push_back(m);
+    }
+
+    EXPECT_CALL(*mockMatchRepo, FindByTournamentIdAndMatchId("tourn-1", "match-6"))
+        .WillOnce(::testing::Return(matches.back()));
+
+    EXPECT_CALL(*mockMatchRepo, FindByTournamentId("tourn-1", MatchFilter::All))
+        .WillOnce(::testing::Return(matches));
     
-    EXPECT_CALL(*mockMatchRepo, CountCompletedMatchesByTournament("tourn-1"))
-        .WillOnce(::testing::Return(6));  // All 6 matches complete
-    
-    auto tournament = std::make_shared<domain::Tournament>("Tournament 1");
-    tournament->Id() = "tourn-1";
-    
-    EXPECT_CALL(*mockTournamentRepo, ReadById("tourn-1"))
-        .WillOnce(::testing::Return(tournament));
+    // Should create at least one playoff match (Top 4 -> 2 semis + 1 final)
+    // Actually BuildTop8FromSeeds will create 3 matches (2 semis, 1 final) if 4 teams
+    EXPECT_CALL(*mockMatchRepo, Create(::testing::_)).Times(::testing::AtLeast(1));
     
     consumer->Handle(event);
 }
 
-// Test: Handle missing tournament gracefully
-TEST_F(ScoreProcessingConsumerTest, HandlesMissingTournament_WhenComplete) {
+// Test: KO Match, Advances Winner
+TEST_F(ScoreProcessingConsumerTest, ProcessScore_KOMatch_AdvancesWinner) {
     nlohmann::json event = {
         {"tournamentId", "tourn-1"},
-        {"matchId", "match-1"}
+        {"matchId", "ko-1"}
     };
     
-    EXPECT_CALL(*mockMatchRepo, CountTotalMatchesByTournament("tourn-1"))
-        .WillOnce(::testing::Return(1));
+    auto mKO = createMatch("ko-1", MatchPhase::Knockout, 2, 1);
+    mKO->HomeTeamId = "T1";
+    mKO->AwayTeamId = "T2";
     
-    EXPECT_CALL(*mockMatchRepo, CountCompletedMatchesByTournament("tourn-1"))
-        .WillOnce(::testing::Return(1));
-    
-    EXPECT_CALL(*mockTournamentRepo, ReadById("tourn-1"))
-        .WillOnce(::testing::Return(nullptr));
-    
-    // Should not throw or crash
-    EXPECT_NO_THROW(consumer->Handle(event));
+    auto mNext = createMatch("ko-2", MatchPhase::Knockout);
+    mNext->HomeTeamId = "W(T1-T2)"; // Placeholder
+    mNext->AwayTeamId = "T3";
+
+    std::vector<std::shared_ptr<Match>> matches = {mKO, mNext};
+
+    EXPECT_CALL(*mockMatchRepo, FindByTournamentIdAndMatchId("tourn-1", "ko-1"))
+        .WillOnce(::testing::Return(mKO));
+
+    // Expect 2 calls to FindByTournamentId (one for advancement, one for completion check)
+    EXPECT_CALL(*mockMatchRepo, FindByTournamentId("tourn-1", MatchFilter::All))
+        .Times(2)
+        .WillRepeatedly(::testing::Return(matches));
+
+    // Should update mNext with Winner T1
+    EXPECT_CALL(*mockMatchRepo, Update(::testing::_)).WillOnce([&](const Match& m){
+        EXPECT_EQ(m.Id, "ko-2");
+        EXPECT_EQ(m.HomeTeamId, "T1");
+        return "ko-2";
+    });
+
+    consumer->Handle(event);
+}
+
+// Test: All Completed
+TEST_F(ScoreProcessingConsumerTest, ProcessScore_AllCompleted) {
+     nlohmann::json event = {
+        {"tournamentId", "tourn-1"},
+        {"matchId", "ko-final"}
+    };
+
+    auto mKO = createMatch("ko-final", MatchPhase::Knockout, 2, 1);
+    std::vector<std::shared_ptr<Match>> matches = {mKO};
+
+     EXPECT_CALL(*mockMatchRepo, FindByTournamentIdAndMatchId("tourn-1", "ko-final"))
+        .WillOnce(::testing::Return(mKO));
+
+     // Expect 2 calls (advancement + completion)
+     EXPECT_CALL(*mockMatchRepo, FindByTournamentId("tourn-1", MatchFilter::All))
+        .Times(2)
+        .WillRepeatedly(::testing::Return(matches));
+
+     // Just prints for now
+     consumer->Handle(event);
 }
 
 // Test: Handle malformed event gracefully
@@ -132,7 +192,6 @@ TEST_F(ScoreProcessingConsumerTest, HandlesMalformedEvent) {
         // Missing tournamentId and matchId
     };
     
-    // Should not throw or crash
     EXPECT_NO_THROW(consumer->Handle(event));
 }
 
@@ -143,51 +202,8 @@ TEST_F(ScoreProcessingConsumerTest, HandlesMissingMatchId) {
         // Missing matchId
     };
     
-    // Should not attempt to process
-    EXPECT_CALL(*mockMatchRepo, CountTotalMatchesByTournament(::testing::_))
+    EXPECT_CALL(*mockMatchRepo, FindByTournamentIdAndMatchId(::testing::_, ::testing::_))
         .Times(0);
     
     EXPECT_NO_THROW(consumer->Handle(event));
 }
-
-// Test: Handle zero matches in tournament
-TEST_F(ScoreProcessingConsumerTest, HandlesZeroMatches) {
-    nlohmann::json event = {
-        {"tournamentId", "tourn-1"},
-        {"matchId", "match-1"}
-    };
-    
-    EXPECT_CALL(*mockMatchRepo, CountTotalMatchesByTournament("tourn-1"))
-        .WillOnce(::testing::Return(0));  // No matches
-    
-    EXPECT_CALL(*mockMatchRepo, CountCompletedMatchesByTournament("tourn-1"))
-        .WillOnce(::testing::Return(0));
-    
-    // Should not mark as complete
-    EXPECT_CALL(*mockTournamentRepo, ReadById(::testing::_))
-        .Times(0);
-    
-    consumer->Handle(event);
-}
-
-// Test: Partial completion scenario
-TEST_F(ScoreProcessingConsumerTest, PartialCompletion_NoAction) {
-    nlohmann::json event = {
-        {"tournamentId", "tourn-1"},
-        {"matchId", "match-1"}
-    };
-    
-    EXPECT_CALL(*mockMatchRepo, CountTotalMatchesByTournament("tourn-1"))
-        .WillOnce(::testing::Return(10));
-    
-    EXPECT_CALL(*mockMatchRepo, CountCompletedMatchesByTournament("tourn-1"))
-        .WillOnce(::testing::Return(7));  // 7 of 10 complete
-    
-    // Should not mark as complete
-    EXPECT_CALL(*mockTournamentRepo, ReadById(::testing::_))
-        .Times(0);
-    
-    consumer->Handle(event);
-}
-
-

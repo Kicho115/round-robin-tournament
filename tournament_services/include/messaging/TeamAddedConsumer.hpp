@@ -23,7 +23,6 @@ struct TeamAddedEvent {
             e.teamId   = j["team"].value("id", "");
             e.teamName = j["team"].value("name", "");
         } else {
-            // Soporta payloads planos
             e.teamId   = j.value("teamId", "");
             e.teamName = j.value("teamName", "");
         }
@@ -44,6 +43,5 @@ public:
           tournamentRepo(std::move(tournamentRepo_)),
           scheduler(std::move(scheduler_)) {}
 
-    // Llama este método desde tu callback de suscripción real (o desde tests)
     void Handle(const nlohmann::json& eventJson);
 };

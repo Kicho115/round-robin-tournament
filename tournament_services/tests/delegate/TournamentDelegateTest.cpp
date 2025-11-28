@@ -3,8 +3,10 @@
 #include <expected>
 
 #include "domain/Tournament.hpp"
+#include "domain/Group.hpp"
 #include "delegate/TournamentDelegate.hpp"
 #include "persistence/repository/IRepository.hpp"
+#include "persistence/repository/IGroupRepository.hpp"
 #include "cms/IQueueMessageProducer.hpp"
 
 // Mock for IRepository<domain::Tournament, std::string>
@@ -17,6 +19,26 @@ public:
     MOCK_METHOD(void, Delete, (std::string id), (override));
 };
 
+// Mock for IGroupRepository
+class GroupRepositoryMock : public IGroupRepository {
+public:
+    MOCK_METHOD(std::string, Create, (const domain::Group& entity), (override));
+    MOCK_METHOD(std::shared_ptr<domain::Group>, ReadById, (std::string id), (override));
+    MOCK_METHOD(std::vector<std::shared_ptr<domain::Group>>, ReadAll, (), (override));
+    MOCK_METHOD(std::string, Update, (const domain::Group& entity), (override));
+    MOCK_METHOD(void, Delete, (std::string id), (override));
+    MOCK_METHOD(std::optional<std::string>, GetGroups, (std::string_view tournamentId, std::vector<std::shared_ptr<domain::Group>>& outGroups), (override));
+    MOCK_METHOD(std::optional<std::string>, GetGroup, (std::string_view tournamentId, std::string_view groupId, std::shared_ptr<domain::Group>& outGroup), (override));
+    MOCK_METHOD(std::vector<std::shared_ptr<domain::Group>>, FindByTournamentId, (std::string_view tournamentId), (override));
+    MOCK_METHOD(std::shared_ptr<domain::Group>, FindByTournamentIdAndGroupId, (std::string_view tournamentId, std::string_view groupId), (override));
+    MOCK_METHOD(std::shared_ptr<domain::Group>, FindByTournamentIdAndTeamId, (std::string_view tournamentId, std::string_view teamId), (override));
+    MOCK_METHOD(void, UpdateGroupAddTeam, (std::string_view groupId, const std::shared_ptr<domain::Team>& team), (override));
+    MOCK_METHOD(bool, ExistsGroupForTournament, (std::string_view tournamentId), (override));
+    MOCK_METHOD(int, GroupsCountForTournament, (std::string_view tournamentId), (override));
+    MOCK_METHOD(int, CountTeamsInGroup, (std::string_view groupId), (override));
+    MOCK_METHOD(std::vector<domain::Team>, GetTeamsOfGroup, (std::string_view groupId), (override));
+};
+
 // Mock for IQueueMessageProducer
 class QueueMessageProducerMock : public IQueueMessageProducer {
 public:
@@ -26,15 +48,18 @@ public:
 class TournamentDelegateTest : public ::testing::Test {
 protected:
     std::shared_ptr<TournamentRepositoryMock> tournamentRepositoryMock;
+    std::shared_ptr<GroupRepositoryMock> groupRepositoryMock;
     std::shared_ptr<QueueMessageProducerMock> queueMessageProducerMock;
     std::shared_ptr<TournamentDelegate> tournamentDelegate;
 
     // Before each test
     void SetUp() override {
         tournamentRepositoryMock = std::make_shared<TournamentRepositoryMock>();
+        groupRepositoryMock = std::make_shared<GroupRepositoryMock>();
         queueMessageProducerMock = std::make_shared<QueueMessageProducerMock>();
         tournamentDelegate = std::make_shared<TournamentDelegate>(
-            tournamentRepositoryMock, 
+            tournamentRepositoryMock,
+            groupRepositoryMock,
             queueMessageProducerMock
         );
     }
@@ -47,7 +72,7 @@ protected:
 // Test 1: CreateTournament - Validate successful insertion and returned ID
 TEST_F(TournamentDelegateTest, CreateTournament_ValidInsertion_ReturnsGeneratedId) {
     // Arrange
-    auto tournament = std::make_shared<domain::Tournament>("Test Tournament", domain::TournamentFormat(2, 8));
+    auto tournament = std::make_shared<domain::Tournament>("Test Tournament", domain::TournamentFormat(1, 8));
     domain::Tournament capturedTournament;
     std::string expectedId = "generated-tournament-id-123";
 
@@ -60,6 +85,11 @@ TEST_F(TournamentDelegateTest, CreateTournament_ValidInsertion_ReturnsGeneratedI
     EXPECT_CALL(*queueMessageProducerMock, SendMessage(expectedId, "tournament.created"))
         .Times(1);
 
+    // Expect only 1 group to be created as a team container for round-robin
+    EXPECT_CALL(*groupRepositoryMock, Create(testing::_))
+        .Times(1)
+        .WillOnce(testing::Return("group-container-id"));
+
     // Act
     auto result = tournamentDelegate->CreateTournament(tournament);
 
@@ -67,7 +97,7 @@ TEST_F(TournamentDelegateTest, CreateTournament_ValidInsertion_ReturnsGeneratedI
     ASSERT_TRUE(result.has_value());
     EXPECT_EQ(result.value(), expectedId);
     EXPECT_EQ(capturedTournament.Name(), "Test Tournament");
-    EXPECT_EQ(capturedTournament.Format().NumberOfGroups(), 2);
+    EXPECT_EQ(capturedTournament.Format().NumberOfGroups(), 1);
     EXPECT_EQ(capturedTournament.Format().MaxTeamsPerGroup(), 8);
 }
 
@@ -85,6 +115,30 @@ TEST_F(TournamentDelegateTest, CreateTournament_FailedInsertion_ReturnsError) {
     // Assert
     ASSERT_FALSE(result.has_value());
     EXPECT_EQ(result.error(), "Failed to create tournament");
+}
+
+// Test 2b: CreateTournament - Validate failed group creation returns error
+TEST_F(TournamentDelegateTest, CreateTournament_FailedGroupCreation_ReturnsError) {
+    // Arrange
+    auto tournament = std::make_shared<domain::Tournament>("Test Tournament", domain::TournamentFormat(1, 8));
+    std::string expectedId = "generated-tournament-id-123";
+    
+    EXPECT_CALL(*tournamentRepositoryMock, Create(testing::_))
+        .WillOnce(testing::Return(expectedId));
+    
+    EXPECT_CALL(*queueMessageProducerMock, SendMessage(expectedId, "tournament.created"))
+        .Times(1);
+    
+    // Group creation fails
+    EXPECT_CALL(*groupRepositoryMock, Create(testing::_))
+        .WillOnce(testing::Return(""));
+
+    // Act
+    auto result = tournamentDelegate->CreateTournament(tournament);
+
+    // Assert
+    ASSERT_FALSE(result.has_value());
+    EXPECT_EQ(result.error(), "Failed to create teams container");
 }
 
 // Test 3: ReadById - Validate successful read with valid object

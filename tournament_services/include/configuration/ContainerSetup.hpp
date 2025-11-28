@@ -12,6 +12,7 @@
 
 #include "persistence/repository/IRepository.hpp"
 #include "persistence/repository/TeamRepository.hpp"
+#include "persistence/repository/ITeamRepository.hpp"
 #include "RunConfiguration.hpp"
 #include "cms/ConnectionManager.hpp"
 #include "delegate/TeamDelegate.hpp"
@@ -20,6 +21,7 @@
 #include "delegate/TournamentDelegate.hpp"
 #include "persistence/configuration/PostgresConnectionProvider.hpp"
 #include "persistence/repository/TournamentRepository.hpp"
+#include "persistence/repository/ITournamentRepository.hpp"
 #include "persistence/repository/GroupRepository.hpp"
 #include "cms/QueueMessageProducer.hpp"
 #include "cms/QueueResolver.hpp"
@@ -67,12 +69,12 @@ namespace config {
             .singleInstance();
         builder.registerType<TeamController>().singleInstance();
 
-        builder.registerType<TournamentRepository>().as<IRepository<domain::Tournament, std::string> >().
-                singleInstance();
+        builder.registerType<TournamentRepository>().as<IRepository<domain::Tournament, std::string> >().singleInstance();
+        builder.registerType<TournamentRepository>().as<ITournamentRepository>().singleInstance();
 
         builder.registerType<TournamentDelegate>()
-                .as<ITournamentDelegate>()
-                .singleInstance();
+            .as<ITournamentDelegate>()
+            .singleInstance();
         builder.registerType<TournamentController>().singleInstance();
 
         builder.registerType<GroupDelegate>().as<IGroupDelegate>().singleInstance();
