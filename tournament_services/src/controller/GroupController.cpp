@@ -67,23 +67,32 @@ crow::response GroupController::CreateGroup(const crow::request& request, const 
         return crow::response{crow::BAD_REQUEST};
     }
 
-    const auto body = json::parse(request.body);
-    domain::Group group = body; // requiere adl_serializer<domain::Group>
-    std::string newGroupId;
+    try {
+        const auto body = json::parse(request.body);
+        domain::Group group = body; // requiere adl_serializer<domain::Group>
+        
+        // Asignar el tournamentId desde la URL, no desde el JSON
+        group.TournamentId() = tournamentId;
+        
+        std::string newGroupId;
 
-    if (auto err = groupDelegate->CreateGroup(tournamentId, group, newGroupId)) {
-        if (*err == "duplicate_group_name" || *err == "group_limit_reached") {
-            return crow::response{crow::CONFLICT, *err};
+        if (auto err = groupDelegate->CreateGroup(tournamentId, group, newGroupId)) {
+            if (*err == "duplicate_group_name" || *err == "group_limit_reached") {
+                return crow::response{crow::CONFLICT, *err};
+            }
+            if (*err == "tournament_not_found") {
+                return crow::response{crow::NOT_FOUND, *err};
+            }
+            return crow::response{422, *err};
         }
-        if (*err == "tournament_not_found") {
-            return crow::response{crow::NOT_FOUND, *err};
-        }
-        return crow::response{422, *err};
+
+        crow::response res{crow::CREATED};
+        res.add_header("location", newGroupId.c_str());
+        return res;
+    } catch (const std::exception& e) {
+        CROW_LOG_ERROR << "CreateGroup exception: " << e.what();
+        return crow::response{crow::BAD_REQUEST, std::string("invalid_request_body: ") + e.what()};
     }
-
-    crow::response res{crow::CREATED};
-    res.add_header("location", newGroupId.c_str());
-    return res;
 }
 
 // PATCH /tournaments/{tid}/groups/{gid}

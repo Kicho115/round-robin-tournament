@@ -115,8 +115,12 @@ namespace domain {
         if(json.contains("tournamentId")) {
             group.TournamentId() = json["tournamentId"].get<std::string>();
         }
-        json["name"].get_to(group.Name());
-        json["teams"].get_to(group.Teams());
+        if(json.contains("name")) {
+            json["name"].get_to(group.Name());
+        }
+        if(json.contains("teams")) {
+            json["teams"].get_to(group.Teams());
+        }
     }
 
     inline void to_json(nlohmann::json& json, const std::shared_ptr<Group>& group) {

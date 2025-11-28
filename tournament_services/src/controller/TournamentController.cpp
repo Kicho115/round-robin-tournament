@@ -81,37 +81,41 @@ crow::response TournamentController::CreateTournament(const crow::request &reque
         return error_json(crow::BAD_REQUEST, "invalid_json");
     }
 
-    auto body = nlohmann::json::parse(request.body);
-    
-    // Parse tournament data from JSON
-    std::string name;
-    int groupsCount = 1;
-    int maxTeamsPerGroup = 16;
-    
-    if (body.contains("name") && body["name"].is_string()) {
-        name = body["name"].get<std::string>();
-    }
-    if (body.contains("groupsCount") && body["groupsCount"].is_number_integer()) {
-        groupsCount = body["groupsCount"].get<int>();
-    }
-    if (body.contains("maxTeamsPerGroup") && body["maxTeamsPerGroup"].is_number_integer()) {
-        maxTeamsPerGroup = body["maxTeamsPerGroup"].get<int>();
-    }
-    
-    auto format = domain::TournamentFormat(groupsCount, maxTeamsPerGroup, domain::TournamentType::ROUND_ROBIN);
-    auto tournament = std::make_shared<domain::Tournament>(name, format);
+    try {
+        auto body = nlohmann::json::parse(request.body);
+        
+        // Parse tournament data from JSON
+        std::string name;
+        int groupsCount = 1;
+        int maxTeamsPerGroup = 16;
+        
+        if (body.contains("name") && body["name"].is_string()) {
+            name = body["name"].get<std::string>();
+        }
+        if (body.contains("groupsCount") && body["groupsCount"].is_number_integer()) {
+            groupsCount = body["groupsCount"].get<int>();
+        }
+        if (body.contains("maxTeamsPerGroup") && body["maxTeamsPerGroup"].is_number_integer()) {
+            maxTeamsPerGroup = body["maxTeamsPerGroup"].get<int>();
+        }
+        
+        auto format = domain::TournamentFormat(groupsCount, maxTeamsPerGroup, domain::TournamentType::ROUND_ROBIN);
+        auto tournament = std::make_shared<domain::Tournament>(name, format);
 
-    auto res = tournamentDelegate->CreateTournament(tournament);
-    if (res.has_value()) {
-        // Los tests sólo verifican 201 y Location.
-        crow::response ok;
-        ok.code = crow::CREATED;
-        ok.add_header("location", res.value());
-        return ok;
-    }
+        auto res = tournamentDelegate->CreateTournament(tournament);
+        if (res.has_value()) {
+            // Los tests sólo verifican 201 y Location.
+            crow::response ok;
+            ok.code = crow::CREATED;
+            ok.add_header("location", res.value());
+            return ok;
+        }
 
-    const std::string err = res.error();
-    return error_json(http_for_error(err), err);
+        const std::string err = res.error();
+        return error_json(http_for_error(err), err);
+    } catch (const std::exception& e) {
+        return error_json(crow::BAD_REQUEST, "invalid_request_body");
+    }
 }
 
 // GET /tournaments
